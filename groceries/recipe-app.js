@@ -29,20 +29,6 @@ function isStructuredIngredient(ingredient) {
   return ingredient && typeof ingredient === "object" && "name" in ingredient;
 }
 
-function ingredientSearchText(ingredient) {
-  if (isStructuredIngredient(ingredient)) {
-    return [ingredient.name, ingredient.unit, ingredient.section].join(" ");
-  }
-  return String(ingredient);
-}
-
-function formatIngredientDisplay(ingredient) {
-  if (!isStructuredIngredient(ingredient)) return String(ingredient);
-  const qty = ingredient.quantity === "to taste" ? "to taste" : ingredient.quantity;
-  const unit = ingredient.unit ? ` ${ingredient.unit}` : "";
-  return `${qty}${unit} ${ingredient.name}`.trim();
-}
-
 function normalizeUnit(unit) {
   if (!unit) return "";
   const clean = unit.toLowerCase();
@@ -74,15 +60,6 @@ function convertToShoppingUnit(name, quantity, unit) {
   if (normalizedName.includes("broth") && normalizedUnit === "cups") {
     const cartons = Math.max(1, Math.ceil(quantity / 4));
     return `${cartons} carton${cartons > 1 ? "s" : ""} (${formatNumber(quantity)} cups needed)`;
-  }
-
-  if (normalizedName === "yellow onion") {
-    return `${formatNumber(quantity)} onion${quantity === 1 ? "" : "s"}`;
-  }
-
-  if (normalizedName === "green onions") {
-    const bunches = Math.max(1, Math.ceil(quantity / 6));
-    return `${bunches} bunch${bunches > 1 ? "es" : ""} (${formatNumber(quantity)} stalks needed)`;
   }
 
   return `${formatNumber(quantity)}${normalizedUnit ? ` ${normalizedUnit}` : ""}`.trim();
@@ -130,3 +107,69 @@ function buildShoppingList(selectedMeals) {
 
   return { items: Object.values(grouped), fallbackItems };
 }
+
+function renderShoppingList(selectedMeals) {
+  const { items } = buildShoppingList(selectedMeals);
+
+  return items.map(item => `
+    <li>
+      <input type="checkbox">
+      <strong>${escapeHtml(item.name)}</strong> — ${escapeHtml(convertToShoppingUnit(item.name, item.quantity, item.unit))}
+    </li>
+  `).join("");
+}
+
+function renderShoppingPage(selectedMeals) {
+  app.innerHTML = `
+    <button onclick="renderList()">Back</button>
+    <button onclick="window.print()">Print</button>
+
+    <h1>Grocery List</h1>
+    <ul class="shopping-list-page">
+      ${renderShoppingList(selectedMeals)}
+    </ul>
+  `;
+}
+
+function renderList() {
+  app.innerHTML = `
+    <button id="chooseFiveBtn">Choose 5</button>
+    <button id="makeListBtn">Make a List</button>
+    <button id="resetBtn">Reset</button>
+
+    ${recipes.map(r => `
+      <div>
+        <input type="checkbox" class="meal-checkbox" data-id="${r.id}">
+        ${r.name}
+      </div>
+    `).join("")}
+  `;
+
+  document.querySelectorAll(".meal-checkbox").forEach(box => {
+    box.addEventListener("change", e => {
+      const id = e.target.dataset.id;
+      if (e.target.checked) {
+        selectedMealIds.push(id);
+      } else {
+        selectedMealIds = selectedMealIds.filter(x => x !== id);
+      }
+    });
+  });
+
+  document.getElementById("makeListBtn").addEventListener("click", () => {
+    const selectedMeals = recipes.filter(r => selectedMealIds.includes(r.id));
+    renderShoppingPage(selectedMeals);
+  });
+
+  document.getElementById("resetBtn").addEventListener("click", () => {
+    selectedMealIds = [];
+    renderList();
+  });
+
+  document.getElementById("chooseFiveBtn").addEventListener("click", () => {
+    const picked = [...recipes].sort(() => 0.5 - Math.random()).slice(0, 5);
+    alert(picked.map(r => r.name).join("\n"));
+  });
+}
+
+renderList();

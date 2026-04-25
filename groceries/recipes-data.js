@@ -607,43 +607,43 @@ const recipes = [
           "Drizzle with spicy sauce and top with green onions and sesame seeds."
         ],
         notes: "Great balance of spicy, savory, and fresh."
-      },
-      {
-        id: "21",
-        name: "Angela and Josh's Orecchiette with Chicken Sausage, Fennel, and Asparagus",
-        category: "Dinner",
-        servings: 4,
-        tags: ["Chicken Sausage", "Pasta", "Asparagus", "Dinner"],
-        ingredients: [
-          { name: "Olive oil", quantity: 3, unit: "tbsp", section: "Pantry" },
-          { name: "Chicken sausage", quantity: 1, unit: "lb", section: "Meat" },
-          { name: "Fennel", quantity: 1, unit: "", section: "Produce" },
-          { name: "Garlic", quantity: 3, unit: "", section: "Produce" },
-          { name: "Red pepper flakes", quantity: 0.25, unit: "tsp", section: "Pantry" },
-          { name: "White wine", quantity: 1, unit: "cup", section: "Pantry" },
-          { name: "Chicken broth", quantity: 2, unit: "cups", section: "Pantry" },
-          { name: "Lemon juice", quantity: 0.5, unit: "cup", section: "Produce" },
-          { name: "Capers", quantity: 2, unit: "tbsp", section: "Pantry" },
-          { name: "Orecchiette pasta", quantity: 8, unit: "oz", section: "Pantry" },
-          { name: "Asparagus", quantity: 0.5, unit: "lb", section: "Produce" },
-          { name: "Pecorino romano cheese", quantity: 0.5, unit: "cup", section: "Dairy" },
-          { name: "Salt", quantity: 1, unit: "tsp", section: "Pantry" },
-          { name: "Black pepper", quantity: 0.5, unit: "tsp", section: "Pantry" }
-        ],
-        instructions: [
-          "Heat olive oil in a large skillet over medium-high heat.",
-          "Add chicken sausage and cook until browned, breaking into pieces.",
-          "Add fennel and cook until softened.",
-          "Add garlic and red pepper flakes and cook until fragrant.",
-          "Pour in white wine and simmer until reduced.",
-          "Add chicken broth, lemon juice, and capers and bring to a boil.",
-          "Add orecchiette pasta and cook until al dente.",
-          "Add asparagus and cook until tender.",
-          "Remove from heat and stir in pecorino romano cheese.",
-          "Season with salt and black pepper to taste and serve."
-        ]
-      }
+             ],
+  notes: "Great balance of spicy, savory, and fresh."
+},
+{
+  id: "21",
+  name: "Angela and Josh's Orecchiette with Chicken Sausage, Fennel, and Asparagus",
+  category: "Dinner",
+  servings: 4,
+  tags: ["Chicken Sausage", "Pasta", "Asparagus", "Dinner"],
+  ingredients: [
+    { name: "Olive oil", quantity: 3, unit: "tbsp", section: "Pantry" },
+    { name: "Chicken sausage", quantity: 1, unit: "lb", section: "Meat" },
+    { name: "Fennel", quantity: 1, unit: "", section: "Produce" },
+    { name: "Garlic", quantity: 3, unit: "", section: "Produce" },
+    { name: "Red pepper flakes", quantity: 0.25, unit: "tsp", section: "Pantry" },
+    { name: "White wine", quantity: 1, unit: "cup", section: "Pantry" },
+    { name: "Chicken broth", quantity: 2, unit: "cups", section: "Pantry" },
+    { name: "Lemon juice", quantity: 0.5, unit: "cup", section: "Produce" },
+    { name: "Capers", quantity: 2, unit: "tbsp", section: "Pantry" },
+    { name: "Orecchiette pasta", quantity: 8, unit: "oz", section: "Pantry" },
+    { name: "Asparagus", quantity: 0.5, unit: "lb", section: "Produce" },
+    { name: "Pecorino romano cheese", quantity: 0.5, unit: "cup", section: "Dairy" },
+    { name: "Salt", quantity: 1, unit: "tsp", section: "Pantry" },
+    { name: "Black pepper", quantity: 0.5, unit: "tsp", section: "Pantry" }
+  ],
+  instructions: [
+    "Heat olive oil in a large skillet over medium-high heat.",
+    "Add chicken sausage and cook until browned, breaking into pieces.",
+    "Add fennel and cook until softened.",
+    "Add garlic and red pepper flakes and cook until fragrant.",
+    "Pour in white wine and simmer until reduced.",
+    "Add chicken broth, lemon juice, and capers and bring to a boil.",
+    "Add orecchiette pasta and cook until al dente.",
+    "Add asparagus and cook until tender.",
+    "Remove from heat and stir in pecorino romano cheese.",
+    "Season with salt and black pepper to taste and serve."
+  ]
+}
 
-
-      
-    ];
+];

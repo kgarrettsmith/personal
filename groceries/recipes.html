@@ -814,6 +814,11 @@
     let selectedTheme = localStorage.getItem("recipeTheme") || "normal";
     document.body.dataset.theme = selectedTheme;
 
+    function getHeadshot() {
+      if (selectedTheme === "lost") return "lost-headshot.png";
+      return "headshot.png";
+    }
+
     function escapeHtml(value) {
       return String(value).replace(/[&<>'"]/g, char => ({
         "&": "&amp;",
@@ -857,7 +862,7 @@
         <section class="hero">
           <div>
             <div style="display:flex;align-items:center;gap:16px;">
-            <img src="headshot.png" alt="Family" style="width:110px;height:110px;border-radius:50%;object-fit:cover;" />
+            <img src="${getHeadshot()}" alt="Family" style="width:110px;height:110px;border-radius:50%;object-fit:cover;" />
             <div>
               <p class="eyebrow">Family Recipe Hub</p>
               <h1>What Is For Dinner?</h1>
@@ -908,6 +913,7 @@
         selectedTheme = event.target.value;
         document.body.dataset.theme = selectedTheme;
         localStorage.setItem("recipeTheme", selectedTheme);
+        renderList();
         triggerStatic();
       });
 
@@ -1040,6 +1046,7 @@
         selectedTheme = event.target.value;
         document.body.dataset.theme = selectedTheme;
         localStorage.setItem("recipeTheme", selectedTheme);
+        renderList();
         triggerStatic();
       });
 

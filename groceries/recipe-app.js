@@ -364,18 +364,6 @@ function renderList() {
             <div class="tags">
               ${recipe.tags.slice(0, 4).map(tag => `<span class="pill">${escapeHtml(tag)}</span>`).join("")}
             </div>
-
-            ${recipe.sourceUrl ? `
-              <a 
-                class="source-link" 
-                href="${escapeHtml(recipe.sourceUrl)}" 
-                target="_blank" 
-                rel="noreferrer"
-                onclick="event.stopPropagation()"
-              >
-                Original recipe ↗
-              </a>
-            ` : ""}
           </article>
         `).join("")}
       </section>

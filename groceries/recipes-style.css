@@ -1,4 +1,3 @@
-  <style>
     :root, body[data-theme="normal"] {
       --bg: #f1f5f9;
       --card: #ffffff;
@@ -760,4 +759,3 @@
       .card-header { display: block; }
       .servings-pill { margin-top: 12px; }
     }
-  </style>

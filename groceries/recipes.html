@@ -38,6 +38,25 @@
     }
 
     body[data-theme="lost"] {
+    }
+
+    body[data-theme="psych"] {
+      --bg: #fff200;
+      --card: #ffffff;
+      --text: #111;
+      --muted: #2f7d32;
+      --border: #00a651;
+      --accent: #00a651;
+      --soft: #f5fff7;
+      --title: #111;
+      --glow: 0 0 12px rgba(0,166,81,0.5);
+      --radius: 12px;
+      --font: "Trebuchet MS", Arial, sans-serif;
+      --texture: none;
+      --hero-note: "I've heard it both ways";
+    }
+
+    body[data-theme="lost"] {
       --bg: #050505;
       --card: #121212;
       --text: #e5e5e5;
@@ -128,6 +147,27 @@
     }
 
     .theme-bar select {
+      }
+
+    body[data-theme="retro"] #chooseFiveBtn {
+      background: #05000d;
+      color: #fff56b;
+      border: 2px solid #ff4fd8;
+      box-shadow: 0 0 10px rgba(255,79,216,0.6);
+    }
+
+    body[data-theme="lost"] #chooseFiveBtn {
+      background: #050505;
+      color: #ffffff;
+      border: 1px solid #888;
+    }
+
+    body[data-theme="lost"] #chooseFiveBtn:hover {
+      border-color: #ffffff;
+      box-shadow: 0 0 10px rgba(255,255,255,0.3);
+    }
+
+    .theme-bar select {
       max-width: 190px;
     }
 
@@ -146,6 +186,45 @@
       background: linear-gradient(180deg, rgba(22,0,42,0.96), rgba(9,0,21,0.96));
       border-width: 3px;
       box-shadow: 0 0 0 4px #05000d, 0 0 22px rgba(255,79,216,0.65), inset 0 0 18px rgba(0,245,255,0.12);
+    }
+
+    body[data-theme="psych"] .hero,
+    body[data-theme="psych"] .toolbar,
+    body[data-theme="psych"] .card,
+    body[data-theme="psych"] .detail-card,
+    body[data-theme="psych"] .empty,
+    body[data-theme="psych"] .mystery-panel {
+      border: 2px solid #00a651;
+      background: #ffffff;
+      box-shadow: 0 4px 12px rgba(0,166,81,0.25);
+    }
+
+    body[data-theme="psych"] h1,
+    body[data-theme="psych"] .detail-title {
+      color: #111;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    body[data-theme="psych"] .hero::after {
+      content: "🍍";
+      font-size: 1.2rem;
+      opacity: 0.8;
+    }
+
+    body[data-theme="psych"] .card h2::after {
+      content: " 🍍";
+      opacity: 0.5;
+    }
+
+    body[data-theme="psych"] .mystery-button {
+      background: #00a651;
+      color: white;
+      border: none;
+    }
+
+    body[data-theme="psych"] .mystery-button:hover {
+      background: #008f45;
     }
 
     body[data-theme="lost"] .hero,
@@ -769,8 +848,9 @@
             <option value="normal" ${selectedTheme === "normal" ? "selected" : ""}>Normal</option>
             <option value="retro" ${selectedTheme === "retro" ? "selected" : ""}>80's Retro</option>
             <option value="lost" ${selectedTheme === "lost" ? "selected" : ""}>LOST</option>
+            <option value="psych" ${selectedTheme === "psych" ? "selected" : ""}>PSYCH</option>
           </select>
-          <button id="chooseFiveBtn" style="margin-left:10px;padding:10px 14px;border:1px solid var(--border);background:var(--card);cursor:pointer;border-radius:6px;">Choose 5</button>
+          <button id="chooseFiveBtn" style="margin-left:10px;padding:10px 14px;border:1px solid var(--border);background:var(--card);color:var(--text);cursor:pointer;border-radius:6px;">Choose 5</button>
         </section>
         <section id="chooseFivePanel" style="display:none;margin-bottom:16px;padding:14px;border:1px solid var(--border);background:var(--card);border-radius:6px;"></section>
 
@@ -903,8 +983,9 @@
             <option value="normal" ${selectedTheme === "normal" ? "selected" : ""}>Normal</option>
             <option value="retro" ${selectedTheme === "retro" ? "selected" : ""}>80's Retro</option>
             <option value="lost" ${selectedTheme === "lost" ? "selected" : ""}>LOST</option>
+            <option value="psych" ${selectedTheme === "psych" ? "selected" : ""}>PSYCH</option>
           </select>
-          <button id="chooseFiveBtn" style="margin-left:10px;padding:10px 14px;border:1px solid var(--border);background:var(--card);cursor:pointer;border-radius:6px;">Choose 5</button>
+          <button id="chooseFiveBtn" style="margin-left:10px;padding:10px 14px;border:1px solid var(--border);background:var(--card);color:var(--text);cursor:pointer;border-radius:6px;">Choose 5</button>
         </section>
         <section id="chooseFivePanel" style="display:none;margin-bottom:16px;padding:14px;border:1px solid var(--border);background:var(--card);border-radius:6px;"></section>
 

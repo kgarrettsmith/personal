@@ -6,6 +6,7 @@
     let immuneRecipeId = null;
     let selectedMealIds = [];
     let selectedTheme = localStorage.getItem("recipeTheme") || "normal";
+    let hidePantry = false;
     document.body.dataset.theme = selectedTheme;
 
     function getHeadshot() {
@@ -192,24 +193,51 @@ function renderShoppingList(selectedMeals) {
   return structuredHtml + fallbackHtml;
 }
 
-    function renderShoppingPage(selectedMeals) {
-      app.innerHTML = `
-        <section class="theme-bar print-actions">
-          <button id="backToRecipesBtn" style="padding:10px 14px;border:1px solid var(--border);background:var(--card);color:var(--text);cursor:pointer;border-radius:6px;">← Back to Recipes</button>
-          <button id="printListBtn" style="padding:10px 14px;border:1px solid var(--border);background:var(--card);color:var(--text);cursor:pointer;border-radius:6px;">Print</button>
-          <button id="resetBtn" style="padding:10px 14px;border:1px solid var(--border);background:var(--card);color:var(--text);cursor:pointer;border-radius:6px;">Reset</button>
-        </section>
+function renderShoppingPage(selectedMeals) {
+  app.innerHTML = `
+    <section class="theme-bar print-actions">
+      <button id="backToRecipesBtn" style="padding:10px 14px;border:1px solid var(--border);background:var(--card);color:var(--text);cursor:pointer;border-radius:6px;">← Back to Recipes</button>
+      <button id="printListBtn" style="padding:10px 14px;border:1px solid var(--border);background:var(--card);color:var(--text);cursor:pointer;border-radius:6px;">Print</button>
+      <button id="resetBtn" style="padding:10px 14px;border:1px solid var(--border);background:var(--card);color:var(--text);cursor:pointer;border-radius:6px;">Reset</button>
+    </section>
 
-        <section class="detail-card shopping-list-page">
-          <p class="eyebrow">Shopping List</p>
-          <h1 class="detail-title">Grocery List</h1>
-          <p class="description">Selected meals: ${selectedMeals.length}</p>
-          <ul style="margin-top:8px;">
-            ${selectedMeals.map(meal => `<li>${escapeHtml(meal.name)}</li>`).join("")}
-          </ul>
-          ${renderShoppingList(selectedMeals)}
-        </section>
-      `;
+    <section class="detail-card shopping-list-page">
+      <p class="eyebrow">Shopping List</p>
+      <div style="display:flex;gap:10px;align-items:center;">
+        <h1 class="detail-title" style="margin:0;">Grocery List</h1>
+        <button id="togglePantryBtn">
+          ${hidePantry ? "Show Pantry Items" : "Hide Pantry Items"}
+        </button>
+      </div>
+      <p class="description">Selected meals: ${selectedMeals.length}</p>
+      <ul style="margin-top:8px;">
+        ${selectedMeals.map(meal => `<li>${escapeHtml(meal.name)}</li>`).join("")}
+      </ul>
+      ${renderShoppingList(selectedMeals)}
+    </section>
+  `;
+
+  // ✅ ADD THIS PART (event listeners)
+
+  document.getElementById("togglePantryBtn").addEventListener("click", () => {
+    hidePantry = !hidePantry;
+    renderShoppingPage(selectedMeals);
+  });
+
+  document.getElementById("backToRecipesBtn").addEventListener("click", () => {
+    selectedRecipeId = null;
+    renderList();
+  });
+
+  document.getElementById("printListBtn").addEventListener("click", () => {
+    window.print();
+  });
+
+  document.getElementById("resetBtn").addEventListener("click", () => {
+    selectedMealIds = [];
+    renderList();
+  });
+}
 
       document.getElementById("backToRecipesBtn").addEventListener("click", () => renderList());
       document.getElementById("printListBtn").addEventListener("click", () => window.print());

@@ -770,7 +770,9 @@
             <option value="retro" ${selectedTheme === "retro" ? "selected" : ""}>80's Retro</option>
             <option value="lost" ${selectedTheme === "lost" ? "selected" : ""}>LOST</option>
           </select>
+          <button id="chooseFiveBtn" style="margin-left:10px;padding:10px 14px;border:1px solid var(--border);background:var(--card);cursor:pointer;border-radius:6px;">Choose 5</button>
         </section>
+        <section id="chooseFivePanel" style="display:none;margin-bottom:16px;padding:14px;border:1px solid var(--border);background:var(--card);border-radius:6px;"></section>
 
         <section class="hero">
           <div>
@@ -842,6 +844,23 @@
         });
       }
 
+      const chooseBtn = document.getElementById("chooseFiveBtn");
+      const panel = document.getElementById("chooseFivePanel");
+      if (chooseBtn) {
+        chooseBtn.addEventListener("click", () => {
+          const shuffled = [...recipes].sort(() => 0.5 - Math.random());
+          const picked = shuffled.slice(0, 5);
+          panel.style.display = "block";
+          panel.innerHTML = `<strong>5 Dinner Picks:</strong><ul style="margin-top:8px;">${picked.map(r => `<li style="margin:6px 0;cursor:pointer;text-decoration:underline;" data-id="${r.id}">${r.name}</li>`).join("")}</ul>`;
+          panel.querySelectorAll("li").forEach(li => {
+            li.addEventListener("click", () => {
+              selectedRecipeId = li.dataset.id;
+              renderDetail();
+            });
+          });
+        });
+      }
+
       document.getElementById("searchInput").addEventListener("input", event => {
         searchQuery = event.target.value;
         renderList();
@@ -885,7 +904,9 @@
             <option value="retro" ${selectedTheme === "retro" ? "selected" : ""}>80's Retro</option>
             <option value="lost" ${selectedTheme === "lost" ? "selected" : ""}>LOST</option>
           </select>
+          <button id="chooseFiveBtn" style="margin-left:10px;padding:10px 14px;border:1px solid var(--border);background:var(--card);cursor:pointer;border-radius:6px;">Choose 5</button>
         </section>
+        <section id="chooseFivePanel" style="display:none;margin-bottom:16px;padding:14px;border:1px solid var(--border);background:var(--card);border-radius:6px;"></section>
 
         <div class="detail-wrap">
           <button class="back-button" id="backButton">← Back to recipes</button>
@@ -940,6 +961,23 @@
         localStorage.setItem("recipeTheme", selectedTheme);
         triggerStatic();
       });
+
+      const chooseBtn2 = document.getElementById("chooseFiveBtn");
+      const panel2 = document.getElementById("chooseFivePanel");
+      if (chooseBtn2) {
+        chooseBtn2.addEventListener("click", () => {
+          const shuffled = [...recipes].sort(() => 0.5 - Math.random());
+          const picked = shuffled.slice(0, 5);
+          panel2.style.display = "block";
+          panel2.innerHTML = `<strong>5 Dinner Picks:</strong><ul style="margin-top:8px;">${picked.map(r => `<li style="margin:6px 0;cursor:pointer;text-decoration:underline;" data-id="${r.id}">${r.name}</li>`).join("")}</ul>`;
+          panel2.querySelectorAll("li").forEach(li => {
+            li.addEventListener("click", () => {
+              selectedRecipeId = li.dataset.id;
+              renderDetail();
+            });
+          });
+        });
+      }
 
       document.getElementById("backButton").addEventListener("click", () => {
         selectedRecipeId = null;

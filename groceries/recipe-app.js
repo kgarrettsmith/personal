@@ -7,6 +7,7 @@ let immuneRecipeId = null;
 let selectedMealIds = [];
 let selectedTheme = localStorage.getItem("recipeTheme") || "normal";
 let hidePantry = false;
+let checkedItems = JSON.parse(localStorage.getItem("checkedItems") || "{}");
 document.body.dataset.theme = selectedTheme;
 
 function getHeadshot() {
@@ -190,7 +191,7 @@ function renderShoppingList(selectedMeals) {
 
             return `
               <li style="display:flex;gap:14px;align-items:flex-start;padding:12px;border:1px solid var(--border);background:var(--soft);border-radius:8px;break-inside:avoid;">
-                <input type="checkbox" />
+                <input type="checkbox" data-key="${escapeHtml(item.name)}" ${checkedItems[item.name] ? "checked" : ""} />
                 <span><strong>${escapeHtml(item.name)}</strong> — ${escapeHtml(amount)}<br><small style="color:var(--muted);">For: ${escapeHtml([...new Set(item.recipes)].join(", "))}</small></span>
               </li>
             `;
@@ -247,11 +248,25 @@ function renderShoppingPage(selectedMeals) {
     window.print();
   });
 
-  document.getElementById("resetBtn").addEventListener("click", () => {
-    selectedMealIds = [];
-    renderList();
+document.getElementById("resetBtn").addEventListener("click", () => {
+  selectedMealIds = [];
+  renderList();
+});
+
+document.querySelectorAll("input[type='checkbox'][data-key]").forEach(box => {
+  box.addEventListener("change", (e) => {
+    const key = e.target.dataset.key;
+
+    if (e.target.checked) {
+      checkedItems[key] = true;
+    } else {
+      delete checkedItems[key];
+    }
+
+    localStorage.setItem("checkedItems", JSON.stringify(checkedItems));
   });
-}
+});
+
 
 function getCategories() {
   return ["All", ...new Set(recipes.map(recipe => recipe.category))];

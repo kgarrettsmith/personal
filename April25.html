@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Trader Joe's Shopping List</title>
+  <style>
+    :root {
+      --bg: #f7f3ea;
+      --card: #ffffff;
+      --text: #243044;
+      --muted: #64748b;
+      --accent: #b91c1c;
+      --border: #e5e7eb;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+    }
+
+    .page {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 20px 16px 48px;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(247, 243, 234, 0.96);
+      backdrop-filter: blur(8px);
+      padding: 16px 0 12px;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 1.75rem;
+      letter-spacing: -0.03em;
+    }
+
+    .subtitle {
+      margin: 4px 0 0;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .section {
+      margin-top: 18px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      box-shadow: 0 6px 20px rgba(15, 23, 42, 0.06);
+      overflow: hidden;
+    }
+
+    .section h2 {
+      margin: 0;
+      padding: 14px 16px;
+      font-size: 1.15rem;
+      background: #fff7ed;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--border);
+      font-size: 1.05rem;
+    }
+
+    .item:last-child {
+      border-bottom: none;
+    }
+
+    input[type="checkbox"] {
+      width: 24px;
+      height: 24px;
+      margin-top: 1px;
+      accent-color: var(--accent);
+      flex: 0 0 auto;
+    }
+
+    label {
+      cursor: pointer;
+      flex: 1;
+    }
+
+    input[type="checkbox"]:checked + label {
+      text-decoration: line-through;
+      color: var(--muted);
+    }
+
+    .note {
+      display: block;
+      margin-top: 2px;
+      color: var(--muted);
+      font-size: 0.9rem;
+      text-decoration: none;
+    }
+
+    input[type="checkbox"]:checked + label .note {
+      text-decoration: line-through;
+    }
+
+    .footer-note {
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: 0.92rem;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <h1>Trader Joe's Shopping List</h1>
+      <p class="subtitle">Organized for a quick store trip. Check items off as you shop.</p>
+    </header>
+
+    <main>
+      <section class="section">
+        <h2>1. Produce</h2>
+
+        <div class="item">
+          <input type="checkbox" id="baby-potatoes" />
+          <label for="baby-potatoes">Baby potatoes — 2 bags</label>
+        </div>
+
+        <div class="item">
+          <input type="checkbox" id="persian-cucumbers" />
+          <label for="persian-cucumbers">Persian cucumbers — 1 pack <span class="note">Usually about 5–6 cucumbers</span></label>
+        </div>
+
+        <div class="item">
+          <input type="checkbox" id="cherry-tomatoes" />
+          <label for="cherry-tomatoes">Cherry tomatoes — 1 container <span class="note">10 oz</span></label>
+        </div>
+
+        <div class="item">
+          <input type="checkbox" id="bell-peppers" />
+          <label for="bell-peppers">Bell peppers — 2 peppers <span class="note">Or 1 bag mini peppers</span></label>
+        </div>
+
+        <div class="item">
+          <input type="checkbox" id="onions" />
+          <label for="onions">Onions — 2 total</label>
+        </div>
+
+        <div class="item">
+          <input type="checkbox" id="mirepoix" />
+          <label for="mirepoix">Mirepoix — 1 container <span class="note">Pre-chopped carrots, celery, and onion</span></label>
+        </div>
+
+        <div class="item">
+          <input type="checkbox" id="parsley" />
+          <label for="parsley">Fresh parsley — 1 bunch</label>
+        </div>
+
+        <div class="item">
+          <input type="checkbox" id="lemon" />
+          <label for="lemon">Lemon — 1</label>
+        </div>
+
+        <div class="item">
+          <input type="checkbox" id="garlic" />
+          <label for="garlic">Garlic — 1 bulb</label>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>2. Meat</h2>
+
+        <div class="item">
+          <input type="checkbox" id="flank-steak" />
+          <label for="flank-steak">Flank steak — 0.75–1 lb <span class="note">Usually 1 package</span></label>
+        </div>
+
+        <div class="item">
+          <input type="checkbox" id="ground-beef" />
+          <label for="ground-beef">Ground beef — 2 lb total <span class="note">Likely 2 × 1 lb packs</span></label>
+        </div>
+
+        <div class="item">
+          <input type="checkbox" id="chicken-thighs" />
+          <label for="chicken-thighs">Boneless skinless chicken thighs — 1–1.5 lb <span class="note">Usually 1 package</span></label>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>3. Dairy</h2>
+
+        <div class="item">
+          <input type="checkbox" id="butter" />
+          <label for="butter">Butter — 1 package <span class="note">Recipe needs 2 tbsp</span></label>
+        </div>
+
+        <div class="item">
+          <input type="checkbox" id="three-cheese" />
+          <label for="three-cheese">Shredded three-cheese blend — 1 bag <span class="note">Recipe needs 1 cup</span></label>
+        </div>
+
+        <div class="item">
+          <input type="checkbox" id="cheddar" />
+          <label for="cheddar">Cheddar cheese — 1 small block or 1 shredded bag <span class="note">Recipe needs 3 oz</span></label>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>4. Pantry / Dry Goods</h2>
+
+        <div class="item">
+          <input type="checkbox" id="macaroni" />
+          <label for="macaroni">Macaroni pasta — 1 bag</label>
+        </div>
+
+        <div class="item">
+          <input type="checkbox" id="pappardelle" />
+          <label for="pappardelle">Pappardelle nests — 1 package <span class="note">Recipe needs 15 nests</span></label>
+        </div>
+
+        <div class="item">
+          <input type="checkbox" id="beef-broth" />
+          <label for="beef-broth">Beef broth — 1 carton <span class="note">32 oz / 4 cups</span></label>
+        </div>
+
+        <div class="item">
+          <input type="checkbox" id="chicken-broth" />
+          <label for="chicken-broth">Chicken broth — 1 carton <span class="note">32 oz / 4 cups; recipe needs 2.5 cups</span></label>
+        </div>
+
+        <div class="item">
+          <input type="checkbox" id="french-onion-soup" />
+          <label for="french-onion-soup">French onion soup — 2 containers</label>
+        </div>
+
+        <div class="item">
+          <input type="checkbox" id="dijon" />
+          <label for="dijon">Dijon mustard — 1 jar</label>
+        </div>
+
+        <div class="item">
+          <input type="checkbox" id="oregano" />
+          <label for="oregano">Oregano — 1 jar</label>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>5. Specialty / Sauces</h2>
+
+        <div class="item">
+          <input type="checkbox" id="chimichurri" />
+          <label for="chimichurri">Chimichurri — 1 container</label>
+        </div>
+
+        <div class="item">
+          <input type="checkbox" id="crunchy-chili-onion" />
+          <label for="crunchy-chili-onion">Crunchy chili onion — 1 jar</label>
+        </div>
+      </section>
+    </main>
+
+    <p class="footer-note">Tip: Save this as <strong>index.html</strong> and upload it to GitHub Pages.</p>
+  </div>
+</body>
+</html>

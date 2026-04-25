@@ -50,12 +50,14 @@
     .item {
       display: flex; gap: 12px; padding: 14px 16px;
       border-bottom: 1px solid var(--border);
+      font-size: 1.05rem;
     }
 
     .item:last-child { border-bottom: none; }
 
     input[type="checkbox"] {
       width: 22px; height: 22px; accent-color: var(--accent);
+      flex: 0 0 auto;
     }
 
     label { flex: 1; cursor: pointer; }
@@ -67,28 +69,70 @@
     .view-btn {
       margin-left: 8px; border: none; background: none;
       color: var(--link); cursor: pointer; text-decoration: underline;
+      font: inherit; padding: 0;
     }
 
     .modal-overlay {
       display: none; position: fixed; inset: 0;
       background: var(--overlay); z-index: 1000;
       align-items: center; justify-content: center;
+      padding: 16px;
     }
 
     .modal-overlay.open { display: flex; }
 
     .modal {
-      width: 90%; max-width: 500px;
-      background: #fff; border-radius: 16px; overflow: hidden;
+      width: 92%; max-width: 500px;
+      background: #fff; border-radius: 18px; overflow: hidden;
+      box-shadow: 0 20px 70px rgba(0,0,0,0.25);
     }
 
     .modal-header {
-      display: flex; justify-content: space-between;
-      padding: 12px; border-bottom: 1px solid var(--border);
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 14px 16px; border-bottom: 1px solid var(--border);
+      font-size: 1.35rem; font-weight: 700;
     }
 
-    .modal img { width: 100%; max-height: 300px; object-fit: cover; }
+    #closeModal {
+      width: 38px; height: 38px; border-radius: 8px;
+      border: 1px solid #999; background: #f8fafc;
+      font-size: 1.4rem; font-weight: 700;
+    }
 
+    .visual-card {
+      padding: 20px 16px 18px;
+      text-align: center;
+    }
+
+    .emoji {
+      font-size: 5rem;
+      line-height: 1;
+      margin: 8px 0 14px;
+    }
+
+    .look-for {
+      margin: 0 auto 14px;
+      color: var(--text);
+      font-size: 1.05rem;
+      max-width: 390px;
+      line-height: 1.4;
+    }
+
+    .search-link {
+      display: inline-block;
+      background: #eff6ff;
+      color: var(--link);
+      text-decoration: none;
+      font-weight: 700;
+      padding: 11px 14px;
+      border-radius: 12px;
+    }
+
+    .modal-note {
+      margin: 12px 0 0;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
   </style>
 </head>
 <body>
@@ -99,88 +143,53 @@
     </header>
 
     <main>
-
       <section class="section">
         <h2>1. Produce</h2>
-
-        <div class="item"><input type="checkbox" id="potatoes"><label for="potatoes">Baby potatoes — 2 bags <button class="view-btn" data-name="Potatoes" data-img="https://source.unsplash.com/900x650/?potatoes">view</button></label></div>
-
-        <div class="item"><input type="checkbox" id="cucumbers"><label for="cucumbers">Persian cucumbers — 1 pack <button class="view-btn" data-name="Cucumbers" data-img="https://source.unsplash.com/900x650/?cucumbers">view</button></label></div>
-
-        <div class="item"><input type="checkbox" id="tomatoes"><label for="tomatoes">Cherry tomatoes — 1 container <button class="view-btn" data-name="Cherry tomatoes" data-img="https://source.unsplash.com/900x650/?cherry-tomatoes">view</button></label></div>
-
-        <div class="item"><input type="checkbox" id="peppers"><label for="peppers">Bell peppers — 2 <button class="view-btn" data-name="Bell peppers" data-img="https://source.unsplash.com/900x650/?bell-peppers">view</button></label></div>
-
-        <div class="item"><input type="checkbox" id="onions"><label for="onions">Onions — 2 <button class="view-btn" data-name="Onions" data-img="https://source.unsplash.com/900x650/?onions">view</button></label></div>
-
-        <div class="item"><input type="checkbox" id="spinach"><label for="spinach">Spinach — 1 bag (5 oz) <button class="view-btn" data-name="Spinach" data-img="https://source.unsplash.com/900x650/?spinach">view</button></label></div>
-
-        <div class="item"><input type="checkbox" id="parsley"><label for="parsley">Parsley — 1 bunch <button class="view-btn" data-name="Parsley" data-img="https://source.unsplash.com/900x650/?parsley">view</button></label></div>
-
-        <div class="item"><input type="checkbox" id="lemon"><label for="lemon">Lemon — 1 <button class="view-btn" data-name="Lemon" data-img="https://source.unsplash.com/900x650/?lemon">view</button></label></div>
-
-        <div class="item"><input type="checkbox" id="garlic"><label for="garlic">Garlic — 1 bulb (covers all recipes) <button class="view-btn" data-name="Garlic" data-img="https://source.unsplash.com/900x650/?garlic">view</button></label></div>
-
+        <div class="item"><input type="checkbox" id="potatoes"><label for="potatoes">Baby potatoes — 2 bags <button class="view-btn" type="button" data-name="Baby potatoes" data-emoji="🥔" data-desc="Look for small bagged potatoes in the produce section, often labeled baby potatoes, petite potatoes, or tiny potatoes." data-search="https://www.google.com/search?tbm=isch&q=baby+potatoes+bag">view</button></label></div>
+        <div class="item"><input type="checkbox" id="cucumbers"><label for="cucumbers">Persian cucumbers — 1 pack <button class="view-btn" type="button" data-name="Persian cucumbers" data-emoji="🥒" data-desc="Look for small, thin cucumbers sold together in a plastic pack or bag." data-search="https://www.google.com/search?tbm=isch&q=persian+cucumbers+package">view</button></label></div>
+        <div class="item"><input type="checkbox" id="tomatoes"><label for="tomatoes">Cherry tomatoes — 1 container <button class="view-btn" type="button" data-name="Cherry tomatoes" data-emoji="🍅" data-desc="Look for a clear plastic clamshell or container of small round tomatoes." data-search="https://www.google.com/search?tbm=isch&q=cherry+tomatoes+container">view</button></label></div>
+        <div class="item"><input type="checkbox" id="peppers"><label for="peppers">Bell peppers — 2 <button class="view-btn" type="button" data-name="Bell peppers" data-emoji="🫑" data-desc="Look for large red, yellow, orange, or green peppers in the produce bins." data-search="https://www.google.com/search?tbm=isch&q=bell+peppers">view</button></label></div>
+        <div class="item"><input type="checkbox" id="onions"><label for="onions">Onions — 2 <button class="view-btn" type="button" data-name="Onions" data-emoji="🧅" data-desc="Look for loose yellow onions or a small bag of yellow onions." data-search="https://www.google.com/search?tbm=isch&q=yellow+onions">view</button></label></div>
+        <div class="item"><input type="checkbox" id="spinach"><label for="spinach">Spinach — 1 bag (5 oz) <button class="view-btn" type="button" data-name="Spinach" data-emoji="🥬" data-desc="Look for bagged fresh baby spinach in the refrigerated produce area." data-search="https://www.google.com/search?tbm=isch&q=fresh+baby+spinach+bag">view</button></label></div>
+        <div class="item"><input type="checkbox" id="parsley"><label for="parsley">Parsley — 1 bunch <button class="view-btn" type="button" data-name="Parsley" data-emoji="🌿" data-desc="Look for a fresh green herb bunch near cilantro and other herbs." data-search="https://www.google.com/search?tbm=isch&q=fresh+parsley+bunch">view</button></label></div>
+        <div class="item"><input type="checkbox" id="lemon"><label for="lemon">Lemon — 1 <button class="view-btn" type="button" data-name="Lemon" data-emoji="🍋" data-desc="Look for a single bright yellow lemon in the citrus area." data-search="https://www.google.com/search?tbm=isch&q=lemon+fruit">view</button></label></div>
+        <div class="item"><input type="checkbox" id="garlic"><label for="garlic">Garlic — 1 bulb (covers all recipes) <button class="view-btn" type="button" data-name="Garlic" data-emoji="🧄" data-desc="Look for a whole bulb/head of garlic, usually near onions." data-search="https://www.google.com/search?tbm=isch&q=garlic+bulb">view</button></label></div>
       </section>
 
       <section class="section">
         <h2>2. Meat</h2>
-
-        <div class="item"><input type="checkbox" id="steak"><label for="steak">Flank steak — 1 package <button class="view-btn" data-name="Flank steak" data-img="https://source.unsplash.com/900x650/?steak">view</button></label></div>
-
-        <div class="item"><input type="checkbox" id="beef"><label for="beef">Ground beef — 2 lb <button class="view-btn" data-name="Ground beef" data-img="https://source.unsplash.com/900x650/?ground-beef">view</button></label></div>
-
-        <div class="item"><input type="checkbox" id="chicken"><label for="chicken">Chicken thighs — 1 pack <button class="view-btn" data-name="Chicken thighs" data-img="https://source.unsplash.com/900x650/?chicken">view</button></label></div>
-
+        <div class="item"><input type="checkbox" id="steak"><label for="steak">Flank steak — 1 package <button class="view-btn" type="button" data-name="Flank steak" data-emoji="🥩" data-desc="Look for a flat, long steak package in the refrigerated meat section." data-search="https://www.google.com/search?tbm=isch&q=flank+steak+package">view</button></label></div>
+        <div class="item"><input type="checkbox" id="beef"><label for="beef">Ground beef — 2 lb <button class="view-btn" type="button" data-name="Ground beef" data-emoji="🥩" data-desc="Look for ground beef packages; you may need two 1 lb packs." data-search="https://www.google.com/search?tbm=isch&q=ground+beef+package">view</button></label></div>
+        <div class="item"><input type="checkbox" id="chicken"><label for="chicken">Chicken thighs — 1 pack <button class="view-btn" type="button" data-name="Chicken thighs" data-emoji="🍗" data-desc="Look for boneless skinless chicken thighs in the refrigerated meat section." data-search="https://www.google.com/search?tbm=isch&q=boneless+skinless+chicken+thighs+package">view</button></label></div>
       </section>
 
       <section class="section">
         <h2>3. Dairy</h2>
-
-        <div class="item"><input type="checkbox" id="butter"><label for="butter">Butter — 1 package <button class="view-btn" data-name="Butter" data-img="https://source.unsplash.com/900x650/?butter">view</button></label></div>
-
-        <div class="item"><input type="checkbox" id="cheese"><label for="cheese">Shredded cheese blend — 1 bag <button class="view-btn" data-name="Cheese" data-img="https://source.unsplash.com/900x650/?cheese">view</button></label></div>
-
-        <div class="item"><input type="checkbox" id="cheddar"><label for="cheddar">Cheddar — 1 <button class="view-btn" data-name="Cheddar" data-img="https://source.unsplash.com/900x650/?cheddar">view</button></label></div>
-
-        <div class="item"><input type="checkbox" id="cream"><label for="cream">Cream cheese — 1 block <button class="view-btn" data-name="Cream cheese" data-img="https://source.unsplash.com/900x650/?cream-cheese">view</button></label></div>
-
-        <div class="item"><input type="checkbox" id="parm"><label for="parm">Parmesan — 1 container <button class="view-btn" data-name="Parmesan" data-img="https://source.unsplash.com/900x650/?parmesan">view</button></label></div>
-
+        <div class="item"><input type="checkbox" id="butter"><label for="butter">Butter — 1 package <button class="view-btn" type="button" data-name="Butter" data-emoji="🧈" data-desc="Look for boxed butter sticks in the dairy case." data-search="https://www.google.com/search?tbm=isch&q=butter+sticks+box">view</button></label></div>
+        <div class="item"><input type="checkbox" id="cheese"><label for="cheese">Shredded cheese blend — 1 bag <button class="view-btn" type="button" data-name="Shredded cheese blend" data-emoji="🧀" data-desc="Look for a bag of shredded cheese in the refrigerated cheese section." data-search="https://www.google.com/search?tbm=isch&q=shredded+cheese+blend+bag">view</button></label></div>
+        <div class="item"><input type="checkbox" id="cheddar"><label for="cheddar">Cheddar — 1 <button class="view-btn" type="button" data-name="Cheddar" data-emoji="🧀" data-desc="Look for a block of cheddar or pre-shredded cheddar in the cheese section." data-search="https://www.google.com/search?tbm=isch&q=cheddar+cheese+block">view</button></label></div>
+        <div class="item"><input type="checkbox" id="cream"><label for="cream">Cream cheese — 1 block <button class="view-btn" type="button" data-name="Cream cheese" data-emoji="🧀" data-desc="Look for a rectangular block of cream cheese in the dairy case." data-search="https://www.google.com/search?tbm=isch&q=cream+cheese+block">view</button></label></div>
+        <div class="item"><input type="checkbox" id="parm"><label for="parm">Parmesan — 1 container <button class="view-btn" type="button" data-name="Parmesan" data-emoji="🧀" data-desc="Look for grated, shredded, or shaved Parmesan in the cheese section." data-search="https://www.google.com/search?tbm=isch&q=parmesan+cheese+container">view</button></label></div>
       </section>
 
       <section class="section">
         <h2>4. Pantry</h2>
-
-        <div class="item"><input type="checkbox" id="mac"><label for="mac">Macaroni — 1 box <button class="view-btn" data-name="Macaroni" data-img="https://source.unsplash.com/900x650/?macaroni">view</button></label></div>
-
-        <div class="item"><input type="checkbox" id="orzo"><label for="orzo">Orzo — 1 box <button class="view-btn" data-name="Orzo" data-img="https://source.unsplash.com/900x650/?orzo">view</button></label></div>
-
-        <div class="item"><input type="checkbox" id="papp"><label for="papp">Pappardelle — 1 package <button class="view-btn" data-name="Pasta" data-img="https://source.unsplash.com/900x650/?pasta">view</button></label></div>
-
-        <div class="item"><input type="checkbox" id="broth"><label for="broth">Broth — 3 cartons (beef, chicken, vegetable) <button class="view-btn" data-name="Broth" data-img="https://source.unsplash.com/900x650/?broth">view</button></label></div>
-
-        <div class="item"><input type="checkbox" id="soup"><label for="soup">French onion soup — 2 <button class="view-btn" data-name="Soup" data-img="https://source.unsplash.com/900x650/?soup">view</button></label></div>
-
-        <div class="item"><input type="checkbox" id="art"><label for="art">Artichoke hearts — 1 can <button class="view-btn" data-name="Artichoke" data-img="https://source.unsplash.com/900x650/?artichoke">view</button></label></div>
-
-        <div class="item"><input type="checkbox" id="oil"><label for="oil">Olive oil — 1 bottle <button class="view-btn" data-name="Olive oil" data-img="https://source.unsplash.com/900x650/?olive-oil">view</button></label></div>
-
-        <div class="item"><input type="checkbox" id="dijon"><label for="dijon">Dijon — 1 <button class="view-btn" data-name="Dijon" data-img="https://source.unsplash.com/900x650/?mustard">view</button></label></div>
-
-        <div class="item"><input type="checkbox" id="oreg"><label for="oreg">Oregano — 1 <button class="view-btn" data-name="Oregano" data-img="https://source.unsplash.com/900x650/?oregano">view</button></label></div>
-
+        <div class="item"><input type="checkbox" id="mac"><label for="mac">Macaroni — 1 box <button class="view-btn" type="button" data-name="Macaroni" data-emoji="🍝" data-desc="Look for elbow macaroni or short pasta in the dry pasta aisle." data-search="https://www.google.com/search?tbm=isch&q=elbow+macaroni+pasta+box">view</button></label></div>
+        <div class="item"><input type="checkbox" id="orzo"><label for="orzo">Orzo — 1 box <button class="view-btn" type="button" data-name="Orzo" data-emoji="🍚" data-desc="Look for rice-shaped pasta in the dry pasta area." data-search="https://www.google.com/search?tbm=isch&q=orzo+pasta+box">view</button></label></div>
+        <div class="item"><input type="checkbox" id="papp"><label for="papp">Pappardelle — 1 package <button class="view-btn" type="button" data-name="Pappardelle" data-emoji="🍝" data-desc="Look for wide ribbon pasta, sometimes sold as nests." data-search="https://www.google.com/search?tbm=isch&q=pappardelle+pasta+nests">view</button></label></div>
+        <div class="item"><input type="checkbox" id="broth"><label for="broth">Broth — 3 cartons (beef, chicken, vegetable) <button class="view-btn" type="button" data-name="Broth cartons" data-emoji="🥣" data-desc="Grab one carton each: beef broth, chicken broth, and vegetable broth." data-search="https://www.google.com/search?tbm=isch&q=broth+carton+beef+chicken+vegetable">view</button></label></div>
+        <div class="item"><input type="checkbox" id="soup"><label for="soup">French onion soup — 2 <button class="view-btn" type="button" data-name="French onion soup" data-emoji="🧅" data-desc="Look for ready-made French onion soup; at Trader Joe's it may be refrigerated, frozen, or shelf-stable depending on store stock." data-search="https://www.google.com/search?tbm=isch&q=trader+joes+french+onion+soup">view</button></label></div>
+        <div class="item"><input type="checkbox" id="art"><label for="art">Artichoke hearts — 1 can <button class="view-btn" type="button" data-name="Artichoke hearts" data-emoji="🥫" data-desc="Look for canned or jarred artichoke hearts near olives, canned vegetables, or antipasto items." data-search="https://www.google.com/search?tbm=isch&q=canned+artichoke+hearts">view</button></label></div>
+        <div class="item"><input type="checkbox" id="oil"><label for="oil">Olive oil — 1 bottle <button class="view-btn" type="button" data-name="Olive oil" data-emoji="🫒" data-desc="Look for a bottle of olive oil in the oils and vinegar area." data-search="https://www.google.com/search?tbm=isch&q=olive+oil+bottle">view</button></label></div>
+        <div class="item"><input type="checkbox" id="dijon"><label for="dijon">Dijon — 1 <button class="view-btn" type="button" data-name="Dijon mustard" data-emoji="🌭" data-desc="Look for a jar of Dijon mustard near condiments and sauces." data-search="https://www.google.com/search?tbm=isch&q=dijon+mustard+jar">view</button></label></div>
+        <div class="item"><input type="checkbox" id="oreg"><label for="oreg">Oregano — 1 <button class="view-btn" type="button" data-name="Oregano" data-emoji="🌿" data-desc="Look for dried oregano in the spice section." data-search="https://www.google.com/search?tbm=isch&q=dried+oregano+spice+jar">view</button></label></div>
       </section>
 
       <section class="section">
         <h2>5. Specialty</h2>
-
-        <div class="item"><input type="checkbox" id="chim"><label for="chim">Chimichurri — 1 <button class="view-btn" data-name="Chimichurri" data-img="https://source.unsplash.com/900x650/?chimichurri">view</button></label></div>
-
-        <div class="item"><input type="checkbox" id="chili"><label for="chili">Crunchy chili onion — 1 <button class="view-btn" data-name="Chili crisp" data-img="https://source.unsplash.com/900x650/?chili-oil">view</button></label></div>
-
+        <div class="item"><input type="checkbox" id="chim"><label for="chim">Chimichurri — 1 <button class="view-btn" type="button" data-name="Chimichurri" data-emoji="🌿" data-desc="Look for a green herb sauce. At Trader Joe's it is often near refrigerated dips, sauces, or prepared foods." data-search="https://www.google.com/search?tbm=isch&q=trader+joes+chimichurri+sauce">view</button></label></div>
+        <div class="item"><input type="checkbox" id="chili"><label for="chili">Crunchy chili onion — 1 <button class="view-btn" type="button" data-name="Crunchy chili onion" data-emoji="🌶️" data-desc="Look for a small jar of chili onion/crisp near oils, sauces, and condiments." data-search="https://www.google.com/search?tbm=isch&q=trader+joes+crunchy+chili+onion">view</button></label></div>
       </section>
-
     </main>
   </div>
 
@@ -188,35 +197,38 @@
     <div class="modal">
       <div class="modal-header">
         <span id="modalTitle"></span>
-        <button id="closeModal">×</button>
+        <button id="closeModal" type="button">×</button>
       </div>
-      <img id="modalImage" alt="Preview image" />
+      <div class="visual-card">
+        <div class="emoji" id="modalEmoji"></div>
+        <p class="look-for" id="modalDesc"></p>
+        <a class="search-link" id="modalSearch" target="_blank" rel="noopener">Open real images</a>
+        <p class="modal-note">This popup works offline-style without broken images. Tap “Open real images” for Google image results.</p>
+      </div>
     </div>
   </div>
 
   <script>
     const modal = document.getElementById('imageModal');
-    const modalImage = document.getElementById('modalImage');
     const modalTitle = document.getElementById('modalTitle');
+    const modalEmoji = document.getElementById('modalEmoji');
+    const modalDesc = document.getElementById('modalDesc');
+    const modalSearch = document.getElementById('modalSearch');
 
     document.querySelectorAll('.view-btn').forEach(btn => {
       btn.onclick = (e) => {
+        e.preventDefault();
         e.stopPropagation();
-        modalImage.src = btn.dataset.img;
-        modalImage.onerror = () => {
-          modalImage.src = 'https://via.placeholder.com/600x400?text=Image+Unavailable';
-        };
         modalTitle.textContent = btn.dataset.name;
+        modalEmoji.textContent = btn.dataset.emoji;
+        modalDesc.textContent = btn.dataset.desc;
+        modalSearch.href = btn.dataset.search;
         modal.classList.add('open');
       };
     });
 
     document.getElementById('closeModal').onclick = () => modal.classList.remove('open');
-
-    modal.onclick = (e) => {
-      if (e.target === modal) modal.classList.remove('open');
-    };
+    modal.onclick = (e) => { if (e.target === modal) modal.classList.remove('open'); };
   </script>
-
 </body>
 </html>

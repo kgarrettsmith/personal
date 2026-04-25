@@ -609,29 +609,28 @@ const recipes = [
         notes: "Great balance of spicy, savory, and fresh."
       },
       {
-        {
-        "id": "21",
-        "name": "Angela and Josh's Orecchiette with Chicken Sausage, Fennel, and Asparagus",
-        "category": "Dinner",
-        "servings": 4,
-        "tags": ["Chicken Sausage", "Pasta", "Asparagus", "Dinner"],
-        "ingredients": [
-          { "name": "Olive oil", "quantity": 3, "unit": "tbsp", "section": "Pantry" },
-          { "name": "Chicken sausage", "quantity": 1, "unit": "lb", "section": "Meat" },
-          { "name": "Fennel", "quantity": 1, "unit": "", "section": "Produce" },
-          { "name": "Garlic", "quantity": 3, "unit": "", "section": "Produce" },
-          { "name": "Red pepper flakes", "quantity": 0.25, "unit": "tsp", "section": "Pantry" },
-          { "name": "White wine", "quantity": 1, "unit": "cup", "section": "Pantry" },
-          { "name": "Chicken broth", "quantity": 2, "unit": "cups", "section": "Pantry" },
-          { "name": "Lemon juice", "quantity": 0.5, "unit": "cup", "section": "Produce" },
-          { "name": "Capers", "quantity": 2, "unit": "tbsp", "section": "Pantry" },
-          { "name": "Orecchiette pasta", "quantity": 8, "unit": "oz", "section": "Pantry" },
-          { "name": "Asparagus", "quantity": 0.5, "unit": "lb", "section": "Produce" },
-          { "name": "Pecorino romano cheese", "quantity": 0.5, "unit": "cup", "section": "Dairy" },
-          { "name": "Salt", "quantity": 1, "unit": "tsp", "section": "Pantry" },
-          { "name": "Black pepper", "quantity": 0.5, "unit": "tsp", "section": "Pantry" }
+        id: "21",
+        name: "Angela and Josh's Orecchiette with Chicken Sausage, Fennel, and Asparagus",
+        category: "Dinner",
+        servings: 4,
+        tags: ["Chicken Sausage", "Pasta", "Asparagus", "Dinner"],
+        ingredients: [
+          { name: "Olive oil", quantity: 3, unit: "tbsp", section: "Pantry" },
+          { name: "Chicken sausage", quantity: 1, unit: "lb", section: "Meat" },
+          { name: "Fennel", quantity: 1, unit: "", section: "Produce" },
+          { name: "Garlic", quantity: 3, unit: "", section: "Produce" },
+          { name: "Red pepper flakes", quantity: 0.25, unit: "tsp", section: "Pantry" },
+          { name: "White wine", quantity: 1, unit: "cup", section: "Pantry" },
+          { name: "Chicken broth", quantity: 2, unit: "cups", section: "Pantry" },
+          { name: "Lemon juice", quantity: 0.5, unit: "cup", section: "Produce" },
+          { name: "Capers", quantity: 2, unit: "tbsp", section: "Pantry" },
+          { name: "Orecchiette pasta", quantity: 8, unit: "oz", section: "Pantry" },
+          { name: "Asparagus", quantity: 0.5, unit: "lb", section: "Produce" },
+          { name: "Pecorino romano cheese", quantity: 0.5, unit: "cup", section: "Dairy" },
+          { name: "Salt", quantity: 1, unit: "tsp", section: "Pantry" },
+          { name: "Black pepper", quantity: 0.5, unit: "tsp", section: "Pantry" }
         ],
-        "instructions": [
+        instructions: [
           "Heat olive oil in a large skillet over medium-high heat.",
           "Add chicken sausage and cook until browned, breaking into pieces.",
           "Add fennel and cook until softened.",

@@ -267,6 +267,7 @@ document.querySelectorAll("input[type='checkbox'][data-key]").forEach(box => {
   });
 });
 
+}
 
 function getCategories() {
   return ["All", ...new Set(recipes.map(recipe => recipe.category))];

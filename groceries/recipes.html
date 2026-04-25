@@ -1476,20 +1476,7 @@
           grouped[key].recipes.push(meal.name);
         });
       }
-
-      if (resetBtn) {
-        resetBtn.addEventListener("click", () => {
-          selectedMealIds = [];
-          document.querySelectorAll(".meal-checkbox").forEach(box => {
-            box.checked = false;
-          });
-          const shoppingListPanel = document.getElementById("shoppingListPanel");
-          if (shoppingListPanel) {
-            shoppingListPanel.style.display = "none";
-            shoppingListPanel.innerHTML = "";
-          }
-        });
-      });
+);
 
       return { items: Object.values(grouped), fallbackItems };
     }

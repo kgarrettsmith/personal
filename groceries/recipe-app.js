@@ -145,44 +145,52 @@
       return { items: Object.values(grouped), fallbackItems };
     }
 
-    function renderShoppingList(selectedMeals) {
-      const { items, fallbackItems } = buildShoppingList(selectedMeals);
-      const sectionOrder = ["Produce", "Meat", "Dairy", "Frozen", "Refrigerated", "Pantry", "Other"];
-      const itemsBySection = {};
-      items.forEach(item => {
-        if (!itemsBySection[item.section]) itemsBySection[item.section] = [];
-        itemsBySection[item.section].push(item);
-      });
+function renderShoppingList(selectedMeals) {
+  const { items, fallbackItems } = buildShoppingList(selectedMeals);
+  const sectionOrder = ["Produce", "Meat", "Dairy", "Frozen", "Refrigerated", "Pantry", "Other"];
+  const itemsBySection = {};
 
-      const structuredHtml = sectionOrder
-        .filter(section => itemsBySection[section] && itemsBySection[section].length)
-        .map(section => `
-          <h3 style="margin-top:24px;border-bottom:1px solid var(--border);padding-bottom:6px;">${escapeHtml(section)}</h3>
-          <ul style="list-style:none;padding:0;margin:0;display:grid;gap:10px;">
-            ${itemsBySection[section]
-              .sort((a, b) => a.name.localeCompare(b.name))
-              .map(item => {
-                const amount = item.toTaste && !item.quantity ? "to taste" : convertToShoppingUnit(item.name, item.quantity, item.unit);
-                return `
-                  <li style="display:flex;gap:14px;align-items:flex-start;padding:12px;border:1px solid var(--border);background:var(--soft);border-radius:8px;break-inside:avoid;">
-                    <input type="checkbox" />
-                    <span><strong>${escapeHtml(item.name)}</strong> — ${escapeHtml(amount)}<br><small style="color:var(--muted);">For: ${escapeHtml([...new Set(item.recipes)].join(", "))}</small></span>
-                  </li>
-                `;
-              }).join("")}
-          </ul>
-        `).join("");
+  items.forEach(item => {
+    if (!itemsBySection[item.section]) itemsBySection[item.section] = [];
+    itemsBySection[item.section].push(item);
+  });
 
-      const fallbackHtml = fallbackItems.length ? `
-        <h3 style="margin-top:24px;">Needs cleanup</h3>
-        <p style="color:var(--muted);">These older recipe ingredients are still plain text and will not merge until converted to the new format.</p>
-        <ul>
-          ${fallbackItems.map(item => `<li>${escapeHtml(item.text)} <small style="color:var(--muted);">(${escapeHtml(item.meal)})</small></li>`).join("")}
-        </ul>
-      ` : "";
+  const structuredHtml = sectionOrder
+    .filter(section => itemsBySection[section] && itemsBySection[section].length)
+    .map(section => `
+      <h3 style="margin-top:24px;border-bottom:1px solid var(--border);padding-bottom:6px;">${escapeHtml(section)}</h3>
+      <ul style="list-style:none;padding:0;margin:0;display:grid;gap:10px;">
+        ${itemsBySection[section]
+          .sort((a, b) => {
+            if (a.toTaste && !b.toTaste) return 1;
+            if (!a.toTaste && b.toTaste) return -1;
+            return a.name.localeCompare(b.name);
+          })
+          .map(item => {
+            const amount = item.toTaste
+              ? "to taste"
+              : convertToShoppingUnit(item.name, item.quantity, item.unit);
 
-      return structuredHtml + fallbackHtml;
-    }
+            return `
+              <li style="display:flex;gap:14px;align-items:flex-start;padding:12px;border:1px solid var(--border);background:var(--soft);border-radius:8px;break-inside:avoid;">
+                <input type="checkbox" />
+                <span><strong>${escapeHtml(item.name)}</strong> — ${escapeHtml(amount)}<br><small style="color:var(--muted);">For: ${escapeHtml([...new Set(item.recipes)].join(", "))}</small></span>
+              </li>
+            `;
+          }).join("")}
+      </ul>
+    `).join("");
+
+  const fallbackHtml = fallbackItems.length ? `
+    <h3 style="margin-top:24px;">Needs cleanup</h3>
+    <p style="color:var(--muted);">These older recipe ingredients are still plain text and will not merge until converted to the new format.</p>
+    <ul>
+      ${fallbackItems.map(item => `<li>${escapeHtml(item.text)} <small style="color:var(--muted);">(${escapeHtml(item.meal)})</small></li>`).join("")}
+    </ul>
+  ` : "";
+
+  return structuredHtml + fallbackHtml;
+}
 
     function renderShoppingPage(selectedMeals) {
       app.innerHTML = `

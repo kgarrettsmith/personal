@@ -609,10 +609,12 @@ const recipes = [
         notes: "Great balance of spicy, savory, and fresh."
       },
       {
+        {
         "id": "21",
         "name": "Angela and Josh's Orecchiette with Chicken Sausage, Fennel, and Asparagus",
         "category": "Dinner",
         "servings": 4,
+        "tags": ["Chicken Sausage", "Pasta", "Asparagus", "Dinner"],
         "ingredients": [
           { "name": "Olive oil", "quantity": 3, "unit": "tbsp", "section": "Pantry" },
           { "name": "Chicken sausage", "quantity": 1, "unit": "lb", "section": "Meat" },

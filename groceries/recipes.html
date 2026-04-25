@@ -1014,6 +1014,41 @@
         ],
         notes: "Add extra sesame oil for more flavor."
       }
+      ,
+      {
+        id: "chicken-wonton-stir-fry",
+        name: "Trader Joe's Chicken Wonton Stir Fry",
+        category: "Dinner",
+        source: "Custom",
+        sourceUrl: "",
+        servings: 4,
+        prepTime: "10 min",
+        cookTime: "15 min",
+        tags: ["Trader Joe's", "Wontons", "Stir Fry", "Quick"],
+        description: "A quick stir fry with chicken wontons, frozen vegetables, Soyaki sauce, garlic, sesame oil, and green onions.",
+        ingredients: [
+          { name: "Chicken wontons", quantity: 1, unit: "bag", section: "Frozen" },
+          { name: "Frozen stir fry vegetables", quantity: 1, unit: "bag", section: "Frozen" },
+          { name: "Soyaki sauce", quantity: 0.5, unit: "cups", section: "Pantry" },
+          { name: "Garlic", quantity: 2, unit: "", section: "Produce" },
+          { name: "Olive oil", quantity: 1, unit: "tbsp", section: "Pantry" },
+          { name: "Green onions", quantity: 2, unit: "", section: "Produce" },
+          { name: "Sesame oil", quantity: 1, unit: "tsp", section: "Pantry" },
+          { name: "Salt", quantity: "to taste", unit: "", section: "Pantry" },
+          { name: "Black pepper", quantity: "to taste", unit: "", section: "Pantry" }
+        ],
+        instructions: [
+          "Heat olive oil in a large pan over medium heat.",
+          "Add garlic and cook briefly until fragrant.",
+          "Add frozen stir fry vegetables and cook until heated through.",
+          "Add chicken wontons and cook according to package instructions until heated through.",
+          "Pour in Soyaki sauce and sesame oil and stir to combine.",
+          "Cook for an additional 2 to 3 minutes.",
+          "Garnish with sliced green onions.",
+          "Season with salt and black pepper to taste."
+        ],
+        notes: "Good fast freezer meal. Keep the wontons whole and avoid over-stirring once they are heated."
+      }
     ];
 
     const app = document.getElementById("app");
@@ -1043,6 +1078,164 @@
       }[char]));
     }
 
+    function isStructuredIngredient(ingredient) {
+      return ingredient && typeof ingredient === "object" && "name" in ingredient;
+    }
+
+    function ingredientSearchText(ingredient) {
+      if (isStructuredIngredient(ingredient)) {
+        return [ingredient.name, ingredient.unit, ingredient.section].join(" ");
+      }
+      return String(ingredient);
+    }
+
+    function formatIngredientDisplay(ingredient) {
+      if (!isStructuredIngredient(ingredient)) return String(ingredient);
+      const qty = ingredient.quantity === "to taste" ? "to taste" : ingredient.quantity;
+      const unit = ingredient.unit ? ` ${ingredient.unit}` : "";
+      return `${qty}${unit} ${ingredient.name}`.trim();
+    }
+
+    function normalizeUnit(unit) {
+      if (!unit) return "";
+      const clean = unit.toLowerCase();
+      if (["cup", "cups"].includes(clean)) return "cups";
+      if (["tbsp", "tablespoon", "tablespoons"].includes(clean)) return "tbsp";
+      if (["tsp", "teaspoon", "teaspoons"].includes(clean)) return "tsp";
+      if (["lb", "lbs", "pound", "pounds"].includes(clean)) return "lb";
+      if (["oz", "ounce", "ounces"].includes(clean)) return "oz";
+      return clean;
+    }
+
+    function formatNumber(value) {
+      if (typeof value !== "number") return value;
+      return Number.isInteger(value) ? String(value) : String(Math.round(value * 100) / 100);
+    }
+
+    function convertToShoppingUnit(name, quantity, unit) {
+      const normalizedName = name.toLowerCase();
+      const normalizedUnit = normalizeUnit(unit);
+
+      if (quantity === "to taste") return "to taste";
+      if (typeof quantity !== "number") return `${quantity}${normalizedUnit ? ` ${normalizedUnit}` : ""}`;
+
+      if (normalizedName === "garlic") {
+        const bulbs = Math.max(1, Math.ceil(quantity / 10));
+        return `${bulbs} bulb${bulbs > 1 ? "s" : ""} (${formatNumber(quantity)} cloves needed)`;
+      }
+
+      if (normalizedName === "chicken broth" && normalizedUnit === "cups") {
+        const cartons = Math.max(1, Math.ceil(quantity / 4));
+        return `${cartons} carton${cartons > 1 ? "s" : ""} (${formatNumber(quantity)} cups needed)`;
+      }
+
+      if (normalizedName === "beef broth" && normalizedUnit === "cups") {
+        const cartons = Math.max(1, Math.ceil(quantity / 4));
+        return `${cartons} carton${cartons > 1 ? "s" : ""} (${formatNumber(quantity)} cups needed)`;
+      }
+
+      if (normalizedName === "yellow onion" && normalizedUnit === "") {
+        return `${formatNumber(quantity)} onion${quantity === 1 ? "" : "s"}`;
+      }
+
+      if (normalizedName === "bell peppers" && normalizedUnit === "") {
+        return `${formatNumber(quantity)} pepper${quantity === 1 ? "" : "s"}`;
+      }
+
+      if (normalizedName === "green onions" && normalizedUnit === "") {
+        const bunches = Math.max(1, Math.ceil(quantity / 6));
+        return `${bunches} bunch${bunches > 1 ? "es" : ""} (${formatNumber(quantity)} stalks needed)`;
+      }
+
+      if (normalizedName === "cream cheese" && normalizedUnit === "oz") {
+        const blocks = Math.max(1, Math.ceil(quantity / 8));
+        return `${blocks} block${blocks > 1 ? "s" : ""} (${formatNumber(quantity)} oz needed)`;
+      }
+
+      return `${formatNumber(quantity)}${normalizedUnit ? ` ${normalizedUnit}` : ""}`.trim();
+    }
+
+    function buildShoppingList(selectedMeals) {
+      const grouped = {};
+      const fallbackItems = [];
+
+      selectedMeals.forEach(meal => {
+        meal.ingredients.forEach(ingredient => {
+          if (!isStructuredIngredient(ingredient)) {
+            fallbackItems.push({ meal: meal.name, text: String(ingredient) });
+            return;
+          }
+
+          const name = ingredient.name;
+          const unit = normalizeUnit(ingredient.unit || "");
+          const section = ingredient.section || "Other";
+          const key = `${section}|${name}|${unit}`;
+
+          if (!grouped[key]) {
+            grouped[key] = {
+              name,
+              unit,
+              section,
+              quantity: 0,
+              toTaste: false,
+              recipes: []
+            };
+          }
+
+          if (ingredient.quantity === "to taste") {
+            grouped[key].toTaste = true;
+          } else if (typeof ingredient.quantity === "number") {
+            grouped[key].quantity += ingredient.quantity;
+          } else {
+            grouped[key].quantity = ingredient.quantity;
+          }
+
+          grouped[key].recipes.push(meal.name);
+        });
+      });
+
+      return { items: Object.values(grouped), fallbackItems };
+    }
+
+    function renderShoppingList(selectedMeals) {
+      const { items, fallbackItems } = buildShoppingList(selectedMeals);
+      const sectionOrder = ["Produce", "Meat", "Dairy", "Frozen", "Refrigerated", "Pantry", "Other"];
+      const itemsBySection = {};
+      items.forEach(item => {
+        if (!itemsBySection[item.section]) itemsBySection[item.section] = [];
+        itemsBySection[item.section].push(item);
+      });
+
+      const structuredHtml = sectionOrder
+        .filter(section => itemsBySection[section] && itemsBySection[section].length)
+        .map(section => `
+          <h3 style="margin-top:18px;">${escapeHtml(section)}</h3>
+          <ul style="list-style:none;padding:0;margin:0;display:grid;gap:8px;">
+            ${itemsBySection[section]
+              .sort((a, b) => a.name.localeCompare(b.name))
+              .map(item => {
+                const amount = item.toTaste && !item.quantity ? "to taste" : convertToShoppingUnit(item.name, item.quantity, item.unit);
+                return `
+                  <li style="display:flex;gap:10px;align-items:flex-start;padding:10px;border:1px solid var(--border);background:var(--soft);border-radius:8px;">
+                    <input type="checkbox" style="width:auto;margin-top:3px;" />
+                    <span><strong>${escapeHtml(item.name)}</strong> — ${escapeHtml(amount)}<br><small style="color:var(--muted);">For: ${escapeHtml([...new Set(item.recipes)].join(", "))}</small></span>
+                  </li>
+                `;
+              }).join("")}
+          </ul>
+        `).join("");
+
+      const fallbackHtml = fallbackItems.length ? `
+        <h3 style="margin-top:18px;">Needs cleanup</h3>
+        <p style="color:var(--muted);">These older recipe ingredients are still plain text and will not merge until converted to the new format.</p>
+        <ul>
+          ${fallbackItems.map(item => `<li>${escapeHtml(item.text)} <small style="color:var(--muted);">(${escapeHtml(item.meal)})</small></li>`).join("")}
+        </ul>
+      ` : "";
+
+      return structuredHtml + fallbackHtml;
+    }
+
     function getCategories() {
       return ["All", ...new Set(recipes.map(recipe => recipe.category))];
     }
@@ -1051,7 +1244,7 @@
       const q = searchQuery.trim().toLowerCase();
       return recipes.filter(recipe => {
         const matchesCategory = selectedCategory === "All" || recipe.category === selectedCategory;
-        const text = [recipe.name, recipe.category, recipe.description, ...recipe.tags, ...recipe.ingredients].join(" ").toLowerCase();
+        const text = [recipe.name, recipe.category, recipe.description, ...recipe.tags, ...recipe.ingredients.map(ingredientSearchText)].join(" ").toLowerCase();
         return matchesCategory && text.includes(q);
       });
     }
@@ -1220,12 +1413,9 @@
             return;
           }
           shoppingListPanel.innerHTML = `
-            <strong>Shopping List Starter</strong>
+            <strong>Shopping List</strong>
             <p style="margin:8px 0;">Selected meals: ${selectedMeals.length}</p>
-            <ul style="margin-top:8px;">
-              ${selectedMeals.map(meal => `<li>${escapeHtml(meal.name)}</li>`).join("")}
-            </ul>
-            <p style="margin-bottom:0;color:var(--muted);">Phase 1 complete: meals are selected. Next phase will combine and organize ingredients.</p>
+            ${renderShoppingList(selectedMeals)}
           `;
         });
       }
@@ -1373,7 +1563,7 @@
               <section>
                 <h3>Ingredients</h3>
                 <ul class="ingredients">
-                  ${recipe.ingredients.map(item => `<li>${escapeHtml(item)}</li>`).join("")}
+                  ${recipe.ingredients.map(item => `<li>${escapeHtml(formatIngredientDisplay(item))}</li>`).join("")}
                 </ul>
               </section>
 

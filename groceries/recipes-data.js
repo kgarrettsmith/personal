@@ -6,6 +6,8 @@ const recipes = [
         source: "Frida Sofia Eats",
         sourceUrl: "https://www.fridasofiaeats.com/recipes/lemon-butter-chicken-sheet-pan",
         servings: 4,
+        prepTime: "10 min",
+        cookTime: "40 min",
         tags: ["Chicken", "Sheet Pan", "Easy", "Dinner"],
         description: "Sheet pan chicken with potatoes, peppers, onion, and lemon butter sauce.",
         ingredients: [

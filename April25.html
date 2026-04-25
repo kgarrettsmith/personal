@@ -190,7 +190,7 @@
         <span id="modalTitle"></span>
         <button id="closeModal">×</button>
       </div>
-      <img id="modalImage" />
+      <img id="modalImage" alt="Preview image" />
     </div>
   </div>
 
@@ -203,6 +203,9 @@
       btn.onclick = (e) => {
         e.stopPropagation();
         modalImage.src = btn.dataset.img;
+        modalImage.onerror = () => {
+          modalImage.src = 'https://via.placeholder.com/600x400?text=Image+Unavailable';
+        };
         modalTitle.textContent = btn.dataset.name;
         modal.classList.add('open');
       };

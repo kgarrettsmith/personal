@@ -1,1 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Trader Joe's Shopping List</title>
+  <style>
+    :root {
+      --bg: #f7f3ea;
+      --card: #ffffff;
+      --text: #243044;
+      --muted: #64748b;
+      --accent: #b91c1c;
+      --border: #e5e7eb;
+      --link: #2563eb;
+    }
 
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    .page { max-width: 760px; margin: 0 auto; padding: 20px 16px 48px; }
+
+    header {
+      position: sticky; top: 0; z-index: 10;
+      background: rgba(247, 243, 234, 0.96);
+      padding: 16px 0 12px;
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+    }
+
+    h1 { margin: 0; }
+    .subtitle { margin: 4px 0 0; color: var(--muted); }
+
+    .section {
+      margin-top: 18px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      overflow: hidden;
+    }
+
+    .section h2 { margin: 0; padding: 14px 16px; background: #fff7ed; }
+
+    .item {
+      display: flex; gap: 12px; padding: 14px 16px;
+      border-bottom: 1px solid var(--border);
+      font-size: 1.05rem;
+    }
+
+    .item:last-child { border-bottom: none; }
+
+    input[type="checkbox"] {
+      width: 22px; height: 22px; accent-color: var(--accent);
+      flex: 0 0 auto;
+    }
+
+    label { flex: 1; cursor: pointer; }
+
+    input[type="checkbox"]:checked + label {
+      text-decoration: line-through; color: var(--muted);
+    }
+
+    .view-link {
+      margin-left: 8px;
+      color: var(--link);
+      text-decoration: underline;
+      font-weight: 500;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <h1>Trader Joe's Shopping List</h1>
+      <p class="subtitle">Tap "view" to open real images</p>
+    </header>
+
+    <main>
+      <section class="section">
+        <h2>1. Produce</h2>
+
+        <div class="item"><input type="checkbox" id="potatoes"><label for="potatoes">Baby potatoes — 2 bags <a class="view-link" target="_blank" href="https://www.google.com/search?tbm=isch&q=baby+potatoes+bag">view</a></label></div>
+
+        <div class="item"><input type="checkbox" id="cucumbers"><label for="cucumbers">Persian cucumbers — 1 pack <a class="view-link" target="_blank" href="https://www.google.com/search?tbm=isch&q=persian+cucumbers+package">view</a></label></div>
+
+        <div class="item"><input type="checkbox" id="tomatoes"><label for="tomatoes">Cherry tomatoes — 1 container <a class="view-link" target="_blank" href="https://www.google.com/search?tbm=isch&q=cherry+tomatoes+container">view</a></label></div>
+
+        <div class="item"><input type="checkbox" id="peppers"><label for="peppers">Bell peppers — 2 <a class="view-link" target="_blank" href="https://www.google.com/search?tbm=isch&q=bell+peppers">view</a></label></div>
+
+        <div class="item"><input type="checkbox" id="onions"><label for="onions">Onions — 2 <a class="view-link" target="_blank" href="https://www.google.com/search?tbm=isch&q=yellow+onions">view</a></label></div>
+
+        <div class="item"><input type="checkbox" id="spinach"><label for="spinach">Spinach — 1 bag (5 oz) <a class="view-link" target="_blank" href="https://www.google.com/search?tbm=isch&q=fresh+baby+spinach+bag">view</a></label></div>
+
+        <div class="item"><input type="checkbox" id="parsley"><label for="parsley">Parsley — 1 bunch <a class="view-link" target="_blank" href="https://www.google.com/search?tbm=isch&q=fresh+parsley+bunch">view</a></label></div>
+
+        <div class="item"><input type="checkbox" id="lemon"><label for="lemon">Lemon — 1 <a class="view-link" target="_blank" href="https://www.google.com/search?tbm=isch&q=lemon+fruit">view</a></label></div>
+
+        <div class="item"><input type="checkbox" id="garlic"><label for="garlic">Garlic — 1 bulb <a class="view-link" target="_blank" href="https://www.google.com/search?tbm=isch&q=garlic+bulb">view</a></label></div>
+
+      </section>
+
+      <section class="section">
+        <h2>2. Meat</h2>
+
+        <div class="item"><input type="checkbox" id="steak"><label for="steak">Flank steak — 1 package <a class="view-link" target="_blank" href="https://www.google.com/search?tbm=isch&q=flank+steak+package">view</a></label></div>
+
+        <div class="item"><input type="checkbox" id="beef"><label for="beef">Ground beef — 2 lb <a class="view-link" target="_blank" href="https://www.google.com/search?tbm=isch&q=ground+beef+package">view</a></label></div>
+
+        <div class="item"><input type="checkbox" id="chicken"><label for="chicken">Chicken thighs — 1 pack <a class="view-link" target="_blank" href="https://www.google.com/search?tbm=isch&q=boneless+skinless+chicken+thighs+package">view</a></label></div>
+
+      </section>
+
+      <section class="section">
+        <h2>3. Dairy</h2>
+
+        <div class="item"><input type="checkbox" id="butter"><label for="butter">Butter — 1 package <a class="view-link" target="_blank" href="https://www.google.com/search?tbm=isch&q=butter+sticks+box">view</a></label></div>
+
+        <div class="item"><input type="checkbox" id="cheese"><label for="cheese">Shredded cheese blend — 1 bag <a class="view-link" target="_blank" href="https://www.google.com/search?tbm=isch&q=shredded+cheese+blend+bag">view</a></label></div>
+
+        <div class="item"><input type="checkbox" id="cheddar"><label for="cheddar">Cheddar — 1 <a class="view-link" target="_blank" href="https://www.google.com/search?tbm=isch&q=cheddar+cheese+block">view</a></label></div>
+
+        <div class="item"><input type="checkbox" id="cream"><label for="cream">Cream cheese — 1 block <a class="view-link" target="_blank" href="https://www.google.com/search?tbm=isch&q=cream+cheese+block">view</a></label></div>
+
+        <div class="item"><input type="checkbox" id="parm"><label for="parm">Parmesan — 1 container <a class="view-link" target="_blank" href="https://www.google.com/search?tbm=isch&q=parmesan+cheese+container">view</a></label></div>
+
+      </section>
+
+      <section class="section">
+        <h2>4. Pantry</h2>
+
+        <div class="item"><input type="checkbox" id="mac"><label for="mac">Macaroni — 1 box <a class="view-link" target="_blank" href="https://www.google.com/search?tbm=isch&q=elbow+macaroni+pasta+box">view</a></label></div>
+
+        <div class="item"><input type="checkbox" id="orzo"><label for="orzo">Orzo — 1 box <a class="view-link" target="_blank" href="https://www.google.com/search?tbm=isch&q=orzo+pasta+box">view</a></label></div>
+
+        <div class="item"><input type="checkbox" id="papp"><label for="papp">Pappardelle — 1 package <a class="view-link" target="_blank" href="https://www.google.com/search?tbm=isch&q=pappardelle+pasta+nests">view</a></label></div>
+
+        <div class="item"><input type="checkbox" id="broth"><label for="broth">Broth — 3 cartons (beef, chicken, vegetable) <a class="view-link" target="_blank" href="https://www.google.com/search?tbm=isch&q=broth+carton+beef+chicken+vegetable">view</a></label></div>
+
+        <div class="item"><input type="checkbox" id="soup"><label for="soup">French onion soup — 2 <a class="view-link" target="_blank" href="https://www.google.com/search?tbm=isch&q=trader+joes+french+onion+soup">view</a></label></div>
+
+        <div class="item"><input type="checkbox" id="art"><label for="art">Artichoke hearts — 1 can <a class="view-link" target="_blank" href="https://www.google.com/search?tbm=isch&q=canned+artichoke+hearts">view</a></label></div>
+
+        <div class="item"><input type="checkbox" id="oil"><label for="oil">Olive oil — 1 bottle <a class="view-link" target="_blank" href="https://www.google.com/search?tbm=isch&q=olive+oil+bottle">view</a></label></div>
+
+        <div class="item"><input type="checkbox" id="dijon"><label for="dijon">Dijon — 1 <a class="view-link" target="_blank" href="https://www.google.com/search?tbm=isch&q=dijon+mustard+jar">view</a></label></div>
+
+        <div class="item"><input type="checkbox" id="oreg"><label for="oreg">Oregano — 1 <a class="view-link" target="_blank" href="https://www.google.com/search?tbm=isch&q=dried+oregano+spice+jar">view</a></label></div>
+
+      </section>
+
+      <section class="section">
+        <h2>5. Specialty</h2>
+
+        <div class="item"><input type="checkbox" id="chim"><label for="chim">Chimichurri — 1 <a class="view-link" target="_blank" href="https://www.google.com/search?tbm=isch&q=trader+joes+chimichurri+sauce">view</a></label></div>
+
+        <div class="item"><input type="checkbox" id="chili"><label for="chili">Crunchy chili onion — 1 <a class="view-link" target="_blank" href="https://www.google.com/search?tbm=isch&q=trader+joes+crunchy+chili+onion">view</a></label></div>
+
+      </section>
+
+    </main>
+  </div>
+</body>
+</html>

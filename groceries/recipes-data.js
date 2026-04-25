@@ -557,5 +557,55 @@ const recipes = [
           "Top with the remaining bun and serve."
         ],
         notes: "Good quick sandwich dinner."
+      },
+      {
+        id: "angela-josh-spicy-soy-garlic-turkey-bowl",
+        name: "Angela and Josh's Spicy Soy Garlic Turkey Bowl",
+        category: "Dinner",
+        source: "Custom",
+        sourceUrl: "",
+        servings: 4,
+        prepTime: "15 min",
+        cookTime: "25 min",
+        tags: ["Turkey", "Rice Bowl", "Spicy", "Quick"],
+        description: "A spicy soy garlic turkey bowl with rice, bok choy, pickled radishes, and a creamy curry sauce.",
+        ingredients: [
+          { name: "White rice", quantity: 1, unit: "cup", section: "Pantry" },
+          { name: "Water", quantity: 1.5, unit: "cups", section: "Pantry" },
+          { name: "Salt", quantity: 0.5, unit: "tsp", section: "Pantry" },
+          { name: "Apple cider vinegar", quantity: 1, unit: "tbsp", section: "Pantry" },
+          { name: "Sesame oil", quantity: 1, unit: "tbsp", section: "Pantry" },
+          { name: "Green onions", quantity: 2, unit: "", section: "Produce" },
+          { name: "Black pepper", quantity: 1, unit: "tsp", section: "Pantry" },
+          { name: "Radishes", quantity: 3, unit: "oz", section: "Produce" },
+          { name: "Mayonnaise", quantity: 0.25, unit: "cup", section: "Dairy" },
+          { name: "Red curry paste", quantity: 2, unit: "tbsp", section: "Pantry" },
+          { name: "Honey", quantity: 1, unit: "tbsp", section: "Pantry" },
+          { name: "Soy sauce", quantity: 0.25, unit: "cup", section: "Pantry" },
+          { name: "Brown sugar", quantity: 0.25, unit: "cup", section: "Pantry" },
+          { name: "Garlic", quantity: 2, unit: "", section: "Produce" },
+          { name: "Ginger", quantity: 1, unit: "tsp", section: "Produce" },
+          { name: "Red pepper flakes", quantity: 0.25, unit: "tsp", section: "Pantry" },
+          { name: "Coconut oil", quantity: 1, unit: "tbsp", section: "Pantry" },
+          { name: "Ground turkey", quantity: 1.5, unit: "lb", section: "Meat" },
+          { name: "Bok choy", quantity: 2, unit: "", section: "Produce" },
+          { name: "Sesame seeds", quantity: 1, unit: "tbsp", section: "Pantry" }
+        ],
+        instructions: [
+          "Combine white rice, water, and salt in a saucepan and bring to a boil.",
+          "Reduce heat to low and cook for 10 to 15 minutes until water is absorbed.",
+          "Fluff rice with a fork and set aside.",
+          "In a bowl, mix apple cider vinegar, sesame oil, green onions, salt, and black pepper.",
+          "Add radishes and toss to coat, then set aside.",
+          "In another bowl, mix mayonnaise, red curry paste, and honey to make the sauce.",
+          "In a separate bowl, mix soy sauce, brown sugar, garlic, ginger, and red pepper flakes.",
+          "Heat coconut oil in a skillet over medium-high heat.",
+          "Add ground turkey and cook until browned, breaking it apart.",
+          "Add bok choy and cook until softened.",
+          "Pour soy sauce mixture over turkey and stir to combine.",
+          "Divide rice, turkey mixture, and radishes into bowls.",
+          "Drizzle with spicy sauce and top with green onions and sesame seeds."
+        ],
+        notes: "Great balance of spicy, savory, and fresh."
       }
     ];

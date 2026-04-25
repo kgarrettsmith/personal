@@ -470,6 +470,56 @@
       box-shadow: 0 0 16px rgba(255,255,255,0.18);
     }
 
+    input[type="checkbox"] {
+      width: 22px;
+      height: 22px;
+      min-width: 22px;
+      cursor: pointer;
+      accent-color: var(--accent);
+    }
+
+    .shopping-list-page input[type="checkbox"] {
+      width: 30px;
+      height: 30px;
+      min-width: 30px;
+    }
+
+    @media print {
+      body {
+        background: white !important;
+        color: black !important;
+      }
+
+      body::before,
+      body::after,
+      .theme-bar,
+      .print-actions {
+        display: none !important;
+      }
+
+      .page {
+        max-width: none;
+        padding: 0;
+      }
+
+      .shopping-list-page {
+        box-shadow: none !important;
+        border: none !important;
+        background: white !important;
+        color: black !important;
+      }
+
+      .shopping-list-page h1,
+      .shopping-list-page h3,
+      .shopping-list-page strong,
+      .shopping-list-page small,
+      .shopping-list-page span,
+      .shopping-list-page p,
+      .shopping-list-page li {
+        color: black !important;
+      }
+    }
+
     input, select {
       width: 100%;
       border: 1px solid var(--border);
@@ -1456,15 +1506,15 @@
       const structuredHtml = sectionOrder
         .filter(section => itemsBySection[section] && itemsBySection[section].length)
         .map(section => `
-          <h3 style="margin-top:18px;">${escapeHtml(section)}</h3>
-          <ul style="list-style:none;padding:0;margin:0;display:grid;gap:8px;">
+          <h3 style="margin-top:24px;border-bottom:1px solid var(--border);padding-bottom:6px;">${escapeHtml(section)}</h3>
+          <ul style="list-style:none;padding:0;margin:0;display:grid;gap:10px;">
             ${itemsBySection[section]
               .sort((a, b) => a.name.localeCompare(b.name))
               .map(item => {
                 const amount = item.toTaste && !item.quantity ? "to taste" : convertToShoppingUnit(item.name, item.quantity, item.unit);
                 return `
-                  <li style="display:flex;gap:10px;align-items:flex-start;padding:10px;border:1px solid var(--border);background:var(--soft);border-radius:8px;">
-                    <input type="checkbox" style="width:auto;margin-top:3px;" />
+                  <li style="display:flex;gap:14px;align-items:flex-start;padding:12px;border:1px solid var(--border);background:var(--soft);border-radius:8px;break-inside:avoid;">
+                    <input type="checkbox" />
                     <span><strong>${escapeHtml(item.name)}</strong> — ${escapeHtml(amount)}<br><small style="color:var(--muted);">For: ${escapeHtml([...new Set(item.recipes)].join(", "))}</small></span>
                   </li>
                 `;
@@ -1473,7 +1523,7 @@
         `).join("");
 
       const fallbackHtml = fallbackItems.length ? `
-        <h3 style="margin-top:18px;">Needs cleanup</h3>
+        <h3 style="margin-top:24px;">Needs cleanup</h3>
         <p style="color:var(--muted);">These older recipe ingredients are still plain text and will not merge until converted to the new format.</p>
         <ul>
           ${fallbackItems.map(item => `<li>${escapeHtml(item.text)} <small style="color:var(--muted);">(${escapeHtml(item.meal)})</small></li>`).join("")}
@@ -1481,6 +1531,33 @@
       ` : "";
 
       return structuredHtml + fallbackHtml;
+    }
+
+    function renderShoppingPage(selectedMeals) {
+      app.innerHTML = `
+        <section class="theme-bar print-actions">
+          <button id="backToRecipesBtn" style="padding:10px 14px;border:1px solid var(--border);background:var(--card);color:var(--text);cursor:pointer;border-radius:6px;">← Back to Recipes</button>
+          <button id="printListBtn" style="padding:10px 14px;border:1px solid var(--border);background:var(--card);color:var(--text);cursor:pointer;border-radius:6px;">Print</button>
+          <button id="resetBtn" style="padding:10px 14px;border:1px solid var(--border);background:var(--card);color:var(--text);cursor:pointer;border-radius:6px;">Reset</button>
+        </section>
+
+        <section class="detail-card shopping-list-page">
+          <p class="eyebrow">Shopping List</p>
+          <h1 class="detail-title">Grocery List</h1>
+          <p class="description">Selected meals: ${selectedMeals.length}</p>
+          <ul style="margin-top:8px;">
+            ${selectedMeals.map(meal => `<li>${escapeHtml(meal.name)}</li>`).join("")}
+          </ul>
+          ${renderShoppingList(selectedMeals)}
+        </section>
+      `;
+
+      document.getElementById("backToRecipesBtn").addEventListener("click", () => renderList());
+      document.getElementById("printListBtn").addEventListener("click", () => window.print());
+      document.getElementById("resetBtn").addEventListener("click", () => {
+        selectedMealIds = [];
+        renderList();
+      });
     }
 
     function getCategories() {
@@ -1661,11 +1738,7 @@
             shoppingListPanel.innerHTML = `<strong>Shopping List</strong><p style="margin-bottom:0;">Select 1 to 7 meals first.</p>`;
             return;
           }
-          shoppingListPanel.innerHTML = `
-            <strong>Shopping List</strong>
-            <p style="margin:8px 0;">Selected meals: ${selectedMeals.length}</p>
-            ${renderShoppingList(selectedMeals)}
-          `;
+          renderShoppingPage(selectedMeals);
         });
       }
 

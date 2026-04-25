@@ -1425,6 +1425,20 @@
 
           grouped[key].recipes.push(meal.name);
         });
+      }
+
+      if (resetBtn) {
+        resetBtn.addEventListener("click", () => {
+          selectedMealIds = [];
+          document.querySelectorAll(".meal-checkbox").forEach(box => {
+            box.checked = false;
+          });
+          const shoppingListPanel = document.getElementById("shoppingListPanel");
+          if (shoppingListPanel) {
+            shoppingListPanel.style.display = "none";
+            shoppingListPanel.innerHTML = "";
+          }
+        });
       });
 
       return { items: Object.values(grouped), fallbackItems };
@@ -1498,6 +1512,7 @@
           </select>
           <button id="chooseFiveBtn" style="margin-left:10px;padding:10px 14px;border:1px solid var(--border);background:var(--card);color:var(--text);cursor:pointer;border-radius:6px;">Choose 5</button>
           <button id="makeListBtn" style="margin-left:10px;padding:10px 14px;border:1px solid var(--border);background:var(--card);color:var(--text);cursor:pointer;border-radius:6px;">Make a List</button>
+          <button id="resetBtn" style="margin-left:10px;padding:10px 14px;border:1px solid var(--border);background:var(--card);color:var(--text);cursor:pointer;border-radius:6px;">Reset</button>
         </section>
         <section id="chooseFivePanel" style="display:none;margin-bottom:16px;padding:14px;border:1px solid var(--border);background:var(--card);border-radius:6px;"></section>
         <section id="shoppingListPanel" style="display:none;margin-bottom:16px;padding:14px;border:1px solid var(--border);background:var(--card);border-radius:6px;"></section>
@@ -1636,6 +1651,7 @@
       });
 
       const makeListBtn = document.getElementById("makeListBtn");
+      const resetBtn = document.getElementById("resetBtn");
       const shoppingListPanel = document.getElementById("shoppingListPanel");
       if (makeListBtn && shoppingListPanel) {
         makeListBtn.addEventListener("click", () => {

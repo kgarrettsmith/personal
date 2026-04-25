@@ -606,7 +606,7 @@ const recipes = [
           "Divide rice, turkey mixture, and radishes into bowls.",
           "Drizzle with spicy sauce and top with green onions and sesame seeds."
         ],
-                notes: "Great balance of spicy, savory, and fresh."
+        notes: "Great balance of spicy, savory, and fresh."
       },
 
       {

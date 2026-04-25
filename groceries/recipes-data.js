@@ -23,7 +23,6 @@ const recipes = [
           { name: "Black pepper", quantity: 1, unit: "tsp", section: "Pantry" },
           { name: "Dried oregano", quantity: 1, unit: "tsp", section: "Pantry" }
         ],
-      instructions: []
       },
       {
         id: "sweet-potato-cheeseburger-skillet",

@@ -1597,12 +1597,12 @@
         <section class="hero">
           <div>
             <div style="display:flex;align-items:center;gap:16px;">
-            <img src="${getHeadshot()}" alt="Family" style="width:110px;height:110px;border-radius:50%;object-fit:cover;" />
-            <div>
-              <p class="eyebrow">Family Recipe Hub</p>
-              <h1>What Is For Dinner?</h1>
+              <img src="${getHeadshot()}" alt="Family" style="width:110px;height:110px;border-radius:50%;object-fit:cover;" />
+              <div>
+                <p class="eyebrow">Family Recipe Hub</p>
+                <h1>What Is For Dinner?</h1>
+              </div>
             </div>
-          </div>
             <p>A curated family recipe list with quick filters, searchable ingredients, and full recipe pages.</p>
           </div>
           <div class="count-box">
@@ -1684,12 +1684,12 @@
 
       const chooseBtn = document.getElementById("chooseFiveBtn");
       const panel = document.getElementById("chooseFivePanel");
-      if (chooseBtn) {
+      if (chooseBtn && panel) {
         chooseBtn.addEventListener("click", () => {
           const shuffled = [...recipes].sort(() => 0.5 - Math.random());
           const picked = shuffled.slice(0, 5);
           panel.style.display = "block";
-          panel.innerHTML = `<strong>5 Dinner Picks:</strong><ul style="margin-top:8px;">${picked.map(r => `<li style="margin:6px 0;cursor:pointer;text-decoration:underline;" data-id="${r.id}">${r.name}</li>`).join("")}</ul>`;
+          panel.innerHTML = `<strong>5 Dinner Picks:</strong><ul style="margin-top:8px;">${picked.map(r => `<li style="margin:6px 0;cursor:pointer;text-decoration:underline;" data-id="${r.id}">${escapeHtml(r.name)}</li>`).join("")}</ul>`;
           panel.querySelectorAll("li").forEach(li => {
             li.addEventListener("click", () => {
               selectedRecipeId = li.dataset.id;
@@ -1728,17 +1728,28 @@
       });
 
       const makeListBtn = document.getElementById("makeListBtn");
-      const resetBtn = document.getElementById("resetBtn");
       const shoppingListPanel = document.getElementById("shoppingListPanel");
       if (makeListBtn && shoppingListPanel) {
         makeListBtn.addEventListener("click", () => {
           const selectedMeals = recipes.filter(recipe => selectedMealIds.includes(recipe.id));
-          shoppingListPanel.style.display = "block";
           if (!selectedMeals.length) {
+            shoppingListPanel.style.display = "block";
             shoppingListPanel.innerHTML = `<strong>Shopping List</strong><p style="margin-bottom:0;">Select 1 to 7 meals first.</p>`;
             return;
           }
           renderShoppingPage(selectedMeals);
+        });
+      }
+
+      const resetBtn = document.getElementById("resetBtn");
+      if (resetBtn) {
+        resetBtn.addEventListener("click", () => {
+          selectedMealIds = [];
+          document.querySelectorAll(".meal-checkbox").forEach(box => box.checked = false);
+          if (shoppingListPanel) {
+            shoppingListPanel.style.display = "none";
+            shoppingListPanel.innerHTML = "";
+          }
         });
       }
 

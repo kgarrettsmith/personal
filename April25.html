@@ -23,293 +23,197 @@
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
       background: var(--bg);
       color: var(--text);
-      line-height: 1.5;
     }
 
-    .page {
-      max-width: 760px;
-      margin: 0 auto;
-      padding: 20px 16px 48px;
-    }
+    .page { max-width: 760px; margin: 0 auto; padding: 20px 16px 48px; }
 
     header {
-      position: sticky;
-      top: 0;
-      z-index: 10;
+      position: sticky; top: 0; z-index: 10;
       background: rgba(247, 243, 234, 0.96);
-      backdrop-filter: blur(8px);
       padding: 16px 0 12px;
-      border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+      border-bottom: 1px solid rgba(0,0,0,0.06);
     }
 
-    h1 { margin: 0; font-size: 1.75rem; }
-
-    .subtitle { margin: 4px 0 0; color: var(--muted); font-size: 0.95rem; }
+    h1 { margin: 0; }
+    .subtitle { margin: 4px 0 0; color: var(--muted); }
 
     .section {
       margin-top: 18px;
       background: var(--card);
       border: 1px solid var(--border);
       border-radius: 18px;
-      box-shadow: 0 6px 20px rgba(15, 23, 42, 0.06);
       overflow: hidden;
     }
 
-    .section h2 {
-      margin: 0;
-      padding: 14px 16px;
-      font-size: 1.15rem;
-      background: #fff7ed;
-      border-bottom: 1px solid var(--border);
-    }
+    .section h2 { margin: 0; padding: 14px 16px; background: #fff7ed; }
 
     .item {
-      display: flex;
-      align-items: flex-start;
-      gap: 12px;
-      padding: 14px 16px;
+      display: flex; gap: 12px; padding: 14px 16px;
       border-bottom: 1px solid var(--border);
-      font-size: 1.05rem;
     }
 
     .item:last-child { border-bottom: none; }
 
     input[type="checkbox"] {
-      width: 24px;
-      height: 24px;
-      margin-top: 1px;
-      accent-color: var(--accent);
-      flex: 0 0 auto;
+      width: 22px; height: 22px; accent-color: var(--accent);
     }
 
-    label { cursor: pointer; flex: 1; }
+    label { flex: 1; cursor: pointer; }
 
     input[type="checkbox"]:checked + label {
-      text-decoration: line-through;
-      color: var(--muted);
-    }
-
-    .note {
-      display: block;
-      margin-top: 2px;
-      color: var(--muted);
-      font-size: 0.9rem;
+      text-decoration: line-through; color: var(--muted);
     }
 
     .view-btn {
-      display: inline-block;
-      margin-left: 8px;
-      border: none;
-      background: transparent;
-      color: var(--link);
-      font-size: 0.9rem;
-      text-decoration: underline;
-      cursor: pointer;
-      padding: 0;
-      font-family: inherit;
-    }
-
-    .footer-note {
-      margin-top: 18px;
-      color: var(--muted);
-      font-size: 0.92rem;
-      text-align: center;
+      margin-left: 8px; border: none; background: none;
+      color: var(--link); cursor: pointer; text-decoration: underline;
     }
 
     .modal-overlay {
-      display: none;
-      position: fixed;
-      inset: 0;
-      z-index: 1000;
-      background: var(--overlay);
-      padding: 18px;
-      align-items: center;
-      justify-content: center;
+      display: none; position: fixed; inset: 0;
+      background: var(--overlay); z-index: 1000;
+      align-items: center; justify-content: center;
     }
 
     .modal-overlay.open { display: flex; }
 
     .modal {
-      width: min(92vw, 560px);
-      background: #fff;
-      border-radius: 20px;
-      overflow: hidden;
-      box-shadow: 0 24px 80px rgba(0, 0, 0, 0.28);
+      width: 90%; max-width: 500px;
+      background: #fff; border-radius: 16px; overflow: hidden;
     }
 
     .modal-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 12px;
-      padding: 14px 16px;
-      border-bottom: 1px solid var(--border);
+      display: flex; justify-content: space-between;
+      padding: 12px; border-bottom: 1px solid var(--border);
     }
 
-    .modal-title {
-      margin: 0;
-      font-size: 1.2rem;
-    }
+    .modal img { width: 100%; max-height: 300px; object-fit: cover; }
 
-    .close-btn {
-      border: none;
-      background: #f1f5f9;
-      border-radius: 999px;
-      width: 36px;
-      height: 36px;
-      font-size: 1.4rem;
-      line-height: 1;
-      cursor: pointer;
-    }
-
-    .modal-body {
-      padding: 16px;
-    }
-
-    .modal img {
-      width: 100%;
-      max-height: 360px;
-      object-fit: cover;
-      border-radius: 14px;
-      background: #f1f5f9;
-    }
-
-    .modal-actions {
-      display: flex;
-      gap: 10px;
-      margin-top: 12px;
-      flex-wrap: wrap;
-    }
-
-    .search-link {
-      display: inline-block;
-      padding: 10px 12px;
-      border-radius: 12px;
-      background: #eff6ff;
-      color: var(--link);
-      font-weight: 600;
-      text-decoration: none;
-    }
-
-    .modal-note {
-      margin: 10px 0 0;
-      color: var(--muted);
-      font-size: 0.9rem;
-    }
   </style>
 </head>
 <body>
   <div class="page">
     <header>
       <h1>Trader Joe's Shopping List</h1>
-      <p class="subtitle">Tap “view” to see an image without leaving the list.</p>
+      <p class="subtitle">Optimized + merged for this week's meals</p>
     </header>
 
     <main>
+
       <section class="section">
         <h2>1. Produce</h2>
-        <div class="item"><input type="checkbox" id="baby-potatoes" /><label for="baby-potatoes">Baby potatoes — 2 bags <button class="view-btn" type="button" data-name="Baby potatoes" data-img="https://source.unsplash.com/900x650/?baby-potatoes" data-search="https://www.google.com/search?tbm=isch&q=baby+potatoes">view</button></label></div>
-        <div class="item"><input type="checkbox" id="persian-cucumbers" /><label for="persian-cucumbers">Persian cucumbers — 1 pack <button class="view-btn" type="button" data-name="Persian cucumbers" data-img="https://source.unsplash.com/900x650/?persian-cucumbers" data-search="https://www.google.com/search?tbm=isch&q=persian+cucumbers">view</button><span class="note">Usually about 5–6 cucumbers</span></label></div>
-        <div class="item"><input type="checkbox" id="cherry-tomatoes" /><label for="cherry-tomatoes">Cherry tomatoes — 1 container <button class="view-btn" type="button" data-name="Cherry tomatoes" data-img="https://source.unsplash.com/900x650/?cherry-tomatoes" data-search="https://www.google.com/search?tbm=isch&q=cherry+tomatoes+container">view</button></label></div>
-        <div class="item"><input type="checkbox" id="bell-peppers" /><label for="bell-peppers">Bell peppers — 2 peppers <button class="view-btn" type="button" data-name="Bell peppers" data-img="https://source.unsplash.com/900x650/?bell-peppers" data-search="https://www.google.com/search?tbm=isch&q=bell+peppers">view</button></label></div>
-        <div class="item"><input type="checkbox" id="onions" /><label for="onions">Onions — 2 total <button class="view-btn" type="button" data-name="Yellow onions" data-img="https://source.unsplash.com/900x650/?yellow-onions" data-search="https://www.google.com/search?tbm=isch&q=yellow+onions">view</button></label></div>
-        <div class="item"><input type="checkbox" id="mirepoix" /><label for="mirepoix">Mirepoix — 1 container <button class="view-btn" type="button" data-name="Mirepoix" data-img="https://source.unsplash.com/900x650/?mirepoix" data-search="https://www.google.com/search?tbm=isch&q=trader+joes+mirepoix">view</button></label></div>
-        <div class="item"><input type="checkbox" id="parsley" /><label for="parsley">Fresh parsley — 1 bunch <button class="view-btn" type="button" data-name="Fresh parsley" data-img="https://source.unsplash.com/900x650/?fresh-parsley" data-search="https://www.google.com/search?tbm=isch&q=fresh+parsley+bunch">view</button></label></div>
-        <div class="item"><input type="checkbox" id="lemon" /><label for="lemon">Lemon — 1 <button class="view-btn" type="button" data-name="Lemon" data-img="https://source.unsplash.com/900x650/?lemon" data-search="https://www.google.com/search?tbm=isch&q=lemon">view</button></label></div>
-        <div class="item"><input type="checkbox" id="garlic" /><label for="garlic">Garlic — 1 bulb <button class="view-btn" type="button" data-name="Garlic bulb" data-img="https://source.unsplash.com/900x650/?garlic-bulb" data-search="https://www.google.com/search?tbm=isch&q=garlic+bulb">view</button></label></div>
+
+        <div class="item"><input type="checkbox" id="potatoes"><label for="potatoes">Baby potatoes — 2 bags <button class="view-btn" data-name="Potatoes" data-img="https://source.unsplash.com/900x650/?potatoes">view</button></label></div>
+
+        <div class="item"><input type="checkbox" id="cucumbers"><label for="cucumbers">Persian cucumbers — 1 pack <button class="view-btn" data-name="Cucumbers" data-img="https://source.unsplash.com/900x650/?cucumbers">view</button></label></div>
+
+        <div class="item"><input type="checkbox" id="tomatoes"><label for="tomatoes">Cherry tomatoes — 1 container <button class="view-btn" data-name="Cherry tomatoes" data-img="https://source.unsplash.com/900x650/?cherry-tomatoes">view</button></label></div>
+
+        <div class="item"><input type="checkbox" id="peppers"><label for="peppers">Bell peppers — 2 <button class="view-btn" data-name="Bell peppers" data-img="https://source.unsplash.com/900x650/?bell-peppers">view</button></label></div>
+
+        <div class="item"><input type="checkbox" id="onions"><label for="onions">Onions — 2 <button class="view-btn" data-name="Onions" data-img="https://source.unsplash.com/900x650/?onions">view</button></label></div>
+
+        <div class="item"><input type="checkbox" id="spinach"><label for="spinach">Spinach — 1 bag (5 oz) <button class="view-btn" data-name="Spinach" data-img="https://source.unsplash.com/900x650/?spinach">view</button></label></div>
+
+        <div class="item"><input type="checkbox" id="parsley"><label for="parsley">Parsley — 1 bunch <button class="view-btn" data-name="Parsley" data-img="https://source.unsplash.com/900x650/?parsley">view</button></label></div>
+
+        <div class="item"><input type="checkbox" id="lemon"><label for="lemon">Lemon — 1 <button class="view-btn" data-name="Lemon" data-img="https://source.unsplash.com/900x650/?lemon">view</button></label></div>
+
+        <div class="item"><input type="checkbox" id="garlic"><label for="garlic">Garlic — 1 bulb (covers all recipes) <button class="view-btn" data-name="Garlic" data-img="https://source.unsplash.com/900x650/?garlic">view</button></label></div>
+
       </section>
 
       <section class="section">
         <h2>2. Meat</h2>
-        <div class="item"><input type="checkbox" id="flank-steak" /><label for="flank-steak">Flank steak — 0.75–1 lb <button class="view-btn" type="button" data-name="Flank steak" data-img="https://source.unsplash.com/900x650/?flank-steak" data-search="https://www.google.com/search?tbm=isch&q=flank+steak">view</button></label></div>
-        <div class="item"><input type="checkbox" id="ground-beef" /><label for="ground-beef">Ground beef — 2 lb <button class="view-btn" type="button" data-name="Ground beef" data-img="https://source.unsplash.com/900x650/?ground-beef" data-search="https://www.google.com/search?tbm=isch&q=ground+beef+package">view</button></label></div>
-        <div class="item"><input type="checkbox" id="chicken-thighs" /><label for="chicken-thighs">Chicken thighs — 1–1.5 lb <button class="view-btn" type="button" data-name="Boneless skinless chicken thighs" data-img="https://source.unsplash.com/900x650/?chicken-thighs" data-search="https://www.google.com/search?tbm=isch&q=boneless+skinless+chicken+thighs">view</button></label></div>
+
+        <div class="item"><input type="checkbox" id="steak"><label for="steak">Flank steak — 1 package <button class="view-btn" data-name="Flank steak" data-img="https://source.unsplash.com/900x650/?steak">view</button></label></div>
+
+        <div class="item"><input type="checkbox" id="beef"><label for="beef">Ground beef — 2 lb <button class="view-btn" data-name="Ground beef" data-img="https://source.unsplash.com/900x650/?ground-beef">view</button></label></div>
+
+        <div class="item"><input type="checkbox" id="chicken"><label for="chicken">Chicken thighs — 1 pack <button class="view-btn" data-name="Chicken thighs" data-img="https://source.unsplash.com/900x650/?chicken">view</button></label></div>
+
       </section>
 
       <section class="section">
         <h2>3. Dairy</h2>
-        <div class="item"><input type="checkbox" id="butter" /><label for="butter">Butter — 1 package <button class="view-btn" type="button" data-name="Butter" data-img="https://source.unsplash.com/900x650/?butter-sticks" data-search="https://www.google.com/search?tbm=isch&q=butter+sticks">view</button></label></div>
-        <div class="item"><input type="checkbox" id="three-cheese" /><label for="three-cheese">Three-cheese blend — 1 bag <button class="view-btn" type="button" data-name="Shredded cheese blend" data-img="https://source.unsplash.com/900x650/?shredded-cheese" data-search="https://www.google.com/search?tbm=isch&q=shredded+cheese+blend">view</button></label></div>
-        <div class="item"><input type="checkbox" id="cheddar" /><label for="cheddar">Cheddar cheese — 1 <button class="view-btn" type="button" data-name="Cheddar cheese" data-img="https://source.unsplash.com/900x650/?cheddar-cheese" data-search="https://www.google.com/search?tbm=isch&q=cheddar+cheese+block">view</button></label></div>
+
+        <div class="item"><input type="checkbox" id="butter"><label for="butter">Butter — 1 package <button class="view-btn" data-name="Butter" data-img="https://source.unsplash.com/900x650/?butter">view</button></label></div>
+
+        <div class="item"><input type="checkbox" id="cheese"><label for="cheese">Shredded cheese blend — 1 bag <button class="view-btn" data-name="Cheese" data-img="https://source.unsplash.com/900x650/?cheese">view</button></label></div>
+
+        <div class="item"><input type="checkbox" id="cheddar"><label for="cheddar">Cheddar — 1 <button class="view-btn" data-name="Cheddar" data-img="https://source.unsplash.com/900x650/?cheddar">view</button></label></div>
+
+        <div class="item"><input type="checkbox" id="cream"><label for="cream">Cream cheese — 1 block <button class="view-btn" data-name="Cream cheese" data-img="https://source.unsplash.com/900x650/?cream-cheese">view</button></label></div>
+
+        <div class="item"><input type="checkbox" id="parm"><label for="parm">Parmesan — 1 container <button class="view-btn" data-name="Parmesan" data-img="https://source.unsplash.com/900x650/?parmesan">view</button></label></div>
+
       </section>
 
       <section class="section">
         <h2>4. Pantry</h2>
-        <div class="item"><input type="checkbox" id="macaroni" /><label for="macaroni">Macaroni — 1 bag <button class="view-btn" type="button" data-name="Macaroni pasta" data-img="https://source.unsplash.com/900x650/?macaroni-pasta" data-search="https://www.google.com/search?tbm=isch&q=macaroni+pasta">view</button></label></div>
-        <div class="item"><input type="checkbox" id="pappardelle" /><label for="pappardelle">Pappardelle — 1 package <button class="view-btn" type="button" data-name="Pappardelle pasta" data-img="https://source.unsplash.com/900x650/?pappardelle-pasta" data-search="https://www.google.com/search?tbm=isch&q=pappardelle+pasta">view</button></label></div>
-        <div class="item"><input type="checkbox" id="beef-broth" /><label for="beef-broth">Beef broth — 1 carton <button class="view-btn" type="button" data-name="Beef broth carton" data-img="https://source.unsplash.com/900x650/?beef-broth" data-search="https://www.google.com/search?tbm=isch&q=beef+broth+carton">view</button></label></div>
-        <div class="item"><input type="checkbox" id="chicken-broth" /><label for="chicken-broth">Chicken broth — 1 carton <button class="view-btn" type="button" data-name="Chicken broth carton" data-img="https://source.unsplash.com/900x650/?chicken-broth" data-search="https://www.google.com/search?tbm=isch&q=chicken+broth+carton">view</button></label></div>
-        <div class="item"><input type="checkbox" id="french-onion-soup" /><label for="french-onion-soup">French onion soup — 2 <button class="view-btn" type="button" data-name="French onion soup" data-img="https://source.unsplash.com/900x650/?french-onion-soup" data-search="https://www.google.com/search?tbm=isch&q=french+onion+soup+container">view</button></label></div>
-        <div class="item"><input type="checkbox" id="dijon" /><label for="dijon">Dijon mustard — 1 <button class="view-btn" type="button" data-name="Dijon mustard" data-img="https://source.unsplash.com/900x650/?dijon-mustard" data-search="https://www.google.com/search?tbm=isch&q=dijon+mustard">view</button></label></div>
-        <div class="item"><input type="checkbox" id="oregano" /><label for="oregano">Oregano — 1 <button class="view-btn" type="button" data-name="Dried oregano" data-img="https://source.unsplash.com/900x650/?dried-oregano" data-search="https://www.google.com/search?tbm=isch&q=dried+oregano">view</button></label></div>
+
+        <div class="item"><input type="checkbox" id="mac"><label for="mac">Macaroni — 1 box <button class="view-btn" data-name="Macaroni" data-img="https://source.unsplash.com/900x650/?macaroni">view</button></label></div>
+
+        <div class="item"><input type="checkbox" id="orzo"><label for="orzo">Orzo — 1 box <button class="view-btn" data-name="Orzo" data-img="https://source.unsplash.com/900x650/?orzo">view</button></label></div>
+
+        <div class="item"><input type="checkbox" id="papp"><label for="papp">Pappardelle — 1 package <button class="view-btn" data-name="Pasta" data-img="https://source.unsplash.com/900x650/?pasta">view</button></label></div>
+
+        <div class="item"><input type="checkbox" id="broth"><label for="broth">Broth — 3 cartons (beef, chicken, vegetable) <button class="view-btn" data-name="Broth" data-img="https://source.unsplash.com/900x650/?broth">view</button></label></div>
+
+        <div class="item"><input type="checkbox" id="soup"><label for="soup">French onion soup — 2 <button class="view-btn" data-name="Soup" data-img="https://source.unsplash.com/900x650/?soup">view</button></label></div>
+
+        <div class="item"><input type="checkbox" id="art"><label for="art">Artichoke hearts — 1 can <button class="view-btn" data-name="Artichoke" data-img="https://source.unsplash.com/900x650/?artichoke">view</button></label></div>
+
+        <div class="item"><input type="checkbox" id="oil"><label for="oil">Olive oil — 1 bottle <button class="view-btn" data-name="Olive oil" data-img="https://source.unsplash.com/900x650/?olive-oil">view</button></label></div>
+
+        <div class="item"><input type="checkbox" id="dijon"><label for="dijon">Dijon — 1 <button class="view-btn" data-name="Dijon" data-img="https://source.unsplash.com/900x650/?mustard">view</button></label></div>
+
+        <div class="item"><input type="checkbox" id="oreg"><label for="oreg">Oregano — 1 <button class="view-btn" data-name="Oregano" data-img="https://source.unsplash.com/900x650/?oregano">view</button></label></div>
+
       </section>
 
       <section class="section">
         <h2>5. Specialty</h2>
-        <div class="item"><input type="checkbox" id="chimichurri" /><label for="chimichurri">Chimichurri — 1 <button class="view-btn" type="button" data-name="Chimichurri" data-img="https://source.unsplash.com/900x650/?chimichurri-sauce" data-search="https://www.google.com/search?tbm=isch&q=trader+joes+chimichurri">view</button></label></div>
-        <div class="item"><input type="checkbox" id="crunchy-chili-onion" /><label for="crunchy-chili-onion">Crunchy chili onion — 1 <button class="view-btn" type="button" data-name="Crunchy chili onion" data-img="https://source.unsplash.com/900x650/?chili-crisp" data-search="https://www.google.com/search?tbm=isch&q=trader+joes+crunchy+chili+onion">view</button></label></div>
-      </section>
-    </main>
 
-    <p class="footer-note">Tap “view” to quickly see what each item looks like.</p>
+        <div class="item"><input type="checkbox" id="chim"><label for="chim">Chimichurri — 1 <button class="view-btn" data-name="Chimichurri" data-img="https://source.unsplash.com/900x650/?chimichurri">view</button></label></div>
+
+        <div class="item"><input type="checkbox" id="chili"><label for="chili">Crunchy chili onion — 1 <button class="view-btn" data-name="Chili crisp" data-img="https://source.unsplash.com/900x650/?chili-oil">view</button></label></div>
+
+      </section>
+
+    </main>
   </div>
 
-  <div class="modal-overlay" id="imageModal" aria-hidden="true">
-    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+  <div class="modal-overlay" id="imageModal">
+    <div class="modal">
       <div class="modal-header">
-        <h3 class="modal-title" id="modalTitle">Item image</h3>
-        <button class="close-btn" type="button" id="closeModal" aria-label="Close">×</button>
+        <span id="modalTitle"></span>
+        <button id="closeModal">×</button>
       </div>
-      <div class="modal-body">
-        <img id="modalImage" src="" alt="" />
-        <div class="modal-actions">
-          <a class="search-link" id="modalSearchLink" href="#" target="_blank" rel="noopener">Open more images</a>
-        </div>
-        <p class="modal-note">The preview image is a quick visual guide. Use “Open more images” if the product looks different at Trader Joe’s.</p>
-      </div>
+      <img id="modalImage" />
     </div>
   </div>
 
   <script>
     const modal = document.getElementById('imageModal');
-    const modalTitle = document.getElementById('modalTitle');
     const modalImage = document.getElementById('modalImage');
-    const modalSearchLink = document.getElementById('modalSearchLink');
-    const closeModal = document.getElementById('closeModal');
+    const modalTitle = document.getElementById('modalTitle');
 
-    document.querySelectorAll('.view-btn').forEach(button => {
-      button.addEventListener('click', event => {
-        event.preventDefault();
-        event.stopPropagation();
-
-        const name = button.dataset.name;
-        const imageUrl = button.dataset.img;
-        const searchUrl = button.dataset.search;
-
-        modalTitle.textContent = name;
-        modalImage.src = imageUrl;
-        modalImage.alt = name;
-        modalSearchLink.href = searchUrl;
+    document.querySelectorAll('.view-btn').forEach(btn => {
+      btn.onclick = (e) => {
+        e.stopPropagation();
+        modalImage.src = btn.dataset.img;
+        modalTitle.textContent = btn.dataset.name;
         modal.classList.add('open');
-        modal.setAttribute('aria-hidden', 'false');
-      });
+      };
     });
 
-    function hideModal() {
-      modal.classList.remove('open');
-      modal.setAttribute('aria-hidden', 'true');
-      modalImage.src = '';
-    }
+    document.getElementById('closeModal').onclick = () => modal.classList.remove('open');
 
-    closeModal.addEventListener('click', hideModal);
-
-    modal.addEventListener('click', event => {
-      if (event.target === modal) hideModal();
-    });
-
-    document.addEventListener('keydown', event => {
-      if (event.key === 'Escape') hideModal();
-    });
+    modal.onclick = (e) => {
+      if (e.target === modal) modal.classList.remove('open');
+    };
   </script>
+
 </body>
 </html>

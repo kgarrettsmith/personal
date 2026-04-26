@@ -774,5 +774,28 @@ const recipes = [
           { name: "basmati rice, cooked (for serving)", quantity: "", unit: "", section: "Pantry" }
         ],
         notes: ""
+      },
+      {
+        id: "one-pan-greek-lemon-chicken-and-potatoes",
+        name: "TJ One-Pan Greek Lemon Chicken and Potatoes",
+        category: "Dinner / Sheet Pan",
+        source: "Frida Sofia Eats",
+        sourceUrl: "https://www.fridasofiaeats.com/recipes/one-pan-greek-lemon-chicken-and-potatoes",
+        servings: 4,
+        prepTime: "10 min",
+        cookTime: "45 min",
+        tags: ["Sheet Pan", "Chicken", "Potatoes", "One-Pan", "Easy", "Mediterranean", "Trader Joe's"],
+        description: "A simple and flavorful one-pan meal with lemony chicken, roasted potatoes, and green beans, served with a cool tzatziki sauce.",
+        image: "images/meals/meal-32.png",
+        ingredients: [
+          { name: "small potatoes", quantity: 24, unit: "oz", section: "Produce" },
+          { name: "boneless skinless chicken thighs", quantity: 2, unit: "lb", section: "Meat" },
+          { name: "green beans, trimmed", quantity: 10, unit: "oz", section: "Produce" },
+          { name: "lemons", quantity: 2, unit: "", section: "Produce" },
+          { name: "tzatziki dip", quantity: 6, unit: "oz", section: "Refrigerated" },
+          { name: "olive oil", quantity: "", unit: "", section: "Pantry" },
+          { name: "salt", quantity: "", unit: "", section: "Pantry" }
+        ],
+        notes: ""
       }
     ];

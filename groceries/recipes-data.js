@@ -421,7 +421,6 @@ const recipes = [
         ],
         notes: "Great balance of spicy, savory, and fresh."
       },
-
       {
         id: "21",
         name: "Angela and Josh's Orecchiette with Chicken Sausage, Fennel, and Asparagus",
@@ -450,5 +449,26 @@ const recipes = [
           { name: "shaved Pecorino Romano, for topping", quantity: 0.5, unit: "cup", section: "Dairy" }
         ],
         notes: "Bright, savory pasta dinner with chicken sausage and vegetables."
+      },
+      {
+        id: "teriyaki-green-bean-beef",
+        name: "Trader Joe's Teriyaki Green Bean Beef",
+        category: "Dinner",
+        source: "Frida Sofia Eats",
+        sourceUrl: "https://www.fridasofiaeats.com/recipes/teriyaki-green-been-beef",
+        servings: 4,
+        prepTime: "10 min",
+        cookTime: "20 min",
+        tags: ["Beef", "Rice Bowl", "Quick", "Trader Joe's"],
+        description: "A simple teriyaki beef and green bean bowl served over rice.",
+        image: "images/meals/meal-17.png",
+        ingredients: [
+          { name: "raw basmati rice", quantity: 2, unit: "cups", section: "Pantry" },
+          { name: "ground beef", quantity: 1, unit: "lb", section: "Meat" },
+          { name: "teriyaki stir-fry sauce (store-bought or homemade, see below)", quantity: 14.5, unit: "oz", section: "Pantry" },
+          { name: "green beans, cut", quantity: 12, unit: "oz", section: "Produce" },
+          { name: "olive oil", quantity: "", unit: "", section: "Pantry" }
+        ],
+        notes: ""
       }
     ];

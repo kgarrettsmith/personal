@@ -418,10 +418,16 @@ function renderList() {
 
   setupSurvivorButtons();
 
-  document.getElementById("searchInput").addEventListener("input", event => {
-    searchQuery = event.target.value;
-    renderList();
-  });
+document.getElementById("searchInput").addEventListener("input", event => {
+  searchQuery = event.target.value;
+  renderList();
+
+  const searchInput = document.getElementById("searchInput");
+  if (searchInput) {
+    searchInput.focus();
+    searchInput.setSelectionRange(searchQuery.length, searchQuery.length);
+  }
+});
 
   document.getElementById("categorySelect").addEventListener("change", event => {
     selectedCategory = event.target.value;

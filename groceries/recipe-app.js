@@ -11,10 +11,10 @@ let checkedItems = JSON.parse(localStorage.getItem("checkedItems") || "{}");
 document.body.dataset.theme = selectedTheme;
 
 function getHeadshot() {
-  if (selectedTheme === "lost") return "lost-headshot.png";
-  if (selectedTheme === "psych") return "psych-headshot.png";
-  if (selectedTheme === "survivor") return "survivor-headshot.png";
-  return "headshot.png";
+  if (selectedTheme === "lost") return "images/lost-headshot.png";
+  if (selectedTheme === "psych") return "images/psych-headshot.png";
+  if (selectedTheme === "survivor") return "images/survivor-headshot.png";
+  return "images/headshot.png";
 }
 
 function escapeHtml(value) {
@@ -608,15 +608,22 @@ function renderDetail() {
               ${recipe.ingredients.map(item => `<li>${escapeHtml(formatIngredientDisplay(item))}</li>`).join("")}
             </ul>
           </section>
-
-          <section>
-            <h3>Instructions</h3>
-            <ol class="steps">
-              ${recipe.instructions.map(step => `<li>${escapeHtml(step)}</li>`).join("")}
-            </ol>
-          </section>
-        </div>
-
+        
+          ${recipe.sourceUrl ? `
+            <section>
+              <h3>Instructions</h3>
+              <a 
+                class="source-link" 
+                href="${escapeHtml(recipe.sourceUrl)}" 
+                target="_blank" 
+                rel="noreferrer"
+              >
+                View full recipe ↗
+              </a>
+            </section>
+          ` : ""}
+        </div>  
+        
         ${recipe.notes ? `
           <section class="notes">
             <h3>Family Notes</h3>
@@ -624,9 +631,6 @@ function renderDetail() {
           </section>
         ` : ""}
 
-        <a class="source-link" href="${escapeHtml(recipe.sourceUrl)}" target="_blank" rel="noreferrer">
-          View original recipe at ${escapeHtml(recipe.source)} ↗
-        </a>
       </article>
     </div>
   `;

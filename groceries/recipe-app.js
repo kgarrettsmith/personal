@@ -165,19 +165,11 @@ function renderShoppingList(selectedMeals) {
     "crushed red pepper flakes"
   ];
 
-  const activeItems = items.filter(item => {
-    const isPantryStaple = pantryStaples.includes(item.name.toLowerCase());
-    const isChecked = checkedItems[item.name];
+  const filteredItems = hidePantry
+    ? items.filter(item => !pantryStaples.includes(item.name.toLowerCase()))
+    : items;
 
-    if (hidePantry && isPantryStaple) return false;
-    if (isChecked) return false;
-
-    return true;
-  });
-
-  const completedItems = items.filter(item => checkedItems[item.name]);
-
-  activeItems.forEach(item => {
+  filteredItems.forEach(item => {
     if (!itemsBySection[item.section]) itemsBySection[item.section] = [];
     itemsBySection[item.section].push(item);
   });
@@ -200,33 +192,13 @@ function renderShoppingList(selectedMeals) {
 
             return `
               <li style="display:flex;gap:14px;align-items:flex-start;padding:12px;border:1px solid var(--border);background:var(--soft);border-radius:8px;break-inside:avoid;">
-                <input type="checkbox" data-key="${escapeHtml(item.name)}" />
+                <input type="checkbox" data-key="${escapeHtml(item.name)}" ${checkedItems[item.name] ? "checked" : ""} />
                 <span><strong>${escapeHtml(item.name)}</strong> — ${escapeHtml(amount)}<br><small style="color:var(--muted);">For: ${escapeHtml([...new Set(item.recipes)].join(", "))}</small></span>
               </li>
             `;
           }).join("")}
       </ul>
     `).join("");
-
-  const completedHtml = completedItems.length ? `
-    <h3 style="margin-top:30px;border-bottom:1px solid var(--border);padding-bottom:6px;color:var(--muted);">Completed</h3>
-    <ul style="list-style:none;padding:0;margin:0;display:grid;gap:10px;">
-      ${completedItems
-        .sort((a, b) => a.name.localeCompare(b.name))
-        .map(item => {
-          const amount = item.toTaste
-            ? "to taste"
-            : convertToShoppingUnit(item.name, item.quantity, item.unit);
-
-          return `
-            <li style="display:flex;gap:14px;align-items:flex-start;padding:12px;border:1px solid var(--border);background:var(--soft);border-radius:8px;opacity:0.55;break-inside:avoid;">
-              <input type="checkbox" data-key="${escapeHtml(item.name)}" checked />
-              <span style="text-decoration:line-through;"><strong>${escapeHtml(item.name)}</strong> — ${escapeHtml(amount)}<br><small>For: ${escapeHtml([...new Set(item.recipes)].join(", "))}</small></span>
-            </li>
-          `;
-        }).join("")}
-    </ul>
-  ` : "";
 
   const fallbackHtml = fallbackItems.length ? `
     <h3 style="margin-top:24px;">Needs cleanup</h3>
@@ -236,7 +208,7 @@ function renderShoppingList(selectedMeals) {
     </ul>
   ` : "";
 
-  return structuredHtml + completedHtml + fallbackHtml;
+  return structuredHtml + fallbackHtml;
 }
 
 function renderShoppingPage(selectedMeals) {
@@ -285,11 +257,9 @@ document.getElementById("resetBtn").addEventListener("click", () => {
 document.querySelectorAll("input[type='checkbox'][data-key]").forEach(box => {
   box.addEventListener("change", (e) => {
     const key = e.target.dataset.key;
-    const itemRow = e.target.closest("li");
 
     if (e.target.checked) {
       checkedItems[key] = true;
-      if (itemRow) itemRow.remove();
     } else {
       delete checkedItems[key];
     }

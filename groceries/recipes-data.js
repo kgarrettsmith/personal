@@ -653,5 +653,32 @@ const recipes = [
           { name: "honey (for topping)", quantity: 1, unit: "tbsp", section: "Pantry" }
         ],
         notes: "False flag!"
+      },
+      {
+        id: "creamy-chicken-and-broccoli-pasta",
+        name: "WF Creamy Chicken and Broccoli Pasta",
+        category: "Dinner / Pasta",
+        source: "Frida Sofia Eats",
+        sourceUrl: "https://www.fridasofiaeats.com/recipes/creamy-chicken-and-broccoli-pasta",
+        servings: 4,
+        prepTime: "15 min",
+        cookTime: "25 min",
+        tags: ["Pasta", "Chicken", "Creamy", "Broccoli", "Comfort Food", "Quick", "Whole Foods"],
+        description: "A creamy and comforting pasta dish with ground chicken, broccoli, and a rich Parmesan sauce, perfect for an easy weeknight dinner.",
+        image: "images/meals/meal-27.png",
+        ingredients: [
+          { name: "protein pasta (radiatore)", quantity: 1, unit: "lb", section: "Pantry" },
+          { name: "white or Yellow onion, diced", quantity: 1, unit: "", section: "Produce" },
+          { name: "olive oil", quantity: "", unit: "", section: "Pantry" },
+          { name: "ground chicken", quantity: 1, unit: "lb", section: "Meat" },
+          { name: "Italian seasoning", quantity: 2, unit: "tsp", section: "Pantry" },
+          { name: "salt", quantity: "1–2", unit: "tsp", section: "Pantry" },
+          { name: "black pepper", quantity: 0.5, unit: "tsp", section: "Pantry" },
+          { name: "broccoli", quantity: 8, unit: "oz", section: "Produce" },
+          { name: "heavy cream", quantity: "1–1.5", unit: "cups", section: "Dairy" },
+          { name: "Parmesan cheese, grated", quantity: "1–1.5", unit: "cups", section: "Dairy" },
+          { name: "reserved pasta water", quantity: 0.5, unit: "cup", section: "Other" }
+        ],
+        notes: ""
       }
     ];

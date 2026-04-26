@@ -724,5 +724,29 @@ const recipes = [
           { name: "olive oil", quantity: "", unit: "", section: "Pantry" }
         ],
         notes: ""
+      },
+      {
+        id: "boursin-chicken-sheet-pan",
+        name: "WF Boursin Chicken Sheet Pan",
+        category: "Dinner / Sheet Pan",
+        source: "Frida Sofia Eats",
+        sourceUrl: "https://www.fridasofiaeats.com/recipes/boursin-chicken-sheet-pan",
+        servings: 4,
+        prepTime: "10 min",
+        cookTime: "30 min",
+        tags: ["Sheet Pan", "Chicken", "Easy", "One-Pan", "Comfort Food", "Whole Foods"],
+        description: "A simple and flavorful sheet pan meal with chicken thighs, vegetables, and creamy Boursin cheese, perfect for an easy weeknight dinner.",
+        image: "images/meals/meal-30.png",
+        ingredients: [
+          { name: "yellow baby potatoes", quantity: 24, unit: "oz", section: "Produce" },
+          { name: "boneless skinless chicken thighs", quantity: "1–1.5", unit: "lb", section: "Meat" },
+          { name: "zucchini", quantity: 1, unit: "", section: "Produce" },
+          { name: "red bell peppers", quantity: 2, unit: "", section: "Produce" },
+          { name: "Boursin cheese", quantity: 1, unit: "package", section: "Dairy" },
+          { name: "olive oil", quantity: "", unit: "", section: "Pantry" },
+          { name: "salt", quantity: "", unit: "", section: "Pantry" },
+          { name: "lemon juice (optional)", quantity: "1–2", unit: "tbsp", section: "Produce" }
+        ],
+        notes: ""
       }
     ];

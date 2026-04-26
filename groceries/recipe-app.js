@@ -17,6 +17,7 @@ function getHeadshot() {
   return "images/headshot.png";
 }
 
+
 function escapeHtml(value) {
   return String(value).replace(/[&<>'"]/g, char => ({
     "&": "&amp;",

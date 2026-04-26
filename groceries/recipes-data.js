@@ -1,7 +1,7 @@
 const recipes = [
       {
         id: "lemon-butter-chicken-sheet-pan",
-        name: "Trader Joe's Lemon Butter Chicken Sheet Pan",
+        name: "TJ Lemon Butter Chicken Sheet Pan",
         category: "Dinner / Sheet Pan",
         source: "Frida Sofia Eats",
         sourceUrl: "https://www.fridasofiaeats.com/recipes/lemon-butter-chicken-sheet-pan",
@@ -30,7 +30,7 @@ const recipes = [
       },
       {
         id: "sweet-potato-cheeseburger-skillet",
-        name: "Trader Joe's Sweet Potato Cheeseburger Skillet",
+        name: "TJ Sweet Potato Cheeseburger Skillet",
         category: "Dinner",
         source: "Frida Sofia Eats",
         sourceUrl: "https://www.fridasofiaeats.com/recipes/sweet-potato-cheeseburger-skillet",
@@ -54,7 +54,7 @@ const recipes = [
       },
       {
         id: "french-onion-chicken-orzo",
-        name: "Trader Joe's French Onion Chicken Orzo",
+        name: "TJ French Onion Chicken Orzo",
         category: "Dinner",
         source: "Frida Sofia Eats",
         sourceUrl: "https://www.fridasofiaeats.com/recipes/french-onion-chicken-orzo",
@@ -80,7 +80,7 @@ const recipes = [
       },
       {
         id: "spinach-artichoke-orzo",
-        name: "Trader Joe's Spinach and Artichoke Orzo",
+        name: "TJ Spinach and Artichoke Orzo",
         category: "Dinner / Vegetarian",
         source: "Frida Sofia Eats",
         sourceUrl: "https://www.fridasofiaeats.com/recipes/spinach-and-artichoke-orzo",
@@ -102,7 +102,7 @@ const recipes = [
       },
       {
         id: "chicken-noodle-bowl",
-        name: "Trader Joe's Chicken Noodle Bowl",
+        name: "TJ Chicken Noodle Bowl",
         category: "Dinner",
         source: "Frida Sofia Eats",
         sourceUrl: "https://www.fridasofiaeats.com/recipes/shrimp-noodle-bowl",
@@ -127,7 +127,7 @@ const recipes = [
       },
       {
         id: "salsa-verde-chicken-couscous",
-        name: "Trader Joe's Salsa Verde Chicken and Couscous",
+        name: "TJ Salsa Verde Chicken and Couscous",
         category: "Dinner",
         source: "Frida Sofia Eats",
         sourceUrl: "https://www.fridasofiaeats.com/recipes/salsa-verde-chicken-and-couscous",
@@ -146,7 +146,7 @@ const recipes = [
       },
       {
         id: "soyaki-beef-bowl",
-        name: "Trader Joe's Soyaki Beef Bowl (Original)",
+        name: "TJ Soyaki Beef Bowl (Original)",
         category: "Dinner",
         source: "Frida Sofia Eats",
         sourceUrl: "https://www.fridasofiaeats.com/recipes/soyaki-beef-bowl",
@@ -171,7 +171,7 @@ const recipes = [
       },
       {
         id: "slow-cooker-steak-and-potatoes",
-        name: "Trader Joe's Slow Cooker Steak and Potatoes",
+        name: "TJ Slow Cooker Steak and Potatoes",
         category: "Dinner / Slow Cooker",
         source: "Frida Sofia Eats",
         sourceUrl: "https://www.fridasofiaeats.com/recipes/slow-cooker-steak-and-potatoes",
@@ -200,7 +200,7 @@ const recipes = [
       },
       {
         id: "chicken-sausage-pasta-bake",
-        name: "Trader Joe's Chicken Sausage Pasta Bake",
+        name: "TJ Chicken Sausage Pasta Bake",
         category: "Dinner",
         source: "Frida Sofia Eats",
         sourceUrl: "https://www.fridasofiaeats.com/recipes/pasta-chicken-sausage-bake",
@@ -224,7 +224,7 @@ const recipes = [
       },
       {
         id: "cheesy-chicken-sausage-rice-orzo",
-        name: "Trader Joe's Cheesy Chicken Sausage Rice and Orzo",
+        name: "TJ Cheesy Chicken Sausage Rice and Orzo",
         category: "Dinner",
         source: "Frida Sofia Eats",
         sourceUrl: "https://www.fridasofiaeats.com/recipes/baked-cheesy-chicken-sausage-rice-and-orzo",
@@ -247,7 +247,7 @@ const recipes = [
       },
       {
         id: "spicy-quick-chicken-chili",
-        name: "Trader Joe's Spicy Quick Chicken Chili",
+        name: "TJ Spicy Quick Chicken Chili",
         category: "Dinner",
         source: "Trader Joe's",
         sourceUrl: "https://www.traderjoes.com/home/recipes/spicy-quick-chicken-chili",
@@ -271,7 +271,7 @@ const recipes = [
       },
       {
         id: "soyaki-shaved-steak-bowl",
-        name: "Trader Joe's Soyaki Shaved Steak Bowl",
+        name: "TJ Soyaki Shaved Steak Bowl",
         category: "Dinner",
         source: "5 Items or Less",
         sourceUrl: "https://5itemsorless.com/one-pan-soyaki-shaved-steak-with-bell-pepperrs-over-rice/",
@@ -294,7 +294,7 @@ const recipes = [
       },
       {
         id: "beef-stir-fry-noodles",
-        name: "Trader Joe's Soyaki Shaved Steak Bowl",
+        name: "TJ Soyaki Shaved Steak Bowl",
         category: "Dinner",
         source: "5 Items or Less",
         sourceUrl: "https://5itemsorless.com/4-ingredient-beef-stir-fry-with-noodles-easy-trader-joes-dinner/",
@@ -316,7 +316,7 @@ const recipes = [
       },
       {
         id: "sesame-chicken-veggie-rice-bowl",
-        name: "Trader Joe's Sesame Chicken Veggie Rice Bowl",
+        name: "TJ Sesame Chicken Veggie Rice Bowl",
         category: "Dinner",
         source: "5 Items or Less",
         sourceUrl: "https://5itemsorless.com/easy-20-minute-sesame-chicken-veggie-rice-bowls/",
@@ -341,7 +341,7 @@ const recipes = [
       },
       {
         id: "chicken-wonton-stir-fry",
-        name: "Trader Joe's Chicken Wonton Stir Fry",
+        name: "TJ Chicken Wonton Stir Fry",
         category: "Dinner",
         source: "5 Items or Less",
         sourceUrl: "https://5itemsorless.com/chicken-wonton-stir-fry/",
@@ -363,7 +363,7 @@ const recipes = [
       },
       {
         id: "pesto-chicken-sandwich",
-        name: "Trader Joe's Pesto Chicken Sandwich",
+        name: "TJ Pesto Chicken Sandwich",
         category: "Dinner / Sandwiches",
         source: "5 Items or Less",
         sourceUrl: "https://5itemsorless.com/5-ingredient-pesto-chicken-sandwich-easy-trader-joes-meal/",
@@ -385,9 +385,9 @@ const recipes = [
       },
       {
         id: "angela-josh-spicy-soy-garlic-turkey-bowl",
-        name: "Angela and Josh's Spicy Soy Garlic Turkey Bowl",
+        name: "A&J Spicy Soy Garlic Turkey Bowl",
         category: "Dinner",
-        source: "Custom",
+        source: "Angela and Josh's Cookbook",
         sourceUrl: "https://photos.app.goo.gl/KjA6usSBK4D7V5Bg8",
         servings: 4,
         prepTime: "15 min",
@@ -425,9 +425,9 @@ const recipes = [
       },
       {
         id: "21",
-        name: "Angela and Josh's Orecchiette with Chicken Sausage, Fennel, and Asparagus",
+        name: "A&J Orecchiette with Chicken Sausage, Fennel, and Asparagus",
         category: "Dinner",
-        source: "Custom",
+        source: "Angela and Josh's Cookbook",
         sourceUrl: "https://photos.app.goo.gl/7nG6uxZtAQ3EUuQy6",
         servings: 4,
         prepTime: "10 min",
@@ -455,7 +455,7 @@ const recipes = [
       },
       {
         id: "teriyaki-green-bean-beef",
-        name: "Trader Joe's Teriyaki Green Bean Beef",
+        name: "TJ Teriyaki Green Bean Beef",
         category: "Dinner",
         source: "Frida Sofia Eats",
         sourceUrl: "https://www.fridasofiaeats.com/recipes/teriyaki-green-been-beef",
@@ -476,9 +476,9 @@ const recipes = [
       },
       {
         id: "chicken-adobo",
-        name: "Chicken Adobo",
+        name: "5 Ingredient Chicken Adobo",
         category: "Dinner",
-        source: "Custom",
+        source: "5 Ingredient Tin Box",
         sourceUrl: "https://photos.app.goo.gl/cPGSLeh2UbkvVWi77",
         servings: 6,
         prepTime: "20 min",
@@ -500,9 +500,9 @@ const recipes = [
       },
       {
         id: "taco-pasta-skillet",
-        name: "Taco Pasta Skillet",
+        name: "5 Ingredient Taco Pasta Skillet",
         category: "Dinner / Skillet",
-        source: "Family Recipe",
+        source: "5 Ingredient Tin Box",
         sourceUrl: "https://photos.app.goo.gl/KvS2iXAjPTY2LhMCA",
         servings: 6,
         prepTime: "10 min",
@@ -524,7 +524,7 @@ const recipes = [
       },
       {
         id: "crispy-chickpeas-with-beef",
-        name: "New York Times Crispy Chickpeas with Beef",
+        name: "NYT Crispy Chickpeas with Beef",
         category: "Dinner / Skillet",
         source: "New York Times",
         sourceUrl: "https://cooking.nytimes.com/recipes/8024-crispy-chickpeas-with-beef",
@@ -549,7 +549,7 @@ const recipes = [
       },
       {
         id: "sausage-and-barley-soup-with-greens",
-        name: "New York Times Sausage and Barley Soup with Greens",
+        name: "NYT Sausage and Barley Soup with Greens",
         category: "Dinner / Soup",
         source: "New York Times",
         sourceUrl: "https://cooking.nytimes.com/recipes/1026506-sausage-and-barley-soup-with-greens",
@@ -578,7 +578,7 @@ const recipes = [
       },
       {
         id: "sausage-tortellini-soup",
-        name: "New York Times Sausage Tortellini Soup",
+        name: "NYT Sausage Tortellini Soup",
         category: "Dinner / Soup",
         source: "New York Times",
         sourceUrl: "https://cooking.nytimes.com/recipes/1024144-sausage-tortellini-soup",
@@ -604,7 +604,7 @@ const recipes = [
       },
       {
         id: "turkey-chili",
-        name: "New York Times Turkey Chili",
+        name: "NYT Turkey Chili",
         category: "Dinner / Chili",
         source: "New York Times",
         sourceUrl: "https://cooking.nytimes.com/recipes/1023225-turkey-chili",

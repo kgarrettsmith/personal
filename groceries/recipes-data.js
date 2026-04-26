@@ -572,5 +572,31 @@ const recipes = [
           { name: "fresh herbs (optional)", quantity: "", unit: "", section: "Produce" }
         ],
         notes: ""
+      },
+      {
+        id: "sausage-tortellini-soup",
+        name: "Sausage Tortellini Soup",
+        category: "Dinner / Soup",
+        source: "New York Times",
+        sourceUrl: "https://cooking.nytimes.com/recipes/1024144-sausage-tortellini-soup",
+        servings: 4,
+        prepTime: "10 min",
+        cookTime: "30 min",
+        tags: ["Soup", "Sausage", "Pasta", "One-Pot", "Comfort Food", "Quick"],
+        description: "A hearty and comforting soup featuring sausage, tender tortellini, and vegetables in a flavorful broth, perfect for an easy weeknight meal.",
+        image: "images/meals/meal-22.png",
+        ingredients: [
+          { name: "olive oil", quantity: 3, unit: "tbsp", section: "Pantry" },
+          { name: "chicken sausage, sliced", quantity: "12–16", unit: "oz", section: "Meat" },
+          { name: "fennel bulb, chopped", quantity: 1, unit: "", section: "Produce" },
+          { name: "garlic, chopped", quantity: 4, unit: "cloves", section: "Produce" },
+          { name: "salt", quantity: "", unit: "", section: "Pantry" },
+          { name: "black pepper", quantity: "", unit: "", section: "Pantry" },
+          { name: "chicken broth", quantity: 6, unit: "cups", section: "Pantry" },
+          { name: "tortellini (cheese, spinach, or mushroom)", quantity: 10, unit: "oz", section: "Refrigerated" },
+          { name: "mixed vegetables (snap peas, green beans, asparagus, kale, spinach, escarole, or peas)", quantity: 2, unit: "cups", section: "Produce" },
+          { name: "grated Parmesan (for serving)", quantity: "", unit: "", section: "Dairy" }
+        ],
+        notes: ""
       }
     ];

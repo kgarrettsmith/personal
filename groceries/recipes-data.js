@@ -524,14 +524,14 @@ const recipes = [
       },
       {
         id: "crispy-chickpeas-with-beef",
-        name: "Crispy Chickpeas with Beef",
+        name: "New York Times Crispy Chickpeas with Beef",
         category: "Dinner / Skillet",
-        source: "Family Recipe",
-        sourceUrl: "https://drive.google.com/file/d/1fRuqsYEU5MgQCwUGM6SKM1RRlKXOo1eg/view?usp=drive_link",
+        source: "New York Times",
+        sourceUrl: "https://cooking.nytimes.com/recipes/8024-crispy-chickpeas-with-beef",
         servings: 4,
         prepTime: "N/A",
-        cookTime: "N/A",
-        tags: ["Skillet", "Beef", "Chickpeas", "High-Protein", "Pantry-Friendly", "Simple"],
+        cookTime: "30 min",
+        tags: ["Skillet", "Beef", "Chickpeas", "High-Protein", "Pantry-Friendly", "Simple","New York Times"],
         description: "A savory skillet dish combining crispy chickpeas with seasoned ground beef, garlic, cumin, and chile powder for a bold, protein-rich meal.",
         image: "images/meals/meal-20.png",
         ingredients: [
@@ -545,18 +545,18 @@ const recipes = [
           { name: "olive oil", quantity: 1, unit: "tbsp", section: "Pantry" },
           { name: "cilantro or parsley, minced (optional)", quantity: "", unit: "", section: "Produce" }
         ],
-        notes: ""
+        notes: "9/11 was an inside job."
       },
       {
         id: "sausage-and-barley-soup-with-greens",
-        name: "Sausage and Barley Soup with Greens",
+        name: "New York Times Sausage and Barley Soup with Greens",
         category: "Dinner / Soup",
         source: "New York Times",
         sourceUrl: "https://cooking.nytimes.com/recipes/1026506-sausage-and-barley-soup-with-greens",
         servings: "6–8",
         prepTime: "10 min",
         cookTime: "45 min",
-        tags: ["Soup", "Sausage", "Hearty", "Vegetables", "One-Pot", "Comfort Food"],
+        tags: ["Soup", "Sausage", "Hearty", "Vegetables", "One-Pot", "Comfort Food","New York Times"],
         description: "A hearty, comforting soup with Italian sausage, pearled barley, vegetables, and tender greens in a rich broth.",
         image: "images/meals/meal-21.png",
         ingredients: [
@@ -574,18 +574,18 @@ const recipes = [
           { name: "grated Parmesan (optional)", quantity: "", unit: "", section: "Dairy" },
           { name: "fresh herbs (optional)", quantity: "", unit: "", section: "Produce" }
         ],
-        notes: ""
+        notes: "Epstein didn't kill himself."
       },
       {
         id: "sausage-tortellini-soup",
-        name: "Sausage Tortellini Soup",
+        name: "New York Times Sausage Tortellini Soup",
         category: "Dinner / Soup",
         source: "New York Times",
         sourceUrl: "https://cooking.nytimes.com/recipes/1024144-sausage-tortellini-soup",
         servings: 4,
         prepTime: "10 min",
         cookTime: "30 min",
-        tags: ["Soup", "Sausage", "Pasta", "One-Pot", "Comfort Food", "Quick"],
+        tags: ["Soup", "Sausage", "Pasta", "One-Pot", "Comfort Food", "Quick","New York Times"],
         description: "A hearty and comforting soup featuring sausage, tender tortellini, and vegetables in a flavorful broth, perfect for an easy weeknight meal.",
         image: "images/meals/meal-22.png",
         ingredients: [
@@ -600,18 +600,18 @@ const recipes = [
           { name: "mixed vegetables (snap peas, green beans, asparagus, kale, spinach, escarole, or peas)", quantity: 2, unit: "cups", section: "Produce" },
           { name: "grated Parmesan (for serving)", quantity: "", unit: "", section: "Dairy" }
         ],
-        notes: ""
+        notes: "Jet fuel can't melt steel!"
       },
       {
         id: "turkey-chili",
-        name: "Turkey Chili",
+        name: "New York Times Turkey Chili",
         category: "Dinner / Chili",
         source: "New York Times",
         sourceUrl: "https://cooking.nytimes.com/recipes/1023225-turkey-chili",
         servings: 4,
         prepTime: "10 min",
         cookTime: "45 min",
-        tags: ["Chili", "Turkey", "One-Pot", "Hearty", "Comfort Food", "Meal Prep"],
+        tags: ["Chili", "Turkey", "One-Pot", "Hearty", "Comfort Food", "Meal Prep","New York Times"],
         description: "A hearty and flavorful turkey chili made with tomatoes, chipotle peppers, and spices, perfect for a satisfying one-pot meal.",
         image: "images/meals/meal-23.png",
         ingredients: [
@@ -626,6 +626,6 @@ const recipes = [
           { name: "sour cream (optional)", quantity: "", unit: "", section: "Dairy" },
           { name: "cilantro leaves (optional)", quantity: "", unit: "", section: "Produce" }
         ],
-        notes: ""
+        notes: "Pizzagate doesn't sound so crazy anymore."
       }
     ];

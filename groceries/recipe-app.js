@@ -257,9 +257,11 @@ document.getElementById("resetBtn").addEventListener("click", () => {
 document.querySelectorAll("input[type='checkbox'][data-key]").forEach(box => {
   box.addEventListener("change", (e) => {
     const key = e.target.dataset.key;
+    const itemRow = e.target.closest("li");
 
     if (e.target.checked) {
       checkedItems[key] = true;
+      if (itemRow) itemRow.remove();
     } else {
       delete checkedItems[key];
     }

@@ -702,5 +702,27 @@ const recipes = [
           { name: "olive oil", quantity: "", unit: "", section: "Pantry" }
         ],
         notes: ""
+      },
+      {
+        id: "parmesan-rice-and-chicken-sausage",
+        name: "WF Parmesan Rice and Chicken Sausage",
+        category: "Dinner / Skillet",
+        source: "Frida Sofia Eats",
+        sourceUrl: "https://www.fridasofiaeats.com/recipes/parmesan-rice-and-chicken-sausage",
+        servings: 4,
+        prepTime: "10 min",
+        cookTime: "25 min",
+        tags: ["Rice", "Chicken Sausage", "One-Pan", "Comfort Food", "Quick", "Family-Friendly", "Whole Foods"],
+        description: "A simple and comforting skillet meal with chicken sausage, basmati rice, spinach, and Parmesan cheese, finished with a touch of lemon.",
+        image: "images/meals/meal-29.png",
+        ingredients: [
+          { name: "basmati rice", quantity: 1.5, unit: "cups", section: "Pantry" },
+          { name: "Parmesan cheese, grated", quantity: 0.75, unit: "cup", section: "Dairy" },
+          { name: "lemon", quantity: 1, unit: "", section: "Produce" },
+          { name: "chicken sausage links", quantity: 4, unit: "", section: "Meat" },
+          { name: "spinach", quantity: 2, unit: "cups", section: "Produce" },
+          { name: "olive oil", quantity: "", unit: "", section: "Pantry" }
+        ],
+        notes: ""
       }
     ];

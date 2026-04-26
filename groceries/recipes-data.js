@@ -23,16 +23,6 @@ const recipes = [
           { name: "Salt", quantity: "to taste", unit: "", section: "Pantry" },
           { name: "Black pepper", quantity: "to taste", unit: "", section: "Pantry" }
         ],
-        instructions: [
-          "Preheat oven to 400°F.",
-          "Toss baby potatoes with olive oil, salt, and black pepper and spread on a sheet pan.",
-          "Roast for 15 minutes.",
-          "Add chicken breast and green beans to the pan.",
-          "Melt butter and mix with garlic, lemon juice, Italian seasoning, and paprika.",
-          "Pour mixture over chicken and vegetables.",
-          "Roast for 20 to 25 minutes until chicken is fully cooked.",
-          "Season with additional salt and black pepper to taste."
-        ],
         notes: "Good option for a low-effort dinner night."
       },
       {
@@ -57,17 +47,6 @@ const recipes = [
           { name: "Cheddar cheese", quantity: 1.5, unit: "cups", section: "Dairy" },
           { name: "Salt", quantity: "to taste", unit: "", section: "Pantry" },
           { name: "Black pepper", quantity: "to taste", unit: "", section: "Pantry" }
-        ],
-        instructions: [
-          "Peel and dice sweet potatoes into small cubes.",
-          "Heat olive oil in a large skillet over medium heat.",
-          "Add sweet potatoes and cook until tender, about 10 to 12 minutes.",
-          "Add ground beef and cook until browned.",
-          "Add yellow onion and garlic and cook until softened.",
-          "Stir in ketchup and mustard.",
-          "Cook for 2 to 3 minutes to combine flavors.",
-          "Top with cheddar cheese and allow it to melt.",
-          "Season with salt and black pepper to taste."
         ],
         notes: "Taco seasoning works well here if you want a different flavor."
       },
@@ -96,18 +75,6 @@ const recipes = [
           { name: "Salt", quantity: "to taste", unit: "", section: "Pantry" },
           { name: "Black pepper", quantity: "to taste", unit: "", section: "Pantry" }
         ],
-        instructions: [
-          "Slice yellow onion thinly.",
-          "Heat butter and olive oil in a large pan over medium-low heat.",
-          "Add yellow onion and cook until caramelized, about 20 to 25 minutes.",
-          "Season chicken breast with salt and black pepper and cook separately until fully cooked, then set aside.",
-          "Add garlic and fresh thyme to the onions and cook briefly.",
-          "Stir in orzo pasta and toast for 1 to 2 minutes.",
-          "Add beef broth and simmer until orzo is tender.",
-          "Stir in gruyere cheese and parmesan cheese until melted.",
-          "Slice chicken and return to the pan.",
-          "Season with additional salt and black pepper to taste."
-        ],
         notes: "Keep extra broth nearby if the orzo absorbs too much liquid."
       },
       {
@@ -135,16 +102,6 @@ const recipes = [
           { name: "Salt", quantity: "to taste", unit: "", section: "Pantry" },
           { name: "Black pepper", quantity: "to taste", unit: "", section: "Pantry" }
         ],
-        instructions: [
-          "Heat butter and olive oil in a pan over medium heat.",
-          "Add garlic and cook briefly until fragrant.",
-          "Add orzo pasta and toast for 1 to 2 minutes.",
-          "Add vegetable broth and simmer until orzo is tender.",
-          "Stir in artichoke hearts and spinach and cook until spinach is wilted.",
-          "Add cream cheese and parmesan cheese and stir until creamy.",
-          "Stir in lemon juice.",
-          "Season with salt and black pepper to taste."
-        ],
         notes: "Can be served as a vegetarian main or as a side with chicken."
       },
       {
@@ -170,17 +127,6 @@ const recipes = [
           { name: "Salt", quantity: "to taste", unit: "", section: "Pantry" },
           { name: "Black pepper", quantity: "to taste", unit: "", section: "Pantry" }
         ],
-        instructions: [
-          "Cook noodles according to package instructions and set aside.",
-          "Heat olive oil in a pan over medium heat.",
-          "Add chicken breast and cook until fully cooked, then remove and slice.",
-          "Add garlic to the pan and cook briefly until fragrant.",
-          "Add carrots and cook until slightly softened.",
-          "Return chicken to the pan and add soy sauce and sesame oil.",
-          "Add cooked noodles and toss to combine.",
-          "Top with sliced cucumber.",
-          "Season with salt and black pepper to taste."
-        ],
         notes: "This is adapted from the shrimp version by replacing shrimp with chicken."
       },
       {
@@ -203,17 +149,6 @@ const recipes = [
           { name: "Olive oil", quantity: 1, unit: "tbsp", section: "Pantry" },
           { name: "Salt", quantity: "to taste", unit: "", section: "Pantry" },
           { name: "Black pepper", quantity: "to taste", unit: "", section: "Pantry" }
-        ],
-        instructions: [
-          "Heat olive oil in a pan over medium heat.",
-          "Add chicken breast and cook until fully cooked, then remove and set aside.",
-          "Add garlic to the pan and cook briefly until fragrant.",
-          "Add chicken broth and bring to a simmer.",
-          "Stir in couscous, cover, and remove from heat. Let sit for 5 minutes.",
-          "Fluff couscous with a fork.",
-          "Slice chicken and return to the pan.",
-          "Stir in salsa verde and combine with couscous.",
-          "Season with salt and black pepper to taste."
         ],
         notes: "Good for leftovers and easy to customize."
       },
@@ -239,16 +174,6 @@ const recipes = [
           { name: "Salt", quantity: "to taste", unit: "", section: "Pantry" },
           { name: "Black pepper", quantity: "to taste", unit: "", section: "Pantry" }
         ],
-        instructions: [
-          "Cook white rice according to package instructions using water.",
-          "Heat olive oil in a pan over medium heat.",
-          "Add ground beef and cook until browned.",
-          "Add garlic and cook briefly until fragrant.",
-          "Stir in soyaki sauce and cook for 2 to 3 minutes.",
-          "Serve beef mixture over cooked white rice.",
-          "Top with sliced green onions.",
-          "Season with salt and black pepper to taste."
-        ],
         notes: "One of the fastest weeknight options."
       },
       {
@@ -271,15 +196,6 @@ const recipes = [
           { name: "Italian seasoning", quantity: 1, unit: "tsp", section: "Pantry" },
           { name: "Salt", quantity: "to taste", unit: "", section: "Pantry" },
           { name: "Black pepper", quantity: "to taste", unit: "", section: "Pantry" }
-        ],
-        instructions: [
-          "Heat olive oil in a pan over medium heat.",
-          "Season steak with salt and black pepper and sear on both sides until browned.",
-          "Add steak to the slow cooker.",
-          "Add baby potatoes and garlic to the slow cooker.",
-          "Pour in beef broth and sprinkle with Italian seasoning.",
-          "Cover and cook on low for 6 to 8 hours or high for 3 to 4 hours.",
-          "Season with additional salt and black pepper to taste before serving."
         ],
         notes: "Good make-ahead dinner."
       },
@@ -306,18 +222,6 @@ const recipes = [
           { name: "Salt", quantity: "to taste", unit: "", section: "Pantry" },
           { name: "Black pepper", quantity: "to taste", unit: "", section: "Pantry" }
         ],
-        instructions: [
-          "Preheat oven to 375°F.",
-          "Cook pasta according to package instructions and drain.",
-          "Heat olive oil in a pan over medium heat.",
-          "Add chicken sausage and cook until browned.",
-          "Add garlic and cook briefly until fragrant.",
-          "Stir in crushed tomatoes and Italian seasoning and simmer for 5 minutes.",
-          "Combine pasta with sauce and transfer to a baking dish.",
-          "Top with mozzarella cheese and parmesan cheese.",
-          "Bake for 15 to 20 minutes until cheese is melted and bubbly.",
-          "Season with salt and black pepper to taste."
-        ],
         notes: "Good easy pasta-bake option."
       },
       {
@@ -342,18 +246,6 @@ const recipes = [
           { name: "Cheddar cheese", quantity: 1.5, unit: "cups", section: "Dairy" },
           { name: "Salt", quantity: "to taste", unit: "", section: "Pantry" },
           { name: "Black pepper", quantity: "to taste", unit: "", section: "Pantry" }
-        ],
-        instructions: [
-          "Preheat oven to 375°F.",
-          "Heat olive oil in a pan over medium heat.",
-          "Add chicken sausage and cook until browned.",
-          "Add garlic and cook briefly until fragrant.",
-          "Stir in white rice and orzo pasta and toast for 1 to 2 minutes.",
-          "Add chicken broth and bring to a simmer.",
-          "Transfer mixture to a baking dish and cover.",
-          "Bake for 20 to 25 minutes until rice and orzo are tender.",
-          "Remove from oven and stir in butter and cheddar cheese until melted.",
-          "Season with salt and black pepper to taste."
         ],
         notes: "If picky eaters object to extras, keep this one simple."
       },
@@ -386,14 +278,6 @@ const recipes = [
           { name: "Salt", quantity: "to taste", unit: "", section: "Pantry" },
           { name: "Black pepper", quantity: "to taste", unit: "", section: "Pantry" }
         ],
-        instructions: [
-          "Heat olive oil in a pot over medium heat. Add onion and cook until softened, about 4 to 5 minutes.",
-          "Add garlic, chili powder, cumin, paprika, and red pepper flakes. Cook 1 minute until fragrant.",
-          "Stir in diced tomatoes, black beans, corn, and chicken broth. Bring to a simmer.",
-          "Add shredded chicken and simmer 10 to 15 minutes.",
-          "Stir in cream cheese until melted and fully incorporated.",
-          "Finish with lime juice, then season with salt and pepper to taste."
-        ],
         notes: "Great for leftovers. Adjust spice level by increasing or reducing red pepper flakes."
       },
       {
@@ -419,15 +303,6 @@ const recipes = [
           { name: "Salt", quantity: "to taste", unit: "", section: "Pantry" },
           { name: "Black pepper", quantity: "to taste", unit: "", section: "Pantry" }
         ],
-        instructions: [
-          "Cook rice with water according to package instructions.",
-          "Heat olive oil in a large pan over medium-high heat.",
-          "Add shaved steak, season with salt and pepper, and cook until browned.",
-          "Add sliced onions and bell peppers. Cook until softened.",
-          "Add garlic and cook for 1 minute until fragrant.",
-          "Pour in Soyaki sauce and stir to coat. Simmer a few minutes until heated through.",
-          "Serve over rice."
-        ],
         notes: "Slice vegetables thin so they cook quickly. Great weeknight option."
       },
       {
@@ -450,14 +325,6 @@ const recipes = [
           { name: "Garlic", quantity: 2, unit: "", section: "Produce" },
           { name: "Salt", quantity: "to taste", unit: "", section: "Pantry" },
           { name: "Black pepper", quantity: "to taste", unit: "", section: "Pantry" }
-        ],
-        instructions: [
-          "Heat olive oil in a large pan over medium-high heat.",
-          "Add shaved steak, season with salt and pepper, and cook until browned.",
-          "Add frozen stir fry vegetables and cook until heated through.",
-          "Add garlic and cook 1 minute.",
-          "Add noodles and Soyaki sauce, tossing everything together.",
-          "Cook until noodles are heated through and coated evenly."
         ],
         notes: "Very quick meal—great for busy nights."
       },
@@ -484,15 +351,6 @@ const recipes = [
           { name: "Salt", quantity: "to taste", unit: "", section: "Pantry" },
           { name: "Black pepper", quantity: "to taste", unit: "", section: "Pantry" }
         ],
-        instructions: [
-          "Cook rice with water according to package instructions.",
-          "Heat olive oil in a pan over medium heat.",
-          "Add chicken, season with salt and pepper, and cook until done.",
-          "Add vegetables and cook until heated through.",
-          "Add garlic and cook 1 minute.",
-          "Stir in sesame sauce and sesame oil.",
-          "Serve over rice."
-        ],
         notes: "Add extra sesame oil for more flavor."
       },
       {
@@ -517,16 +375,6 @@ const recipes = [
           { name: "Salt", quantity: "to taste", unit: "", section: "Pantry" },
           { name: "Black pepper", quantity: "to taste", unit: "", section: "Pantry" }
         ],
-        instructions: [
-          "Heat olive oil in a large pan over medium heat.",
-          "Add garlic and cook briefly until fragrant.",
-          "Add frozen stir fry vegetables and cook until heated through.",
-          "Add chicken wontons and cook according to package instructions until heated through.",
-          "Pour in soyaki sauce and sesame oil and stir to combine.",
-          "Cook for an additional 2 to 3 minutes.",
-          "Garnish with sliced green onions.",
-          "Season with salt and black pepper to taste."
-        ],
         notes: "Good fast freezer meal. Keep the wontons whole and avoid over-stirring once they are heated."
       },
       {
@@ -547,14 +395,6 @@ const recipes = [
           { name: "Pesto", quantity: 4, unit: "oz", section: "Refrigerated" },
           { name: "Tomatoes", quantity: 1, unit: "", section: "Produce" },
           { name: "Butter", quantity: "to taste", unit: "", section: "Dairy" }
-        ],
-        instructions: [
-          "Cook the chicken breast in a pan for 4 to 7 minutes per side, until fully cooked.",
-          "Add Havarti cheese during the final 2 minutes of cooking so it melts over the chicken.",
-          "Spread butter on the inside of the brioche buns and toast them in a pan or on a griddle.",
-          "Spread pesto on the bottom bun.",
-          "Add the chicken, melted cheese, and tomato slices.",
-          "Top with the remaining bun and serve."
         ],
         notes: "Good quick sandwich dinner."
       },
@@ -591,21 +431,6 @@ const recipes = [
           { name: "Bok choy", quantity: 2, unit: "", section: "Produce" },
           { name: "Sesame seeds", quantity: 1, unit: "tbsp", section: "Pantry" }
         ],
-        instructions: [
-          "Combine white rice, water, and salt in a saucepan and bring to a boil.",
-          "Reduce heat to low and cook for 10 to 15 minutes until water is absorbed.",
-          "Fluff rice with a fork and set aside.",
-          "In a bowl, mix apple cider vinegar, sesame oil, green onions, salt, and black pepper.",
-          "Add radishes and toss to coat, then set aside.",
-          "In another bowl, mix mayonnaise, red curry paste, and honey to make the sauce.",
-          "In a separate bowl, mix soy sauce, brown sugar, garlic, ginger, and red pepper flakes.",
-          "Heat coconut oil in a skillet over medium-high heat.",
-          "Add ground turkey and cook until browned, breaking it apart.",
-          "Add bok choy and cook until softened.",
-          "Pour soy sauce mixture over turkey and stir to combine.",
-          "Divide rice, turkey mixture, and radishes into bowls.",
-          "Drizzle with spicy sauce and top with green onions and sesame seeds."
-        ],
         notes: "Great balance of spicy, savory, and fresh."
       },
 
@@ -635,18 +460,6 @@ const recipes = [
           { name: "Pecorino romano cheese", quantity: 0.5, unit: "cup", section: "Dairy" },
           { name: "Salt", quantity: 1, unit: "tsp", section: "Pantry" },
           { name: "Black pepper", quantity: 0.5, unit: "tsp", section: "Pantry" }
-        ],
-        instructions: [
-          "Heat olive oil in a large skillet over medium-high heat.",
-          "Add chicken sausage and cook until browned, breaking into pieces.",
-          "Add fennel and cook until softened.",
-          "Add garlic and red pepper flakes and cook until fragrant.",
-          "Pour in white wine and simmer until reduced.",
-          "Add chicken broth, lemon juice, and capers and bring to a boil.",
-          "Add orecchiette pasta and cook until al dente.",
-          "Add asparagus and cook until tender.",
-          "Remove from heat and stir in pecorino romano cheese.",
-          "Season with salt and black pepper to taste and serve."
         ],
         notes: "Bright, savory pasta dinner with chicken sausage and vegetables."
       }

@@ -627,5 +627,31 @@ const recipes = [
           { name: "cilantro leaves (optional)", quantity: "", unit: "", section: "Produce" }
         ],
         notes: "Pizzagate doesn't sound so crazy anymore."
+      },
+      {
+        id: "honey-chicken-rice-bowls",
+        name: "WF Honey Chicken Rice Bowls",
+        category: "Dinner / Bowl",
+        source: "Frida Sofia Eats",
+        sourceUrl: "https://www.fridasofiaeats.com/recipes/honey-salmon-rice-bowls",
+        servings: 4,
+        prepTime: "15 min",
+        cookTime: "20 min",
+        tags: ["Bowl", "Chicken", "Rice", "Healthy", "Quick", "Meal Prep", "Whole Foods"],
+        description: "A flavorful rice bowl featuring honey-glazed chicken, jasmine rice, and fresh vegetables with a savory-sweet sauce.",
+        image: "images/meals/meal-26.png",
+        ingredients: [
+          { name: "chicken breast or thighs, skin removed", quantity: "1.5–2", unit: "lb", section: "Meat" },
+          { name: "ponzu sauce or soy sauce or sukiyaki sauce", quantity: 0.5, unit: "cup", section: "Pantry" },
+          { name: "sesame oil", quantity: 0.33, unit: "cup", section: "Pantry" },
+          { name: "honey", quantity: 3, unit: "tbsp", section: "Pantry" },
+          { name: "jasmine rice", quantity: 1.5, unit: "cups", section: "Pantry" },
+          { name: "cucumbers, thinly sliced", quantity: 4, unit: "", section: "Produce" },
+          { name: "edamame, shelled", quantity: 1, unit: "cup", section: "Frozen" },
+          { name: "ponzu sauce (for topping)", quantity: 2, unit: "tbsp", section: "Pantry" },
+          { name: "sesame sauce (for topping)", quantity: 1, unit: "tbsp", section: "Pantry" },
+          { name: "honey (for topping)", quantity: 1, unit: "tbsp", section: "Pantry" }
+        ],
+        notes: "False flag!"
       }
     ];

@@ -394,6 +394,7 @@ const recipes = [
         cookTime: "25 min",
         tags: ["Turkey", "Rice Bowl", "Spicy", "Quick"],
         description: "A spicy soy garlic turkey bowl with rice, bok choy, pickled radishes, and a creamy curry sauce.",
+        image: "images/meals/meal-24.png",
         ingredients: [
           { name: "jasmine rice", quantity: 1, unit: "cup", section: "Pantry" },
           { name: "water", quantity: 1.5, unit: "cups", section: "Pantry" },
@@ -433,6 +434,7 @@ const recipes = [
         cookTime: "25 min",
         tags: ["Chicken Sausage", "Pasta", "Asparagus", "Dinner"],
         description: "Orecchiette pasta with chicken sausage, fennel, asparagus, lemon, capers, and pecorino romano.",
+        image: "images/meals/meal-25.png",
         ingredients: [
           { name: "extra-virgin olive oil", quantity: 3, unit: "tablespoons", section: "Pantry" },
           { name: "uncooked Italian chicken sausage, casing removed", quantity: 1, unit: "pound", section: "Meat" },

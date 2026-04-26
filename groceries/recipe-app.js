@@ -165,9 +165,15 @@ function renderShoppingList(selectedMeals) {
     "crushed red pepper flakes"
   ];
 
-  const filteredItems = hidePantry
-    ? items.filter(item => !pantryStaples.includes(item.name.toLowerCase()))
-    : items;
+  const filteredItems = items.filter(item => {
+    const isPantryStaple = pantryStaples.includes(item.name.toLowerCase());
+    const isChecked = checkedItems[item.name];
+  
+    if (isChecked) return false;
+    if (hidePantry && isPantryStaple) return false;
+  
+    return true;
+  });
 
   filteredItems.forEach(item => {
     if (!itemsBySection[item.section]) itemsBySection[item.section] = [];

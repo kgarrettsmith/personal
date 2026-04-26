@@ -543,5 +543,34 @@ const recipes = [
           { name: "cilantro or parsley, minced (optional)", quantity: "", unit: "", section: "Produce" }
         ],
         notes: ""
+      },
+      {
+        id: "sausage-and-barley-soup-with-greens",
+        name: "Sausage and Barley Soup with Greens",
+        category: "Dinner / Soup",
+        source: "New York Times",
+        sourceUrl: "https://cooking.nytimes.com/recipes/1026506-sausage-and-barley-soup-with-greens",
+        servings: "6–8",
+        prepTime: "10 min",
+        cookTime: "45 min",
+        tags: ["Soup", "Sausage", "Hearty", "Vegetables", "One-Pot", "Comfort Food"],
+        description: "A hearty, comforting soup with Italian sausage, pearled barley, vegetables, and tender greens in a rich broth.",
+        image: "images/meals/meal-21.png",
+        ingredients: [
+          { name: "olive oil", quantity: 2, unit: "tbsp", section: "Pantry" },
+          { name: "Italian sausage (pork or chicken), casings removed", quantity: 8, unit: "oz", section: "Meat" },
+          { name: "Yellow onion, chopped", quantity: 1, unit: "", section: "Produce" },
+          { name: "carrots, peeled and chopped", quantity: 3, unit: "", section: "Produce" },
+          { name: "salt", quantity: "", unit: "", section: "Pantry" },
+          { name: "black pepper", quantity: "", unit: "", section: "Pantry" },
+          { name: "stock or water", quantity: 6, unit: "cups", section: "Pantry" },
+          { name: "diced tomatoes (canned)", quantity: 14, unit: "oz", section: "Pantry" },
+          { name: "pearled barley", quantity: 0.5, unit: "cup", section: "Pantry" },
+          { name: "tender greens (spinach or baby kale)", quantity: 8, unit: "oz", section: "Produce" },
+          { name: "red wine vinegar or apple cider vinegar", quantity: 2, unit: "tbsp", section: "Pantry" },
+          { name: "grated Parmesan (optional)", quantity: "", unit: "", section: "Dairy" },
+          { name: "fresh herbs (optional)", quantity: "", unit: "", section: "Produce" }
+        ],
+        notes: ""
       }
     ];

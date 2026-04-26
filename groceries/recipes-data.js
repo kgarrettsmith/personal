@@ -494,5 +494,29 @@ const recipes = [
           { name: "hot cooked rice (optional)", quantity: "", unit: "", section: "Pantry" }
         ],
         notes: "Grandma's favorite!"
+      },
+      {
+        id: "taco-pasta-skillet",
+        name: "Taco Pasta Skillet",
+        category: "Dinner / Skillet",
+        source: "Family Recipe",
+        sourceUrl: "https://photos.app.goo.gl/KvS2iXAjPTY2LhMCA",
+        servings: 6,
+        prepTime: "10 min",
+        cookTime: "20 min",
+        tags: ["Skillet", "Beef", "Pasta", "One-Pot", "Family-Friendly", "Quick"],
+        description: "A quick and hearty one-pot meal combining taco-seasoned ground beef, rotini pasta, and salsa for an easy weeknight dinner.",
+        image: "images/meals/meal-19.png",
+        ingredients: [
+          { name: "ground beef", quantity: 1, unit: "lb", section: "Meat" },
+          { name: "Yellow onion, chopped", quantity: 1, unit: "", section: "Produce" },
+          { name: "taco seasoning mix", quantity: 1, unit: "package", section: "Pantry" },
+          { name: "water", quantity: 2, unit: "cups", section: "Pantry" },
+          { name: "medium salsa", quantity: 16, unit: "oz", section: "Pantry" },
+          { name: "salt", quantity: 0.25, unit: "tsp", section: "Pantry" },
+          { name: "rotini pasta, uncooked", quantity: 8, unit: "oz", section: "Pantry" },
+          { name: "shredded cheddar or Mexican blend cheese (optional)", quantity: "", unit: "", section: "Dairy" }
+        ],
+        notes: "Taco, taco, man. I want to be, a Taco man!"
       }
     ];

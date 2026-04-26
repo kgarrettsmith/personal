@@ -350,6 +350,13 @@ function renderList() {
       <section class="grid">
         ${filtered.map(recipe => `
           <article class="card" data-recipe-id="${escapeHtml(recipe.id)}">
+            ${recipe.image ? `
+              <img 
+                src="${escapeHtml(recipe.image)}" 
+                alt="${escapeHtml(recipe.name)}" 
+                class="recipe-card-image"
+              />
+            ` : ""}
             <label style="display:flex;align-items:center;gap:8px;margin-bottom:12px;cursor:pointer;" onclick="event.stopPropagation()">
               <input type="checkbox" class="meal-checkbox" data-meal-id="${escapeHtml(recipe.id)}" ${selectedMealIds.includes(recipe.id) ? "checked" : ""} />
               <span>Select for shopping list</span>

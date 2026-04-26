@@ -11,10 +11,10 @@ let checkedItems = JSON.parse(localStorage.getItem("checkedItems") || "{}");
 document.body.dataset.theme = selectedTheme;
 
 function getHeadshot() {
-  if (selectedTheme === "lost") return "images/headshots/lost-headshot.png";
-  if (selectedTheme === "psych") return "images/headshots/psych-headshot.png";
-  if (selectedTheme === "survivor") return "images/headshots/survivor-headshot.png";
-  return "images/headshots/headshot.png";
+  if (selectedTheme === "lost") return "lost-headshot.png";
+  if (selectedTheme === "psych") return "psych-headshot.png";
+  if (selectedTheme === "survivor") return "survivor-headshot.png";
+  return "headshot.png";
 }
 
 function escapeHtml(value) {

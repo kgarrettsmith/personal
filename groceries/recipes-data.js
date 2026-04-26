@@ -256,6 +256,7 @@ const recipes = [
         cookTime: "25 min",
         tags: ["Chicken", "Chili", "Quick", "Spicy"],
         description: "A fast, hearty chicken chili with beans, corn, and a creamy finish from cream cheese.",
+        image: "images/meals/meal-10.png",
         ingredients: [
           { name: "TJ's All Natural Ground Chicken", quantity: 1, unit: "lb", section: "Meat" },
           { name: "TJ's Jumbo White Onion", quantity: 1, unit: "", section: "Produce" },

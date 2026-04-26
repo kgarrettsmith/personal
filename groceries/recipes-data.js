@@ -10,6 +10,7 @@ const recipes = [
         cookTime: "40 min",
         tags: ["Trader Joe's", "Sheet Pan", "Chicken", "Easy"],
         description: "A simple sheet pan dinner with chicken breast, baby potatoes, green beans, lemon butter, garlic, and seasoning.",
+        image: "images/meals/meal-1.png",
         ingredients: [
           { name: "boneless skinless chicken thighs", quantity: "1–1.5", unit: "lb", section: "Meat" },
           { name: "baby potatoes, halved or quartered", quantity: 24, unit: "oz", section: "Produce" },
@@ -38,6 +39,7 @@ const recipes = [
         cookTime: "20 min",
         tags: ["Beef", "Skillet", "Sweet Potato", "Quick"],
         description: "A simple beef and sweet potato skillet with onion, garlic, ketchup, mustard, and cheddar cheese.",
+        image: "images/meals/meal-2.png",
         ingredients: [
           { name: "onion, diced", quantity: 1, unit: "", section: "Produce" },
           { name: "red bell pepper, diced", quantity: 1, unit: "", section: "Produce" },
@@ -61,6 +63,7 @@ const recipes = [
         cookTime: "35 min",
         tags: ["Chicken", "Orzo", "Comfort Food", "One Pan"],
         description: "A cozy chicken and orzo dinner with caramelized onions, beef broth, gruyere, Parmesan, and thyme.",
+        image: "images/meals/meal-3.png",
         ingredients: [
           { name: "orzo", quantity: 1, unit: "cup", section: "Pantry" },
           { name: "Trader Joe’s French onion soup cubes", quantity: 2, unit: "", section: "Pantry" },
@@ -86,6 +89,7 @@ const recipes = [
         cookTime: "20 min",
         tags: ["Vegetarian", "Orzo", "Creamy", "Trader Joe's"],
         description: "A creamy vegetarian orzo dish with spinach, artichokes, cream cheese, Parmesan, and lemon juice.",
+        image: "images/meals/meal-4.png",
         ingredients: [
           { name: "orzo pasta", quantity: 1, unit: "lbs", section: "Pantry" },
           { name: "chicken sausage (I LOVE this cheddar one from Trader Joe's)", quantity: 12, unit: "oz", section: "Meat" },
@@ -107,6 +111,7 @@ const recipes = [
         cookTime: "15 min",
         tags: ["Chicken", "Noodles", "Quick", "Trader Joe's"],
         description: "A quick chicken noodle bowl with stir fry noodles, carrots, cucumbers, garlic, soy sauce, and sesame oil.",
+        image: "images/meals/meal-5.png",
         ingredients: [
           { name: "packets of wheat noodles (you will need 2 boxes)", quantity: 4, unit: "", section: "Pantry" },
           { name: "bell peppers, sliced", quantity: 2, unit: "", section: "Produce" },
@@ -131,6 +136,7 @@ const recipes = [
         cookTime: "20 min",
         tags: ["Chicken", "Couscous", "Quick", "Trader Joe's"],
         description: "A quick chicken dinner with couscous, chicken broth, salsa verde, garlic, and olive oil.",
+        image: "images/meals/meal-6.png",
         ingredients: [
           { name: "couscous", quantity: 12, unit: "oz", section: "Pantry" },
           { name: "chicken thighs, boneless and skinless", quantity: 1.5, unit: "lbs", section: "Meat" },
@@ -149,6 +155,7 @@ const recipes = [
         cookTime: "15 min",
         tags: ["Beef", "Rice Bowl", "Quick", "Trader Joe's"],
         description: "A fast rice bowl with ground beef, white rice, Soyaki sauce, garlic, and green onions.",
+        image: "images/meals/meal-7.png",
         ingredients: [
           { name: "ground beef", quantity: 1, unit: "lb", section: "Meat" },
           { name: "scallions (about ½ Trader Joe’s bunch), sliced and whites/greens separated", quantity: 3, unit: "oz", section: "Produce" },
@@ -173,6 +180,7 @@ const recipes = [
         cookTime: "6 hrs",
         tags: ["Beef", "Slow Cooker", "Potatoes", "Comfort Food"],
         description: "A slow cooker steak and potato dinner with garlic, beef broth, olive oil, and Italian seasoning.",
+        image: "images/meals/meal-8.png",
         ingredients: [
           { name: "Black Angus petite sirloin steak (leave whole or cut into 2–3 large pieces)", quantity: "1.5–2", unit: "lb", section: "Meat" },
           { name: "potatoes, cut into large 2–3 inch chunks", quantity: 1.5, unit: "lb", section: "Produce" },
@@ -201,6 +209,7 @@ const recipes = [
         cookTime: "25 min",
         tags: ["Chicken Sausage", "Pasta", "Bake", "Easy"],
         description: "A pasta bake with chicken sausage, pasta, crushed tomatoes, garlic, mozzarella, Parmesan, and Italian seasoning.",
+        image: "images/meals/meal-9.png",
         ingredients: [
           { name: "pasta, I used farfalle", quantity: 1, unit: "lbs", section: "Pantry" },
           { name: "cherry tomatoes", quantity: 1, unit: "pint", section: "Produce" },
@@ -224,6 +233,7 @@ const recipes = [
         cookTime: "30 min",
         tags: ["Chicken Sausage", "Rice", "Orzo", "Bake"],
         description: "A cheesy baked rice and orzo dinner with chicken sausage, chicken broth, garlic, butter, and cheddar cheese.",
+        image: "images/meals/meal-10.png",
         ingredients: [
           { name: "packages Trader Joe’s Frozen Orzo Pilaf Mix or about 3 cups dry orzo", quantity: 2, unit: "", section: "Pantry" },
           { name: "chicken sausage (I used Trader Joe’s Unexpected Cheddar), sliced", quantity: 12, unit: "oz", section: "Meat" },
@@ -269,6 +279,7 @@ const recipes = [
         cookTime: "20 min",
         tags: ["Beef", "Rice Bowl", "Quick", "Trader Joe's"],
         description: "A quick rice bowl with shaved steak, peppers, onions, garlic, and Trader Joe's Soyaki sauce.",
+        image: "images/meals/meal-12.png",
         ingredients: [
           { name: "Tri-Color Bell Peppers", quantity: 1, unit: "pack", section: "Produce" },
           { name: "Sweet Onion", quantity: 0.5, unit: "", section: "Produce" },
@@ -291,6 +302,7 @@ const recipes = [
         cookTime: "15 min",
         tags: ["Beef", "Noodles", "Stir Fry", "Quick"],
         description: "A fast stir fry with shaved steak, pre-cooked noodles, vegetables, and Soyaki sauce.",
+        image: "images/meals/meal-13.png",
         ingredients: [
           { name: "Shaved Steak", quantity: 1, unit: "lb", section: "Meat" },
           { name: "Trader Joe's Asian Style Stir Fry Vegetables w stir fry sauce (frozen)", quantity: 1, unit: "package", section: "Frozen" },
@@ -312,6 +324,7 @@ const recipes = [
         cookTime: "20 min",
         tags: ["Chicken", "Rice Bowl", "Stir Fry", "Quick"],
         description: "A simple rice bowl with chicken, vegetables, and sesame sauce.",
+        image: "images/meals/meal-14.png",
         ingredients: [
           { name: "Grilled Chicken Breasts, pre-cooked", quantity: 12, unit: "oz", section: "Meat" },
           { name: "Toasted Sesame Dressing", quantity: 0.25, unit: "cup", section: "Pantry" },
@@ -336,6 +349,7 @@ const recipes = [
         cookTime: "15 min",
         tags: ["Trader Joe's", "Wontons", "Stir Fry", "Quick"],
         description: "A quick stir fry with chicken wontons, frozen vegetables, Soyaki sauce, garlic, sesame oil, and green onions.",
+        image: "images/meals/meal-15.png",
         ingredients: [
           { name: "Chicken Cilantro Mini Wontons", quantity: 12, unit: "oz", section: "Frozen" },
           { name: "Asian Style Vegetable Stir Fry", quantity: 18, unit: "oz", section: "Frozen" },
@@ -357,6 +371,7 @@ const recipes = [
         cookTime: "15 min",
         tags: ["Chicken", "Sandwich", "Pesto", "Quick"],
         description: "A pesto chicken sandwich with Havarti cheese, brioche buns, pesto, tomatoes, and butter.",
+        image: "images/meals/meal-16.png",
         ingredients: [
           { name: "Pesto Chicken", quantity: 1, unit: "pkg", section: "Meat" },
           { name: "Havarti cheese (about an oz each slice)", quantity: 4, unit: "slices", section: "Dairy" },

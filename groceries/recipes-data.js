@@ -748,5 +748,31 @@ const recipes = [
           { name: "lemon juice (optional)", quantity: "1–2", unit: "tbsp", section: "Produce" }
         ],
         notes: ""
+      },
+      {
+        id: "chicken-stroganoff",
+        name: "TJ Chicken Stroganoff",
+        category: "Dinner / Skillet",
+        source: "Frida Sofia Eats",
+        sourceUrl: "https://www.fridasofiaeats.com/recipes/chicken-stroganoff",
+        servings: 4,
+        prepTime: "15 min",
+        cookTime: "25 min",
+        tags: ["Skillet", "Chicken", "Creamy", "Comfort Food", "One-Pan", "Quick", "Trader Joe's"],
+        description: "A creamy and comforting skillet dish with chicken sausage, mushrooms, and a rich, savory sauce, served over rice.",
+        image: "images/meals/meal-31.png",
+        ingredients: [
+          { name: "olive oil", quantity: 1, unit: "tbsp", section: "Pantry" },
+          { name: "Yellow onion, diced", quantity: 1, unit: "", section: "Produce" },
+          { name: "white mushrooms, sliced", quantity: 8, unit: "oz", section: "Produce" },
+          { name: "pre-cooked cheddar chicken sausage, sliced", quantity: 12, unit: "oz", section: "Meat" },
+          { name: "tomato paste", quantity: 3, unit: "tbsp", section: "Pantry" },
+          { name: "Dijon mustard", quantity: 1, unit: "tbsp", section: "Pantry" },
+          { name: "soy sauce or coconut aminos", quantity: 3, unit: "tbsp", section: "Pantry" },
+          { name: "chicken broth", quantity: 1, unit: "cup", section: "Pantry" },
+          { name: "heavy cream", quantity: 1, unit: "cup", section: "Dairy" },
+          { name: "basmati rice, cooked (for serving)", quantity: "", unit: "", section: "Pantry" }
+        ],
+        notes: ""
       }
     ];

@@ -470,5 +470,29 @@ const recipes = [
           { name: "olive oil", quantity: "", unit: "", section: "Pantry" }
         ],
         notes: ""
+      },
+      {
+        id: "chicken-adobo",
+        name: "Chicken Adobo",
+        category: "Dinner",
+        source: "Custom",
+        sourceUrl: "https://photos.app.goo.gl/cPGSLeh2UbkvVWi77",
+        servings: 6,
+        prepTime: "20 min",
+        cookTime: "60 min",
+        tags: ["Chicken", "Filipino", "Dinner"],
+        description: "Classic chicken adobo with soy sauce, vinegar, garlic, and bay leaves.",
+        image: "images/meals/meal-18.png",
+        ingredients: [
+          { name: "cider vinegar", quantity: 0.5, unit: "cup", section: "Pantry" },
+          { name: "reduced-sodium soy sauce", quantity: 0.5, unit: "cup", section: "Pantry" },
+          { name: "cloves garlic, minced", quantity: 4, unit: "", section: "Produce" },
+          { name: "bay leaves", quantity: 3, unit: "", section: "Pantry" },
+          { name: "black pepper", quantity: 1, unit: "teaspoon", section: "Pantry" },
+          { name: "bone-in skin-on chicken thighs (about 6)", quantity: 2.5, unit: "pounds", section: "Meat" },
+          { name: "sliced green onion (optional)", quantity: "", unit: "", section: "Produce" },
+          { name: "hot cooked rice (optional)", quantity: "", unit: "", section: "Pantry" }
+        ],
+        notes: "Grandma's favorite!"
       }
     ];

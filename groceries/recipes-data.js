@@ -518,5 +518,30 @@ const recipes = [
           { name: "shredded cheddar or Mexican blend cheese (optional)", quantity: "", unit: "", section: "Dairy" }
         ],
         notes: "Taco, taco, man. I want to be, a Taco man!"
+      },
+      {
+        id: "crispy-chickpeas-with-beef",
+        name: "Crispy Chickpeas with Beef",
+        category: "Dinner / Skillet",
+        source: "Family Recipe",
+        sourceUrl: "https://drive.google.com/file/d/1fRuqsYEU5MgQCwUGM6SKM1RRlKXOo1eg/view?usp=drive_link",
+        servings: 4,
+        prepTime: "N/A",
+        cookTime: "N/A",
+        tags: ["Skillet", "Beef", "Chickpeas", "High-Protein", "Pantry-Friendly", "Simple"],
+        description: "A savory skillet dish combining crispy chickpeas with seasoned ground beef, garlic, cumin, and chile powder for a bold, protein-rich meal.",
+        image: "images/meals/meal-20.png",
+        ingredients: [
+          { name: "ground beef (or other ground meat)", quantity: "0.5–1", unit: "lb", section: "Meat" },
+          { name: "chickpeas (canned), drained", quantity: 1, unit: "28 oz can", section: "Pantry" },
+          { name: "ground cumin", quantity: 2, unit: "tsp", section: "Pantry" },
+          { name: "chile powder", quantity: 1, unit: "tsp", section: "Pantry" },
+          { name: "garlic, minced", quantity: 2, unit: "tsp", section: "Produce" },
+          { name: "salt", quantity: "", unit: "", section: "Pantry" },
+          { name: "black pepper", quantity: "", unit: "", section: "Pantry" },
+          { name: "olive oil", quantity: 1, unit: "tbsp", section: "Pantry" },
+          { name: "cilantro or parsley, minced (optional)", quantity: "", unit: "", section: "Produce" }
+        ],
+        notes: ""
       }
     ];

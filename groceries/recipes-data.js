@@ -115,7 +115,7 @@ const recipes = [
         ingredients: [
           { name: "packets of wheat noodles (you will need 2 boxes)", quantity: 4, unit: "", section: "Pantry" },
           { name: "bell peppers, sliced", quantity: 2, unit: "", section: "Produce" },
-          { name: "shrimp, deveined and peeled", quantity: 1, unit: "lb", section: "Meat" },
+          { name: "chicken breast", quantity: 1, unit: "lb", section: "Meat" },
           { name: "soyaki sauce", quantity: 0.5, unit: "cup", section: "Pantry" },
           { name: "reserved noodle water", quantity: 1/3, unit: "cup", section: "Pantry" },
           { name: "salt", quantity: "", unit: "", section: "Pantry" },

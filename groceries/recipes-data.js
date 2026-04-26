@@ -598,5 +598,31 @@ const recipes = [
           { name: "grated Parmesan (for serving)", quantity: "", unit: "", section: "Dairy" }
         ],
         notes: ""
+      },
+      {
+        id: "turkey-chili",
+        name: "Turkey Chili",
+        category: "Dinner / Chili",
+        source: "New York Times",
+        sourceUrl: "https://cooking.nytimes.com/recipes/1023225-turkey-chili",
+        servings: 4,
+        prepTime: "10 min",
+        cookTime: "45 min",
+        tags: ["Chili", "Turkey", "One-Pot", "Hearty", "Comfort Food", "Meal Prep"],
+        description: "A hearty and flavorful turkey chili made with tomatoes, chipotle peppers, and spices, perfect for a satisfying one-pot meal.",
+        image: "images/meals/meal-23.png",
+        ingredients: [
+          { name: "olive oil", quantity: 3, unit: "tbsp", section: "Pantry" },
+          { name: "White onion, diced", quantity: 1, unit: "", section: "Produce" },
+          { name: "whole peeled tomatoes (canned)", quantity: 28, unit: "oz", section: "Pantry" },
+          { name: "salt", quantity: "", unit: "", section: "Pantry" },
+          { name: "chili powder", quantity: 2, unit: "tbsp", section: "Pantry" },
+          { name: "ground turkey", quantity: 1, unit: "lb", section: "Meat" },
+          { name: "chipotle peppers in adobo sauce", quantity: 7, unit: "oz", section: "Pantry" },
+          { name: "shredded extra-sharp cheddar (optional)", quantity: "", unit: "", section: "Dairy" },
+          { name: "sour cream (optional)", quantity: "", unit: "", section: "Dairy" },
+          { name: "cilantro leaves (optional)", quantity: "", unit: "", section: "Produce" }
+        ],
+        notes: ""
       }
     ];

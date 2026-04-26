@@ -455,14 +455,14 @@ const recipes = [
       },
       {
         id: "teriyaki-green-bean-beef",
-        name: "TJ Teriyaki Green Bean Beef",
+        name: "ALDI Teriyaki Green Bean Beef",
         category: "Dinner",
         source: "Frida Sofia Eats",
         sourceUrl: "https://www.fridasofiaeats.com/recipes/teriyaki-green-been-beef",
         servings: 4,
         prepTime: "10 min",
         cookTime: "20 min",
-        tags: ["Beef", "Rice Bowl", "Quick", "Trader Joe's"],
+        tags: ["Beef", "Rice Bowl", "Quick", "Aldi's"],
         description: "A simple teriyaki beef and green bean bowl served over rice.",
         image: "images/meals/meal-17.png",
         ingredients: [

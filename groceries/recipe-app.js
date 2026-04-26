@@ -251,6 +251,8 @@ function renderShoppingPage(selectedMeals) {
 
 document.getElementById("resetBtn").addEventListener("click", () => {
   selectedMealIds = [];
+  checkedItems = {};
+  localStorage.removeItem("checkedItems");
   renderList();
 });
 

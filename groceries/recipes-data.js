@@ -680,5 +680,27 @@ const recipes = [
           { name: "reserved pasta water", quantity: 0.5, unit: "cup", section: "Other" }
         ],
         notes: ""
+      },
+      {
+        id: "beef-noodles",
+        name: "WF Beef Noodles",
+        category: "Dinner / Noodles",
+        source: "Frida Sofia Eats",
+        sourceUrl: "https://www.fridasofiaeats.com/recipes/beef-noodles",
+        servings: 4,
+        prepTime: "15 min",
+        cookTime: "20 min",
+        tags: ["Noodles", "Beef", "Quick", "One-Pan", "Weeknight", "Savory", "Whole Foods"],
+        description: "A quick and savory noodle dish with ground beef, ramen noodles, and a flavorful ponzu-based sauce, perfect for an easy weeknight meal.",
+        image: "images/meals/meal-28.png",
+        ingredients: [
+          { name: "ramen noodles", quantity: 8, unit: "oz", section: "Pantry" },
+          { name: "ground beef", quantity: 1, unit: "lb", section: "Meat" },
+          { name: "zucchini", quantity: 1, unit: "", section: "Produce" },
+          { name: "ponzu sauce", quantity: 0.5, unit: "cup", section: "Pantry" },
+          { name: "sesame oil", quantity: 0.33, unit: "cup", section: "Pantry" },
+          { name: "olive oil", quantity: "", unit: "", section: "Pantry" }
+        ],
+        notes: ""
       }
     ];

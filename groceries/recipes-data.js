@@ -949,5 +949,40 @@ const recipes = [
           { name: "chives, chopped", quantity: 8, unit: "", section: "Produce" }
         ],
         notes: ""
+      },
+      {
+        id: "moroccan-spiced-chickpea-stew",
+        name: "Moroccan Spiced Chickpea Stew",
+        category: "Dinner / Stew",
+        source: "Mama's Vegan Cookbook",
+        sourceUrl: "https://drive.google.com/file/d/12om1rRCJouX1ygvQvw58N9UB37iecP2L/view?usp=drive_link",
+        servings: 4,
+        prepTime: "25 min",
+        cookTime: "25 min",
+        tags: ["Stew", "Vegan", "Chickpeas", "Spiced", "One-Pot", "Healthy"],
+        description: "A warm and flavorful Moroccan-inspired stew with chickpeas, vegetables, and aromatic spices, served with couscous.",
+        image: "images/meals/meal-39.png",
+        ingredients: [
+          { name: "olive oil", quantity: 3, unit: "tbsp", section: "Pantry" },
+          { name: "Yellow onion, thinly sliced", quantity: 1, unit: "", section: "Produce" },
+          { name: "kosher salt", quantity: 1, unit: "tsp", section: "Pantry" },
+          { name: "garlic, chopped", quantity: 1, unit: "clove", section: "Produce" },
+          { name: "ground cumin", quantity: 2, unit: "tsp", section: "Pantry" },
+          { name: "paprika", quantity: 1, unit: "tsp", section: "Pantry" },
+          { name: "ground cinnamon", quantity: 0.5, unit: "tsp", section: "Pantry" },
+          { name: "tomato paste", quantity: 1, unit: "tbsp", section: "Pantry" },
+          { name: "diced tomatoes (canned)", quantity: 14.5, unit: "oz", section: "Pantry" },
+          { name: "red bell pepper, sliced", quantity: 1, unit: "", section: "Produce" },
+          { name: "carrots", quantity: 3, unit: "", section: "Produce" },
+          { name: "chickpeas (canned)", quantity: 2, unit: "cans", section: "Pantry" },
+          { name: "water", quantity: 2, unit: "cups", section: "Pantry" },
+          { name: "black pepper", quantity: 0.25, unit: "tsp", section: "Pantry" },
+          { name: "cayenne pepper", quantity: 0.125, unit: "tsp", section: "Pantry" },
+          { name: "lemon", quantity: 1, unit: "", section: "Produce" },
+          { name: "couscous", quantity: 1, unit: "cup", section: "Pantry" },
+          { name: "golden raisins", quantity: 0.5, unit: "cup", section: "Pantry" },
+          { name: "fresh cilantro or parsley, chopped (for serving)", quantity: 0.25, unit: "cup", section: "Produce" }
+        ],
+        notes: ""
       }
     ];

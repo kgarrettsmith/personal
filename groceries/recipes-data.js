@@ -922,5 +922,32 @@ const recipes = [
           { name: "fresh cilantro, chopped (optional)", quantity: "", unit: "", section: "Produce" }
         ],
         notes: ""
+      },
+      {
+        id: "tomato-soup-with-sourdough-croutons",
+        name: "Tomato Soup with Sourdough Croutons",
+        category: "Dinner / Soup",
+        source: "Erin's Vegan Cookbook",
+        sourceUrl: "https://drive.google.com/file/d/1nuUoQrM7O_zz3qZTLutDBq5mBBkOKTva/view?usp=drive_link",
+        servings: 4,
+        prepTime: "20 min",
+        cookTime: "20 min",
+        tags: ["Soup", "Vegan", "Comfort Food", "Simple", "Homemade"],
+        description: "A comforting tomato soup made with whole peeled tomatoes, garlic, and spices, served with crispy sourdough croutons.",
+        image: "images/meals/meal-38.png",
+        ingredients: [
+          { name: "olive oil", quantity: 0.25, unit: "cup", section: "Pantry" },
+          { name: "Yellow onion, thinly sliced", quantity: 1, unit: "", section: "Produce" },
+          { name: "kosher salt", quantity: 1, unit: "tsp", section: "Pantry" },
+          { name: "garlic, smashed", quantity: 1, unit: "clove", section: "Produce" },
+          { name: "tomato paste", quantity: 1, unit: "tbsp", section: "Pantry" },
+          { name: "whole peeled tomatoes (canned)", quantity: 28, unit: "oz", section: "Pantry" },
+          { name: "crushed red pepper flakes", quantity: "0.125–0.25", unit: "tsp", section: "Pantry" },
+          { name: "black pepper", quantity: 0.25, unit: "tsp", section: "Pantry" },
+          { name: "water or vegetable broth", quantity: 2.5, unit: "cups", section: "Pantry" },
+          { name: "sourdough croutons", quantity: 2, unit: "cups", section: "Pantry" },
+          { name: "chives, chopped", quantity: 8, unit: "", section: "Produce" }
+        ],
+        notes: ""
       }
     ];

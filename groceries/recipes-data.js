@@ -823,5 +823,27 @@ const recipes = [
           { name: "dry mustard", quantity: 1, unit: "tsp", section: "Pantry" }
         ],
         notes: ""
+      },
+      {
+        id: "simple-salsa-steak",
+        name: "Simple Salsa Steak",
+        category: "Dinner / Skillet",
+        source: "5 Ingredient Tin Box",
+        sourceUrl: "https://drive.google.com/file/d/1QJihINZ49iP3bkEa8BbIrGEwwlB8fg-R/view?usp=drive_link",
+        servings: 4,
+        prepTime: "2 hours",
+        cookTime: "10 min",
+        tags: ["Steak", "Quick", "Simple", "High-Protein"],
+        description: "A simple and flavorful steak dish marinated in spicy salsa, lime juice, and cumin, then quickly cooked for an easy, protein-rich meal.",
+        image: "images/meals/meal-34.png",
+        ingredients: [
+          { name: "spicy salsa", quantity: 1.5, unit: "cups", section: "Pantry" },
+          { name: "lime juice", quantity: 3, unit: "tbsp", section: "Produce" },
+          { name: "olive oil", quantity: 1.5, unit: "tbsp", section: "Pantry" },
+          { name: "ground cumin", quantity: 0.75, unit: "tsp", section: "Pantry" },
+          { name: "flank steak", quantity: 1.5, unit: "lb", section: "Meat" },
+          { name: "Green onions, finely chopped", quantity: 1, unit: "", section: "Produce" }
+        ],
+        notes: ""
       }
     ];

@@ -797,5 +797,31 @@ const recipes = [
           { name: "salt", quantity: "", unit: "", section: "Pantry" }
         ],
         notes: ""
+      },
+      {
+        id: "easy-meat-loaf",
+        name: "Slow Cooker Easy Meat Loaf",
+        category: "Dinner / Slow Cooker",
+        source: "Slow Cooker Tin Box",
+        sourceUrl: "https://drive.google.com/file/d/1eym1auLLrpqe1aN8DjMvt5_ZNRvhYU0m/view?usp=drive_link",
+        servings: 6,
+        prepTime: "20 min",
+        cookTime: "5–6 hours",
+        tags: ["Slow Cooker", "Beef", "Comfort Food", "Family-Friendly"],
+        description: "A simple and comforting slow cooker meat loaf made with ground beef, breadcrumbs, and a sweet and tangy ketchup glaze.",
+        image: "images/meals/meal-33.png",
+        ingredients: [
+          { name: "ground beef", quantity: 1.5, unit: "lb", section: "Meat" },
+          { name: "milk", quantity: 0.75, unit: "cup", section: "Dairy" },
+          { name: "plain dry bread crumbs", quantity: 0.66, unit: "cup", section: "Pantry" },
+          { name: "eggs, beaten", quantity: 2, unit: "", section: "Dairy" },
+          { name: "Yellow onion, minced", quantity: 2, unit: "tbsp", section: "Produce" },
+          { name: "salt", quantity: 1, unit: "tsp", section: "Pantry" },
+          { name: "ground sage", quantity: 0.5, unit: "tsp", section: "Pantry" },
+          { name: "ketchup", quantity: 0.5, unit: "cup", section: "Pantry" },
+          { name: "brown sugar", quantity: 2, unit: "tbsp", section: "Pantry" },
+          { name: "dry mustard", quantity: 1, unit: "tsp", section: "Pantry" }
+        ],
+        notes: ""
       }
     ];

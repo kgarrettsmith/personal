@@ -826,7 +826,7 @@ const recipes = [
       },
       {
         id: "simple-salsa-steak",
-        name: "Simple Salsa Steak",
+        name: "5 Ingredient Simple Salsa Steak",
         category: "Dinner / Skillet",
         source: "5 Ingredient Tin Box",
         sourceUrl: "https://drive.google.com/file/d/1QJihINZ49iP3bkEa8BbIrGEwwlB8fg-R/view?usp=drive_link",

@@ -845,5 +845,28 @@ const recipes = [
           { name: "Green onions, finely chopped", quantity: 1, unit: "", section: "Produce" }
         ],
         notes: ""
+      },
+      {
+        id: "5-ingredient-asian-chicken-and-noodle-stir-fry",
+        name: "5 Ingredient Asian Chicken and Noodle Stir-Fry",
+        category: "Dinner / Noodles",
+        source: "5 Ingredient Tin Box",
+        sourceUrl: "https://drive.google.com/file/d/1KBzIENNFFa2AgxyZIzOQOURzttN0I7zg/view?usp=drive_link",
+        servings: 4,
+        prepTime: "15 min",
+        cookTime: "20 min",
+        tags: ["Noodles", "Chicken", "Stir-Fry", "Quick", "One-Pan"],
+        description: "A quick and simple stir-fry with chicken, rice noodles, and vegetables in a sweet and savory stir-fry sauce.",
+        image: "images/meals/meal-35.png",
+        ingredients: [
+          { name: "Pad Thai rice noodles (thin)", quantity: 8, unit: "oz", section: "Pantry" },
+          { name: "vegetable oil", quantity: 1, unit: "tbsp", section: "Pantry" },
+          { name: "boneless skinless chicken breasts, cut into pieces", quantity: 1, unit: "lb", section: "Meat" },
+          { name: "stir-fry sauce", quantity: 12, unit: "oz", section: "Pantry" },
+          { name: "water", quantity: 0.25, unit: "cup", section: "Pantry" },
+          { name: "brown sugar", quantity: 2, unit: "tbsp", section: "Pantry" },
+          { name: "frozen stir-fry vegetable blend", quantity: 16, unit: "oz", section: "Frozen" }
+        ],
+        notes: ""
       }
     ];

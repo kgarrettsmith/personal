@@ -891,5 +891,36 @@ const recipes = [
           { name: "cooked rice (optional)", quantity: "", unit: "", section: "Pantry" }
         ],
         notes: ""
+      },
+      {
+        id: "slow-cooker-mexican-skillet-tamale-casserole",
+        name: "Slow Cooker Mexican Skillet Tamale Casserole",
+        category: "Dinner / Slow Cooker",
+        source: "Slow Cooker Tin Box",
+        sourceUrl: "https://drive.google.com/file/d/1nTiIKHMQNKA07uAwJQUGCZM-U1H6o_75/view?usp=drive_link",
+        servings: 4,
+        prepTime: "20 min",
+        cookTime: "50 min",
+        tags: ["Slow Cooker", "Mexican", "Casserole", "Comfort Food", "One-Pot"],
+        description: "A hearty and comforting slow cooker casserole with ground beef, corn, chiles, and a cheesy tamale-style topping.",
+        image: "images/meals/meal-37.png",
+        ingredients: [
+          { name: "ground beef", quantity: 1, unit: "lb", section: "Meat" },
+          { name: "corn (frozen)", quantity: 1, unit: "cup", section: "Frozen" },
+          { name: "tomato sauce (canned)", quantity: 8, unit: "oz", section: "Pantry" },
+          { name: "diced green chiles (canned)", quantity: 4, unit: "oz", section: "Pantry" },
+          { name: "water", quantity: 0.5, unit: "cup", section: "Pantry" },
+          { name: "taco seasoning mix", quantity: 1, unit: "package", section: "Pantry" },
+          { name: "ground cumin", quantity: 0.5, unit: "tsp", section: "Pantry" },
+          { name: "biscuit baking mix", quantity: 0.5, unit: "cup", section: "Pantry" },
+          { name: "whole milk", quantity: 1, unit: "cup", section: "Dairy" },
+          { name: "eggs", quantity: 2, unit: "", section: "Dairy" },
+          { name: "Monterey Jack or Mexican cheese blend, shredded", quantity: 1.5, unit: "cups", section: "Dairy" },
+          { name: "sour cream (optional)", quantity: "", unit: "", section: "Dairy" },
+          { name: "sliced olives (optional)", quantity: "", unit: "", section: "Pantry" },
+          { name: "fresh tomatoes, chopped (optional)", quantity: "", unit: "", section: "Produce" },
+          { name: "fresh cilantro, chopped (optional)", quantity: "", unit: "", section: "Produce" }
+        ],
+        notes: ""
       }
     ];

@@ -868,5 +868,28 @@ const recipes = [
           { name: "frozen stir-fry vegetable blend", quantity: 16, unit: "oz", section: "Frozen" }
         ],
         notes: ""
+      },
+      {
+        id: "5-ingredient-pork-and-asparagus-stir-fry",
+        name: "5 Ingredient Pork and Asparagus Stir-Fry",
+        category: "Dinner / Stir-Fry",
+        source: "5 Ingredient Tin Box",
+        sourceUrl: "https://drive.google.com/file/d/1_jhPjtJYR-NHfzVSOM8XDtZW6gNjZ3pu/view?usp=drive_link",
+        servings: 4,
+        prepTime: "15 min",
+        cookTime: "15 min",
+        tags: ["Stir-Fry", "Pork", "Quick", "One-Pan"],
+        description: "A quick and simple stir-fry with pork tenderloin, asparagus, and a savory black bean sauce, perfect for an easy weeknight meal.",
+        image: "images/meals/meal-36.png",
+        ingredients: [
+          { name: "vegetable oil", quantity: 1, unit: "tbsp", section: "Pantry" },
+          { name: "pork tenderloin, cut into pieces", quantity: 12, unit: "oz", section: "Meat" },
+          { name: "Chinese black bean sauce", quantity: 3, unit: "tbsp", section: "Pantry" },
+          { name: "black pepper", quantity: 0.5, unit: "tsp", section: "Pantry" },
+          { name: "asparagus, cut into pieces", quantity: 12, unit: "oz", section: "Produce" },
+          { name: "water", quantity: "2–3", unit: "tbsp", section: "Pantry" },
+          { name: "cooked rice (optional)", quantity: "", unit: "", section: "Pantry" }
+        ],
+        notes: ""
       }
     ];
